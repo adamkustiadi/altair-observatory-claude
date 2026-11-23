@@ -1,0 +1,2110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Altair Observatory</title>
+<meta name="description" content="Altair Observatory: a calm, premium portal to AI learning resources, videos and articles from AI Creator Labs.">
+<meta name="theme-color" content="#05060F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2305060F'/%3E%3Cpath d='M16 5l2.2 8.8L27 16l-8.8 2.2L16 27l-2.2-8.8L5 16l8.8-2.2z' fill='%23E8D5A3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>(function(){var d=document.documentElement;try{var m=localStorage.getItem('altair-theme')||'dark';var r=m==='system'?(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):m;d.setAttribute('data-theme',r==='light'?'light':'dark')}catch(e){d.setAttribute('data-theme','dark')}})()</script>
+<style>
+:root{
+  --bg:#05060F; --blue:#2A2A6E; --violet:#4B2E83;
+  --text:#EEF0FA; --muted:#9AA0C0; --gold:#E8D5A3; --hi:#fff; --ph:#8e94b8;
+  --ink:238,240,250; --gd:232,213,163; --bgc:5,6,15; --wh:255,255,255; --pn:10,11,30;
+  --line:rgba(255,255,255,.14);
+  --line-soft:rgba(255,255,255,.08);
+  --glass:rgba(14,16,40,.55);
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --gutter:clamp(20px,5vw,72px);
+}
+/* light theme: warm paper, deep navy ink, antique-gold accent */
+html[data-theme="light"]{
+  --bg:#F6F4EE; --blue:#C3D0F5; --violet:#D8CCF6;
+  --text:#14163A; --muted:#5C6183; --gold:#8A681C; --hi:#0B0D24; --ph:#7C8099;
+  --ink:20,22,58; --gd:138,104,28; --bgc:246,244,238; --wh:20,22,58; --pn:255,255,255;
+  --line:rgba(20,22,58,.16);
+  --line-soft:rgba(20,22,58,.09);
+  --glass:rgba(255,255,255,.62);
+  color-scheme:light;
+}
+html[data-theme="light"] .sky i:nth-child(3){background:radial-gradient(circle,rgba(170,150,230,.4),transparent 65%)}
+html[data-theme="light"] .sky i:nth-child(4){background:radial-gradient(circle,rgba(225,190,100,.3),transparent 65%)}
+html[data-theme="light"] .sky i{opacity:.9}
+html[data-theme="light"] .vsort{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%238A681C' stroke-width='1.5'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E")}
+html[data-theme="light"] .vsort option{background:#fff;color:#14163A}
+html[data-theme="light"] .card:hover,html[data-theme="light"] .card:focus-visible{box-shadow:0 14px 36px rgba(75,46,131,.16)}
+html[data-theme="light"] .btn{background:rgba(255,255,255,.55)}
+html[data-theme="light"] .thumb,html[data-theme="light"] .media,html[data-theme="light"] .glyph{background:linear-gradient(145deg,#26266C,#3C2676 55%,#0C0D26)}
+.code{background:#0E1030}
+.copy{color:#E8D5A3}
+.thumb .dur{color:#EEF0FA}
+/* theme switch (footer, bottom right) */
+.themebox{position:relative}
+.tbtn{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--line);background:rgba(var(--wh),.03);border-radius:8px;padding:.55rem .95rem;font-size:.78rem;letter-spacing:0;text-transform:none;color:var(--text);cursor:pointer;transition:border-color .25s,background .25s}
+.tbtn:hover{border-color:rgba(var(--gd),.6)}
+.tbtn svg{width:16px;height:16px;flex:none}
+.tmenu{position:absolute;right:0;bottom:calc(100% + 10px);min-width:176px;z-index:40;border:1px solid var(--line);background:rgba(var(--pn),.97);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-radius:12px;padding:.35rem;text-align:left;box-shadow:0 16px 40px rgba(0,0,0,.28)}
+.tmenu[hidden]{display:none}
+.tmenu button{display:flex;align-items:center;gap:.7rem;width:100%;border:0;background:none;padding:.55rem .7rem;border-radius:8px;font-size:.82rem;letter-spacing:0;text-transform:none;color:var(--text);cursor:pointer;text-align:left}
+.tmenu button:hover,.tmenu button:focus-visible{background:rgba(var(--wh),.08)}
+.tmenu svg{width:16px;height:16px;flex:none}
+.tmenu i{margin-left:auto;font-style:normal;color:var(--gold)}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{color-scheme:dark;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden;min-height:100vh}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+em{font-style:italic;font-weight:400}
+:focus-visible{outline:1px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+/* ---------- background ---------- */
+.sky{position:fixed;inset:0;z-index:-2;overflow:hidden;background:var(--bg)}
+.sky i{position:absolute;border-radius:50%;filter:blur(80px);opacity:.75}
+.sky i:nth-child(1){width:70vmax;height:70vmax;left:-20vmax;top:-25vmax;background:radial-gradient(circle,var(--violet),transparent 65%)}
+.sky i:nth-child(2){width:65vmax;height:65vmax;right:-22vmax;top:5vmax;background:radial-gradient(circle,var(--blue),transparent 65%)}
+.sky i:nth-child(3){width:50vmax;height:50vmax;left:15vmax;bottom:-30vmax;background:radial-gradient(circle,rgba(110,80,180,.55),transparent 65%)}
+.sky i:nth-child(4){width:30vmax;height:30vmax;right:8vmax;bottom:-12vmax;background:radial-gradient(circle,rgba(232,213,163,.14),transparent 65%)}
+.sky::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--bgc),.35),rgba(var(--bgc),.7))}
+#stars{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+
+/* ---------- shared ---------- */
+.eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:400}
+.wrap{width:min(1120px,100% - 2*var(--gutter));margin-inline:auto}
+section{position:relative}
+.btn{display:inline-flex;align-items:center;gap:.75rem;border:1px solid var(--line);background:rgba(var(--wh),.03);padding:.85rem 1.4rem;border-radius:6px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400;transition:background .25s,border-color .25s,transform .25s;cursor:pointer}
+.btn:hover{background:rgba(var(--gd),.1);border-color:rgba(var(--gd),.55)}
+.btn svg{width:18px;height:18px;transition:transform .25s}
+.btn:hover svg{transform:translateX(4px)}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+/* ---------- language switch ---------- */
+.lang{display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:999px;padding:3px}
+.lang button{border:0;background:none;cursor:pointer;font-size:.68rem;letter-spacing:.16em;font-weight:500;color:var(--muted);padding:.38rem .8rem;border-radius:999px;transition:color .25s,background .25s}
+.lang button:hover{color:var(--hi)}
+.lang button[aria-pressed="true"]{background:rgba(var(--gd),.16);color:var(--gold)}
+.lang.fixed{position:fixed;top:16px;right:var(--gutter);z-index:40}
+
+/* ---------- tabs ---------- */
+.tabs{display:flex;justify-content:center;gap:clamp(18px,4vw,44px);flex-wrap:wrap}
+.tab{--ls:.26em;position:relative;font-size:.78rem;letter-spacing:var(--ls);text-transform:uppercase;color:rgba(var(--ink),.72);padding:.55rem 0;font-weight:400;transition:color .25s}
+/* underline = exactly the width of the word (trailing letter-spacing removed) */
+.tab::after{content:"";position:absolute;left:0;right:var(--ls);bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.tab:hover{color:var(--hi)}
+.tab:hover::after{transform:scaleX(1)}
+.tab[aria-current="page"]{color:var(--hi)}
+.tab[aria-current="page"]::after{transform:scaleX(1)}
+
+/* ---------- hero ---------- */
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:96px var(--gutter) 88px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(3.1rem,10.5vw,8rem);line-height:.95;letter-spacing:-.01em;margin:1.1rem 0 1.3rem}
+.hero h1 em{color:var(--gold)}
+.hero .lead{max-width:40rem;color:rgba(var(--ink),.82);font-size:clamp(.95rem,1.6vw,1.08rem)}
+.byline{margin-top:1rem;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.hero .tabs{margin-top:2.4rem}
+.searchbox{position:relative;width:min(640px,100%);margin-top:2.1rem}
+.search{display:flex;align-items:center;gap:.8rem;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:999px;padding:.45rem .5rem .45rem 1.3rem;transition:border-color .25s,box-shadow .25s}
+.search:focus-within{border-color:rgba(var(--gd),.6);box-shadow:0 0 0 4px rgba(var(--gd),.08),0 0 40px rgba(110,80,180,.3)}
+.search svg.ic{width:18px;height:18px;flex:none;color:var(--muted)}
+.search input{flex:1;min-width:0;background:none;border:0;outline:0;font-size:.95rem;text-overflow:ellipsis;padding:.6rem 0;color:var(--text)}
+.search input::placeholder{color:var(--ph)}
+.search button{flex:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(var(--gd),.12);display:grid;place-items:center;cursor:pointer;transition:background .25s}
+.search button:hover{background:rgba(var(--gd),.28)}
+.search button svg{width:18px;height:18px;color:var(--gold)}
+.results{position:absolute;left:0;right:0;top:calc(100% + 10px);z-index:20;text-align:left;border:1px solid var(--line);background:rgba(var(--pn),.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:18px;padding:.4rem;display:none;max-height:min(52vh,360px);overflow:auto}
+.results.open{display:block}
+.results a{display:flex;align-items:center;gap:.8rem;padding:.7rem .9rem;border-radius:12px;transition:background .2s}
+.results a:hover,.results a:focus-visible{background:rgba(var(--wh),.06)}
+.results .t{flex:1;min-width:0;font-size:.9rem;color:var(--text);font-weight:400}
+.results .k{flex:none;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(var(--gd),.35);border-radius:999px;padding:.15rem .6rem}
+.results .none{padding:.9rem 1rem;color:var(--muted);font-size:.88rem}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:1.2rem;max-width:760px}
+.chip{border:1px solid var(--line);background:rgba(var(--wh),.02);border-radius:999px;padding:.5rem 1.05rem;font-size:.8rem;color:rgba(var(--ink),.85);cursor:pointer;transition:background .25s,border-color .25s,color .25s}
+.chip:hover{border-color:rgba(var(--gd),.55);background:rgba(var(--gd),.08);color:var(--hi)}
+.cue{position:absolute;left:50%;bottom:26px;width:1px;height:46px;background:linear-gradient(var(--gold),transparent);opacity:.7}
+
+/* ---------- why ai ---------- */
+.why{padding:clamp(80px,12vw,160px) 0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,7vw,110px);align-items:center}
+.block h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.02;margin:1rem 0 1.4rem}
+.why h2{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,7.4vw,5.8rem);line-height:.98;margin:0 0 .8rem}
+.why h2 em{color:var(--gold)}
+.why .sub{font-family:var(--serif);font-weight:300;font-size:clamp(1.35rem,2.6vw,2rem);line-height:1.2;color:rgba(var(--ink),.92);max-width:none;margin:0 0 1.4rem}
+.why .sub em{color:var(--gold)}
+.why p,.block p.d{color:rgba(var(--ink),.8);font-size:1.02rem;max-width:34rem}
+.rows{border-top:1px solid var(--line)}
+.rows div{display:flex;justify-content:space-between;gap:1.5rem;padding:1.15rem 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.rows dt{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);flex:none;padding-top:.15rem;font-weight:400}
+.rows dd{text-align:right;color:rgba(var(--ink),.88)}
+
+/* ---------- counters ---------- */
+.counters{padding:clamp(56px,8vw,110px) 0;border-block:1px solid var(--line-soft);background:linear-gradient(180deg,rgba(var(--bgc),.0),rgba(var(--bgc),.55),rgba(var(--bgc),.0))}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,3vw,40px);text-align:center}
+.counter{display:block;padding:.5rem;border-radius:12px;transition:transform .3s}
+.counter:hover{transform:translateY(-4px)}
+.counter b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(3.2rem,10vw,7rem);line-height:1;color:var(--hi);font-variant-numeric:lining-nums tabular-nums}
+.counter span{display:block;margin-top:.6rem;font-size:clamp(.6rem,1.6vw,.78rem);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.counter:hover span{color:var(--gold)}
+
+/* ---------- alternating blocks ---------- */
+.block{padding:clamp(70px,10vw,140px) 0}
+.block .split{align-items:center}
+.block.flip .media{order:2}
+.block .eyebrow{display:block}
+.block h2{margin-top:1rem}
+.block .btn{margin-top:2rem}
+.media{position:relative;aspect-ratio:4/3;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(145deg,rgba(42,42,110,.55),rgba(75,46,131,.35) 55%,rgba(10,11,30,.7))}
+.media svg.con{position:absolute;inset:0;width:100%;height:100%}
+.media .glow{position:absolute;width:55%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(var(--gd),.28),transparent 65%);filter:blur(30px);left:42%;top:12%}
+.media .tag{position:absolute;left:18px;bottom:16px;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:#E8D5A3}
+.video{padding:0;cursor:pointer;display:block;width:100%;text-align:left}
+.video img,.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.video img{opacity:.92;transition:transform .6s,opacity .3s}
+.video:hover img{transform:scale(1.03);opacity:1}
+.video::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,6,15,.1) 35%,rgba(5,6,15,.88));pointer-events:none}
+.video.playing::after{display:none}
+.play{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);z-index:2;width:68px;height:68px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(5,6,15,.45);backdrop-filter:blur(8px);display:grid;place-items:center;transition:transform .25s,border-color .25s}
+.video:hover .play{transform:translate(-50%,-50%) scale(1.08);border-color:var(--gold)}
+.play svg{width:22px;height:22px;margin-left:3px}
+.vmeta{position:absolute;left:18px;right:18px;bottom:16px;z-index:2;display:flex;flex-direction:column;gap:.3rem}
+.vmeta .vt{font-size:.9rem;font-weight:400;line-height:1.35;color:#fff}
+.vmeta .vs{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:#E8D5A3}
+.video.playing .vmeta,.video.playing .play{display:none}
+
+/* ---------- quote ---------- */
+.quote{padding:clamp(90px,13vw,190px) 0;text-align:center;background:linear-gradient(180deg,rgba(var(--bgc),0),rgba(var(--bgc),.6),rgba(var(--bgc),0))}
+.quote blockquote{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(1.55rem,3.6vw,2.7rem);line-height:1.3;max-width:48rem;margin:1.6rem auto 0;color:var(--hi)}
+.quote cite{display:block;margin-top:2rem;font-style:normal;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.mark{font-family:var(--serif);font-size:4rem;line-height:.5;color:var(--gold);opacity:.7}
+
+/* ---------- footer ---------- */
+footer{text-align:center;padding:0 0 38px}
+footer .vline{width:1px;height:clamp(60px,10vw,120px);background:linear-gradient(transparent,rgba(var(--wh),.7));margin:0 auto 2.4rem}
+footer .tag{font-family:var(--serif);font-size:clamp(1.5rem,3.2vw,2.3rem);font-weight:300}
+footer .tag em{color:var(--gold)}
+footer p.s{margin:.7rem auto 0;color:var(--muted);font-size:.85rem;max-width:30rem}
+footer .btn{margin-top:1.8rem}
+.contact2{margin-top:1.2rem;font-size:.85rem;color:var(--muted)}
+.contact2 a{color:var(--text);border-bottom:1px solid var(--line)}
+.contact2 a:hover{color:var(--gold);border-color:var(--gold)}
+.ifoot{margin-top:clamp(10px,3vw,40px)}
+.fbar{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-top:clamp(48px,7vw,90px);padding-top:1.5rem;border-top:1px solid var(--line-soft);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.fbar nav{display:flex;gap:1.6rem;flex-wrap:wrap;justify-content:center}
+.fbar a:hover{color:var(--gold)}
+
+/* ---------- inner pages ---------- */
+.bar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:.8rem 1rem;flex-wrap:wrap;padding:.9rem var(--gutter);background:rgba(var(--bgc),.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+.brand{font-family:var(--serif);font-size:1.45rem;font-weight:400;line-height:1}
+.brand em{color:var(--gold)}
+.bar .tabs{gap:clamp(14px,3vw,34px)}
+.bar .tab{font-size:.7rem}
+.page{min-height:70vh;padding:clamp(70px,10vw,140px) 0}
+.page h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.8rem,7vw,5.5rem);line-height:1;margin:1rem 0 1.3rem}
+.page p{color:rgba(var(--ink),.8);max-width:34rem}
+.page .btn{margin-top:2rem}
+[hidden]{display:none!important}
+
+/* ---------- home art + image slots ---------- */
+.media svg.art{position:absolute;inset:0;width:100%;height:100%}
+.media img.slot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.media .tag{z-index:2}
+
+/* ---------- resources page ---------- */
+.res{width:min(1280px,100% - 2*var(--gutter));margin-inline:auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:start;padding-bottom:clamp(50px,7vw,100px)}
+.rmain{min-width:0}
+.side{position:sticky;top:96px;align-self:start;margin-top:clamp(64px,8vw,110px);max-height:calc(100vh - 120px);overflow:auto;scrollbar-width:none}
+.side::-webkit-scrollbar{display:none}
+.side-h{font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin:1.4rem 0 .5rem;padding-left:.9rem}
+.sl{display:flex;align-items:baseline;gap:.7rem;width:100%;text-align:left;background:none;border:0;border-left:1px solid var(--line-soft);padding:.5rem .9rem;color:rgba(var(--ink),.7);font-size:.88rem;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
+.sl:hover{color:var(--hi)}
+.sl.on{color:var(--hi);border-left-color:var(--gold);background:linear-gradient(90deg,rgba(var(--gd),.09),transparent)}
+.sl .n{font-size:.68rem;letter-spacing:.12em;color:var(--gold);flex:none}
+.sl .tt{flex:1;min-width:0}
+.sl em{font-style:normal;font-size:.7rem;color:var(--muted)}
+.sl.off{opacity:.35;pointer-events:none}
+.rhead{padding:clamp(56px,7vw,96px) 0 clamp(26px,4vw,40px);scroll-margin-top:100px}
+.rhead h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.8rem,6.4vw,5.4rem);line-height:.98;margin:1rem 0 1.1rem}
+.rhead h1 em{color:var(--gold)}
+.lead2{color:rgba(var(--ink),.82);max-width:38rem;font-size:1.05rem}
+.rstats{margin-top:1.1rem;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.filters{display:flex;flex-direction:column;gap:.9rem;margin-top:1.8rem}
+.frow{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .6rem}
+.flabel{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-right:.4rem;min-width:7.5rem}
+.chip.on{border-color:rgba(var(--gd),.7);background:rgba(var(--gd),.14);color:var(--hi)}
+.rq{flex:1;min-width:190px;max-width:320px;border:1px solid var(--line);background:var(--glass);border-radius:999px;padding:.55rem 1rem;font-size:.85rem;outline:0;transition:border-color .25s}
+.rq:focus{border-color:rgba(var(--gd),.6)}
+.rq::placeholder{color:var(--ph)}
+.rcount{font-size:.82rem;color:var(--muted)}
+.linkbtn{background:none;border:0;border-bottom:1px solid var(--line);color:var(--text);cursor:pointer;font-size:.82rem;margin-left:.5rem}
+.linkbtn:hover{color:var(--gold);border-color:var(--gold)}
+.grp{padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line);scroll-margin-top:100px}
+.gh{display:grid;grid-template-columns:auto 1fr;column-gap:1rem;align-items:baseline;margin-bottom:1.6rem}
+.gh .gn{font-size:.78rem;letter-spacing:.14em;color:var(--gold)}
+.gh h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.05}
+.gh p{grid-column:2;color:var(--muted);margin-top:.4rem;max-width:34rem;font-size:.95rem}
+.start{grid-column:2;justify-self:start;margin-top:.7rem;background:none;border:0;border-bottom:1px solid var(--line);padding:0 0 .15rem;font-size:.78rem;color:rgba(var(--ink),.8);cursor:pointer;transition:color .2s,border-color .2s;text-align:left}
+.start b{font-weight:500;color:var(--gold)}
+.start:hover{color:var(--hi);border-color:var(--gold)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{position:relative;display:flex;flex-direction:column;text-align:left;gap:.55rem;padding:20px 20px 20px;border:1px solid var(--line);border-radius:16px;background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s,background .3s}
+.card:hover,.card:focus-visible{transform:translateY(-4px);border-color:rgba(var(--gd),.55);box-shadow:0 14px 40px rgba(75,46,131,.35);background:rgba(var(--pn),.62)}
+.ct{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
+.glyph{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,rgba(42,42,110,.6),rgba(75,46,131,.3))}
+.glyph svg{width:30px;height:30px}
+.cc{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.ctitle{font-family:var(--serif);font-size:1.5rem;line-height:1.1;color:var(--hi);font-weight:500}
+.cd{font-size:.88rem;color:rgba(var(--ink),.72);line-height:1.5;flex:1}
+.ca{align-self:flex-end;color:var(--gold);transition:transform .25s}
+.card:hover .ca{transform:translateX(4px)}
+.lvl{display:inline-flex;align-items:center;gap:4px;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lvl i{width:6px;height:6px;border-radius:50%;border:1px solid rgba(var(--gd),.6)}
+.lvl i.on{background:var(--gold)}
+.lvl b{font-weight:400;margin-left:6px}
+.empty{padding:3rem 0;color:var(--muted)}
+.what{padding:clamp(48px,7vw,96px) 0 clamp(26px,4vw,50px);border-top:1px solid var(--line);scroll-margin-top:100px}
+.what .stmt{font-family:var(--serif);font-weight:300;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.25;margin:1rem 0 2rem;max-width:46rem}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:16px;background:var(--glass);overflow:hidden}
+.tri div{padding:22px}
+.tri div+div{border-left:1px solid var(--line)}
+.tri h3{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:.7rem}
+.tri p{font-size:.92rem;color:rgba(var(--ink),.8)}
+.works{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem 2rem;margin-top:1.2rem;padding:20px 22px;border:1px solid var(--line);border-radius:16px;background:var(--glass)}
+.works strong{display:block;font-weight:500;font-size:1.02rem}
+.works .s{font-size:.86rem;color:var(--muted)}
+.works .pills{display:flex;flex-wrap:wrap;gap:.5rem}
+.works .pills i{font-style:normal;font-size:.76rem;border:1px solid var(--line);border-radius:8px;padding:.35rem .8rem;color:rgba(var(--ink),.85)}
+.what .stmt.sm{font-family:var(--sans);font-size:1.05rem;font-weight:300;color:rgba(var(--ink),.8);margin:.8rem 0 0}
+.log{list-style:none;margin:1.6rem 0 0;padding:0;border-left:1px solid var(--line)}
+.log>li{position:relative;padding:0 0 1.8rem 26px}
+.log>li::before{content:"";position:absolute;left:-5px;top:.45rem;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.log>li.next::before{background:transparent;border:1px solid var(--gold)}
+.lh{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .9rem;margin-bottom:.7rem}
+.lh b{font-family:var(--serif);font-weight:400;font-size:1.5rem}
+.lh time{font-size:.8rem;color:var(--muted);letter-spacing:.08em}
+.lt{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);border-radius:99px;padding:.2rem .7rem}
+.log ul{list-style:none;margin:0;padding:0}
+.log ul li{position:relative;padding-left:1.1rem;margin:.35rem 0;font-size:.94rem;color:rgba(var(--ink),.8);max-width:44rem}
+.log ul li::before{content:"–";position:absolute;left:0;color:var(--gold)}
+.steps3 .sn{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);font-size:.82rem;margin-bottom:.9rem}
+.steps3 h3{color:var(--text)}
+.rback{padding-top:1.6rem}
+/* detail drawer */
+.drawer{position:fixed;inset:0;z-index:60}
+.dback{position:absolute;inset:0;background:rgba(3,4,12,.62);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;transition:opacity .35s}
+.dpanel{position:absolute;top:0;right:0;bottom:0;width:min(540px,100vw);background:rgba(var(--pn),.97);border-left:1px solid var(--line);padding:clamp(26px,4vw,40px);overflow:auto;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.drawer.open .dback{opacity:1}
+.drawer.open .dpanel{transform:none}
+.dclose{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(var(--wh),.04);cursor:pointer;color:var(--text);display:grid;place-items:center;transition:border-color .2s}
+.dclose:hover{border-color:var(--gold)}
+.dpanel h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4vw,2.7rem);line-height:1.05;margin:.8rem 0 1rem;padding-right:2.4rem}
+.dmeta{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.2rem;margin-bottom:1.2rem}
+.dgoal{font-size:.8rem;color:var(--muted)}
+.ddesc{color:rgba(var(--ink),.85)}
+.dpanel h3{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:400;margin:1.8rem 0 .7rem}
+.steps{padding-left:1.2rem;color:rgba(var(--ink),.82);font-size:.92rem}
+.steps li{margin:.3rem 0}
+.code{border:1px solid var(--line);border-radius:12px;background:rgba(0,0,0,.35);overflow:hidden}
+.code pre{white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.78rem;line-height:1.6;padding:16px;margin:0;color:#dfe2f5;max-height:34vh;overflow:auto}
+.copy{display:block;width:100%;border:0;border-top:1px solid var(--line);background:rgba(232,213,163,.08);padding:.75rem;cursor:pointer;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);transition:background .25s}
+.copy:hover{background:rgba(232,213,163,.18)}
+.note{font-size:.78rem;color:var(--muted);margin-top:.8rem}
+@media (max-width:1100px){
+  .tri{grid-template-columns:1fr}
+  .tri div+div{border-left:0;border-top:1px solid var(--line)}
+}
+@media (max-width:860px){
+  .bar{position:static;gap:.7rem 1rem}
+  .bar .brand{order:1}
+  .bar .lang{order:2;margin-left:auto}
+  .bar .tabs{order:3;flex-basis:100%;justify-content:center}
+  .res{grid-template-columns:1fr;gap:0}
+  .side{position:sticky;top:0;z-index:25;margin:0 calc(-1*var(--gutter));padding:.55rem var(--gutter);background:rgba(var(--bgc),.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft);display:flex;gap:.4rem;overflow-x:auto;max-height:none}
+  .side-h{display:none}
+  .sl{width:auto;flex:none;white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:.4rem .85rem;font-size:.78rem}
+  .sl .n,.sl em{display:none}
+  .sl.on{border-color:rgba(var(--gd),.6);background:rgba(var(--gd),.12)}
+  .rhead{padding-top:40px;scroll-margin-top:70px}
+  .grp,.what{scroll-margin-top:70px}
+  .flabel{min-width:100%}
+  .rq{max-width:none}
+}
+
+/* ---------- knowledges ---------- */
+.vtool{position:sticky;top:var(--stick,78px);z-index:20;display:flex;gap:.7rem;align-items:center;padding:.75rem 0;margin-bottom:1.5rem;background:rgba(var(--bgc),.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-block:1px solid var(--line-soft)}
+.rq.vq{max-width:none;min-width:0}
+.vsort{flex:none;appearance:none;-webkit-appearance:none;border:1px solid var(--line);background:var(--glass) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23E8D5A3' stroke-width='1.5'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 1rem center;color:var(--text);border-radius:999px;padding:.55rem 2.4rem .55rem 1.1rem;font:inherit;font-size:.85rem;outline:0;cursor:pointer;transition:border-color .25s}
+.vsort:focus{border-color:rgba(var(--gd),.6)}
+.vsort option{background:#0A0B1E;color:#EEF0FA}
+.vcount{margin:-.6rem 0 1.2rem}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:30px 22px}
+.vcard{display:flex;flex-direction:column;gap:.75rem;text-align:left;background:none;border:0;padding:0;cursor:pointer;color:inherit;font:inherit}
+.thumb{position:relative;display:block;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(145deg,rgba(42,42,110,.55),rgba(75,46,131,.35) 55%,rgba(10,11,30,.7));transition:border-color .3s,box-shadow .3s,transform .3s}
+.thumb svg.tart,.thumb img{position:absolute;inset:0;width:100%;height:100%}
+.thumb img{object-fit:cover;transition:transform .5s}
+.thumb .dur{position:absolute;right:10px;bottom:10px;z-index:2;font-size:.72rem;letter-spacing:.06em;padding:.2rem .5rem;border-radius:6px;background:rgba(5,6,15,.82);border:1px solid var(--line)}
+.thumb .play{position:absolute;left:50%;top:50%;z-index:2;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:rgba(5,6,15,.6);border:1px solid rgba(232,213,163,.7);display:grid;place-items:center;opacity:0;transform:scale(.9);transition:opacity .3s,transform .3s}
+.vcard:hover .thumb,.vcard:focus-visible .thumb{border-color:rgba(var(--gd),.6);box-shadow:0 14px 40px rgba(75,46,131,.35);transform:translateY(-3px)}
+.vcard:hover .thumb img{transform:scale(1.04)}
+.vcard:hover .play,.vcard:focus-visible .play{opacity:1;transform:none}
+.vep{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.vtitle{font-family:var(--serif);font-size:1.22rem;line-height:1.25;font-weight:400;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.dpanel.vp{width:min(720px,100vw)}
+.player{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000;margin:1.2rem 0 1rem}
+.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vinfo{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font-size:.84rem;color:var(--muted)}
+.vinfo b{font-weight:400;color:var(--text)}
+.dpanel.vp h2{font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.2}
+.vfull{font-size:.94rem;color:rgba(var(--ink),.8)}
+.ytlink{display:inline-block;margin-top:1.4rem;font-size:.8rem;color:var(--gold);border-bottom:1px solid rgba(var(--gd),.4);padding-bottom:2px}
+.ytlink:hover{border-color:var(--gold)}
+.sl.cur{color:var(--gold);cursor:default}
+.sl .ar{font-size:.8rem;color:var(--muted)}
+@media (max-width:860px){
+  .xl,.side-h.xh{display:none}
+  .vtool{padding:.6rem 0}
+  .vsort{padding-right:2.2rem}
+  .thumb .play{opacity:.9;transform:none}
+  .vgrid{gap:26px 18px}
+}
+@media (max-width:520px){
+  .vsort{padding-left:.9rem;max-width:44%}
+  .vgrid{grid-template-columns:1fr}
+}
+
+/* ---------- articles ---------- */
+.tags{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:18px}
+.tagcard{display:flex;flex-direction:column;gap:.55rem;min-height:200px;padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--glass);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:inherit;transition:transform .3s,border-color .3s,box-shadow .3s}
+.tagcard:hover,.tagcard:focus-visible{transform:translateY(-4px);border-color:rgba(var(--gd),.55);box-shadow:0 14px 40px rgba(75,46,131,.28)}
+.tagcard .tl{font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.tagcard .tn{font-family:var(--serif);font-size:1.9rem;line-height:1.05;color:var(--hi)}
+.tagcard .td{flex:1;color:var(--muted);font-size:.9rem}
+.tagcard .tc{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.tagcard .tc b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(var(--gd),.14);border:1px solid rgba(var(--gd),.35);font-weight:400;color:var(--gold);font-size:.95rem;letter-spacing:0;transition:background .25s}
+.tagcard:hover .tc b{background:rgba(var(--gd),.28)}
+.shead.row{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem 1.5rem;flex-wrap:wrap}
+.shead .more{font-size:.85rem;color:var(--gold);border-bottom:1px solid rgba(var(--gd),.4);padding-bottom:2px}
+.shead .more:hover{border-color:var(--gold)}
+.tpills{display:flex;flex-wrap:wrap;gap:.6rem}
+.tpill{display:inline-flex;align-items:baseline;gap:.55rem;border:1px solid var(--line);border-radius:999px;padding:.5rem 1.05rem;font-size:.88rem;color:rgba(var(--ink),.9);background:rgba(var(--wh),.02);transition:border-color .25s,background .25s,color .25s}
+.tpill span{color:var(--muted);font-size:.78rem}
+.tpill:hover,.tpill:focus-visible{border-color:rgba(var(--gd),.55);background:rgba(var(--gd),.08);color:var(--hi)}
+.shead{margin:clamp(34px,5vw,56px) 0 1.1rem}
+.shead h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,3vw,2.3rem);line-height:1.1}
+.alist{border-top:1px solid var(--line)}
+.arow{display:grid;grid-template-columns:1fr auto;column-gap:1.5rem;row-gap:.35rem;padding:1.5rem 0;border-bottom:1px solid var(--line);color:inherit;transition:padding .3s}
+.arow:hover,.arow:focus-visible{padding-left:.7rem}
+.arow .am{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.arow .at{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.15;color:var(--hi)}
+.arow .ax{color:var(--muted);font-size:.93rem;max-width:42rem}
+.arow .ar{grid-column:2;grid-row:1/4;align-self:center;color:var(--gold);font-size:1.25rem}
+.crumb{display:inline-block;margin-bottom:1.6rem;font-size:.8rem;color:var(--muted);border-bottom:1px solid var(--line)}
+.crumb:hover{color:var(--gold);border-color:var(--gold)}
+.ahead h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.04;margin:1rem 0 1rem;max-width:46rem}
+.ahead.big h1{font-size:clamp(2.8rem,6.4vw,5.4rem);line-height:.98}
+.ahead h1 em{color:var(--gold)}
+.ameta{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.prose{max-width:40rem;margin-top:2.2rem}
+.prose p{margin:0 0 1.15rem;font-size:1.04rem;line-height:1.78;color:rgba(var(--ink),.88)}
+.prose h2{font-family:var(--serif);font-weight:400;font-size:1.8rem;line-height:1.15;margin:2.3rem 0 .8rem}
+.prose ul,.prose ol{margin:0 0 1.3rem 1.3rem;color:rgba(var(--ink),.88);font-size:1.02rem;line-height:1.7}
+.prose li{margin:.45rem 0;padding-left:.2rem}
+.prose li::marker{color:var(--gold)}
+.prose strong{font-weight:500;color:var(--hi)}
+.prose a{color:var(--gold);border-bottom:1px solid rgba(var(--gd),.45)}
+.prose a:hover{border-color:var(--gold)}
+.prose pre{white-space:pre-wrap;word-break:break-word;border:1px solid var(--line);border-radius:12px;background:#0E1030;color:#dfe2f5;padding:16px;margin:0 0 1.3rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.65}
+.aend{display:grid;gap:14px;margin-top:2.8rem;max-width:40rem}
+.abox{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--glass);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.abox h3{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:.55rem}
+.abox p{color:rgba(var(--ink),.85);font-size:.95rem;margin-bottom:1rem}
+.abox .chips2{display:flex;flex-wrap:wrap;gap:.5rem}
+.abox .btn{padding:.7rem 1.2rem}
+.aq{margin:0 0 .4rem}
+/* ---------- responsive ---------- */
+@media (max-width:860px){
+  .split{grid-template-columns:1fr;gap:2.4rem}
+  .block.flip .media{order:0}
+  .media{aspect-ratio:16/10}
+  .rows dd{font-size:.88rem}
+  .hero{padding-top:72px}
+}
+@media (max-width:520px){
+  .tabs{gap:14px 20px}
+  .tab{--ls:.2em;font-size:.68rem}
+  .counter span{letter-spacing:.14em}
+  .fbar{justify-content:center;text-align:center}
+  .bar{justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+}
+
+@media (max-width:520px){.fbar .themebox{order:3}.tmenu{right:50%;transform:translateX(50%)}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<div class="sky" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<main id="home">
+  <div class="lang fixed" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true" title="English">EN</button>
+    <button type="button" data-lang="id" aria-pressed="false" title="Bahasa Indonesia">ID</button>
+  </div>
+
+  <!-- 1. HERO -->
+  <section class="hero" id="top">
+    <p class="eyebrow">Explore Beyond Intelligence</p>
+    <h1>Altair <em>Observatory</em></h1>
+    <p class="lead" data-i="lead">Your window into the universe of AI (Artificial Intelligence): skills, videos, and ideas to help you learn, build, and grow.</p>
+    <p class="byline">by AI Creator Labs</p>
+
+    <nav class="tabs" aria-label="Main">
+      <a class="tab" href="#/resources" data-i="tabRes">Resources</a>
+      <a class="tab" href="#/knowledges" data-i="tabKnow">Knowledges</a>
+      <a class="tab" href="#/articles" data-i="tabArt">Articles</a>
+    </nav>
+
+    <div class="searchbox">
+      <form class="search" id="searchForm" role="search" autocomplete="off">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="q" type="text" placeholder="Search skills, videos, articles…" aria-label="Search skills, videos, or articles" aria-controls="results">
+        <button type="submit" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+      </form>
+      <div class="results" id="results" role="region" aria-live="polite"></div>
+    </div>
+
+    <div class="chips" id="chips">
+      <button class="chip" type="button" data-i="c1">Prompt Engineering</button>
+      <button class="chip" type="button" data-i="c2">AI Agents</button>
+      <button class="chip" type="button" data-i="c3">AI for Business</button>
+      <button class="chip" type="button" data-i="c4">Content Creation</button>
+      <button class="chip" type="button" data-i="c5">Vibe Coding</button>
+    </div>
+    <span class="cue" aria-hidden="true"></span>
+  </section>
+
+  <!-- 2. WHY AI -->
+  <section class="why">
+    <div class="wrap split">
+      <div class="reveal">
+        <h2 data-i="whyT">Why <em>AI?</em></h2>
+        <p class="sub" data-i="whySub">A new kind of <em>leverage</em></p>
+        <p data-i="whyP">AI is no longer a distant idea. It is a new kind of leverage: it helps one person think faster, create more, and build what once took an entire team. The advantage doesn't go to those who know the most tools, but to those who use them with clarity and keep moving forward.</p>
+      </div>
+      <dl class="rows reveal">
+        <div><dt data-i="rk1">Clarity</dt><dd data-i="rv1">Turn vague ideas into clear plans</dd></div>
+        <div><dt data-i="rk2">Speed</dt><dd data-i="rv2">Go from idea to first draft far faster</dd></div>
+        <div><dt data-i="rk3">Leverage</dt><dd data-i="rv3">Do more with the same time and team</dd></div>
+        <div><dt data-i="rk4">Creativity</dt><dd data-i="rv4">Explore options you wouldn't reach alone</dd></div>
+        <div><dt data-i="rk5">Consistency</dt><dd data-i="rv5">Learn and build, one step at a time</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 3. COUNTERS -->
+  <section class="counters">
+    <div class="wrap cgrid reveal">
+      <a class="counter" href="#/resources"><b data-count="resources">0</b><span data-i="cn1">Skills &amp; Resources</span></a>
+      <a class="counter" href="#/knowledges"><b data-count="videos">0</b><span data-i="cn2">Videos</span></a>
+      <a class="counter" href="#/articles"><b data-count="articles">0</b><span data-i="cn3">Articles</span></a>
+    </div>
+  </section>
+
+  <!-- 4. ARCHIVE -->
+  <section class="block">
+    <div class="wrap split">
+      <div class="media reveal" id="mediaArchive" aria-hidden="true"><span class="tag">Archive</span></div>
+      <div class="reveal">
+        <span class="eyebrow">Altair Archive</span>
+        <h2 data-i="arcH">Explore the <em>Skills</em></h2>
+        <p class="d" data-i="arcD">A curated collection of AI skills, prompts, resources, and practical tools to help you build, create, and work smarter.</p>
+        <a class="btn" href="#/resources"><span data-i="arcB">Explore Now</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. TELESCOPE -->
+  <section class="block flip">
+    <div class="wrap split">
+      <button class="media video reveal" id="featVideo" type="button" aria-label="Play preview: Perbedaan AI Agent vs AI Tools Biasa">
+        <img id="thumb" alt="" loading="lazy" src="https://img.youtube.com/vi/AU4svOtansw/hqdefault.jpg">
+        <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg></span>
+        <span class="vmeta"><span class="vt">Perbedaan AI Agent vs AI Tools Biasa (GPT, Claude, Gemini) | Apa Itu AI Agent? - ACL PODCAST #5</span><span class="vs" data-i="vs">Preview 07:05–08:30 · Full 24:25</span></span>
+      </button>
+      <div class="reveal">
+        <span class="eyebrow">Altair Telescope</span>
+        <h2 data-i="telH">Learn from the <em>Video</em></h2>
+        <p class="d" data-i="telD">Explore video lessons, walkthroughs, and insights from the AI Creator Labs learning universe.</p>
+        <a class="btn" href="https://www.youtube.com/watch?v=AU4svOtansw&t=425s" target="_blank" rel="noopener noreferrer"><span data-i="telB">Watch now</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. JOURNAL -->
+  <section class="block">
+    <div class="wrap split">
+      <div class="media reveal" id="mediaJournal" aria-hidden="true"><span class="tag">Journal</span></div>
+      <div class="reveal">
+        <span class="eyebrow">Altair Journal</span>
+        <h2 data-i="jouH">Ideas Beyond the <em>Horizon</em></h2>
+        <p class="d" data-i="jouD">Discover articles, perspectives, and ideas about artificial intelligence, creativity, and the future of work.</p>
+        <a class="btn" href="#/articles"><span data-i="jouB">Read Now</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. QUOTE -->
+  <section class="quote">
+    <div class="wrap reveal">
+      <div class="mark" aria-hidden="true">“</div>
+      <blockquote data-i="qt">Think like a pawn in chess. Don't be dazzled by the queen who can move anywhere. Remember the pawn: it can't retreat, it can only move forward, one step at a time. But if it keeps going and never stops until it reaches the end of the board, it can become anything.</blockquote>
+      <cite>Sepri — AI Creator Labs</cite>
+    </div>
+  </section>
+
+  <!-- 8. FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="vline" aria-hidden="true"></div>
+      <p class="tag">Explore Beyond <em>Intelligence</em></p>
+      <p class="s" data-i="fs">Altair Observatory is a learning portal by AI Creator Labs. Questions or collaborations? Say hello.</p>
+      <a class="btn" href="mailto:accounts@aicreatorlabs.id" data-i="fb">Contact us</a>
+      <p class="contact2"><span data-i="fw">or WhatsApp</span> <a href="https://wa.me/6285123177522" target="_blank" rel="noopener noreferrer">+62 851-2317-7522</a></p>
+      <div class="fbar">
+        <span>© 2026 Altair Observatory · by AI Creator Labs</span>
+        <nav aria-label="Social">
+          <a href="https://www.instagram.com/aicreatorlabs.id/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.tiktok.com/@aicreatorlabs.id" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://www.youtube.com/@aicreatorlabsid" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </nav>
+        <div class="themebox" data-themebox></div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<!-- Inner pages (built in stages 2-4) -->
+<div id="inner" hidden>
+  <header class="bar">
+    <a class="brand" href="#/" aria-label="Back to Altair Observatory home">Altair <em>Observatory</em></a>
+    <nav class="tabs" aria-label="Main">
+      <a class="tab" href="#/resources" data-tab="resources" data-i="tabRes">Resources</a>
+      <a class="tab" href="#/knowledges" data-tab="knowledges" data-i="tabKnow">Knowledges</a>
+      <a class="tab" href="#/articles" data-tab="articles" data-i="tabArt">Articles</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true" title="English">EN</button>
+      <button type="button" data-lang="id" aria-pressed="false" title="Bahasa Indonesia">ID</button>
+    </div>
+  </header>
+  <main class="page" id="pageStub">
+    <div class="wrap">
+      <p class="eyebrow" id="pLabel"></p>
+      <h1 id="pTitle"></h1>
+      <p id="pText"></p>
+      <a class="btn" href="#/" data-i="back">← Back to home</a>
+    </div>
+  </main>
+
+  <!-- RESOURCES (Altair Archive) -->
+  <main id="resView" hidden>
+    <div class="res">
+      <aside class="side" id="side" aria-label="Categories"></aside>
+      <div class="rmain">
+        <section class="rhead" id="resTop">
+          <p class="eyebrow">Altair Archive</p>
+          <h1 data-i="resH">AI Skills for <em>Every Creator</em></h1>
+          <p class="lead2" data-i="resLead">Practical AI skills for every level, from your first prompt to building your own agents. Pick the ones you need and put them to work.</p>
+          <p class="rstats" id="resStats"></p>
+          <div class="filters">
+            <div class="frow" id="resPaths"></div>
+            <div class="frow" id="resLevels"></div>
+            <div class="frow"><input class="rq" id="resQ" type="search" autocomplete="off"><span class="rcount" id="resCount"></span></div>
+          </div>
+        </section>
+
+        <div id="resGroups"></div>
+
+        <section class="what" id="resWhat">
+          <p class="eyebrow" data-i="whatEye">What is a skill?</p>
+          <p class="stmt" data-i="whatStmt">A skill is a reusable playbook for your AI: written once, used every time. Instead of re-explaining what you want, you hand over the playbook and get consistent results.</p>
+          <div class="tri">
+            <div><h3 data-i="prT">The problem</h3><p data-i="prP">Without a process, AI guesses. You re-explain the same thing in every chat and get a different result each time.</p></div>
+            <div><h3 data-i="fxT">The fix</h3><p data-i="fxP">A skill writes down one good habit (a checklist, a format, a way of thinking) so your AI repeats it the same way every time.</p></div>
+            <div><h3 data-i="grT">Why it grows with you</h3><p data-i="grP">Skills chain together: what one produces, the next uses. Improve a single step and your whole workflow gets better.</p></div>
+          </div>
+          <div class="works">
+            <div><strong data-i="worksT">Works with the AI you already use</strong><span class="s" data-i="worksS">Skills are plain text. Copy, paste, and adapt.</span></div>
+            <div class="pills"><i>Claude</i><i>ChatGPT</i><i>Gemini</i><i data-i="anyAI">Any AI tool</i></div>
+          </div>
+        </section>
+
+        <section class="what" id="resLog">
+          <p class="eyebrow" data-i="chgEye">Changelog</p>
+          <p class="stmt sm" data-i="chgStmt">What's new in the Archive. Fresh skills are added here as they are released.</p>
+          <ol class="log">
+            <li><div class="lh"><b>v1.0</b><time>22 Nov 2026</time><span class="lt" data-i="chgTag">Launch</span></div>
+              <ul><li data-i="chg1">20 skills across 6 categories, from your first prompt to agent building.</li>
+              <li data-i="chg2">Filter by level and by path: content creator, AI income, or agent builder.</li>
+              <li data-i="chg3">Copy-ready skill text in every detail panel, with English and Indonesian interface.</li></ul></li>
+            <li class="next"><div class="lh"><b data-i="chgNext">Coming next</b><span class="lt" data-i="chgSoon">Soon</span></div>
+              <ul><li data-i="chg4">Altair Knowledges: a video library to learn each skill in action.</li>
+              <li data-i="chg5">Altair Journal: articles and ideas, grouped by topic.</li></ul></li>
+          </ol>
+        </section>
+
+        <section class="what" id="resInstall">
+          <p class="eyebrow" data-i="insEye">Get started</p>
+          <p class="stmt" data-i="insStmt">Install the skills and get to work</p>
+          <div class="tri steps3">
+            <div><span class="sn">1</span><h3 data-i="in1T">Pick a skill</h3><p data-i="in1P">Choose one that matches your task, or start with the first skill in a category.</p></div>
+            <div><span class="sn">2</span><h3 data-i="in2T">Add it to your AI</h3><p data-i="in2P">Copy the skill text and paste it where your AI keeps instructions: a project, a custom assistant, or the start of a new chat.</p></div>
+            <div><span class="sn">3</span><h3 data-i="in3T">Describe the task</h3><p data-i="in3P">Tell your AI what you need. It follows the skill, asks what is missing, and gives you a consistent result.</p></div>
+          </div>
+          <div class="works">
+            <div><strong data-i="inWT">Where to paste it</strong><span class="s" data-i="inWS">Claude: project instructions · ChatGPT: project or custom instructions · Gemini: a Gem</span></div>
+            <a class="btn" href="#/resources" id="browseTop" data-i="inBtn">Browse the skills ↑</a>
+          </div>
+          <div class="rback"><a class="btn" href="#/" data-i="back">← Back to home</a></div>
+        </section>
+      </div>
+    </div>
+
+    <div class="drawer" id="drawer" hidden>
+      <div class="dback" data-close></div>
+      <aside class="dpanel" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+        <button type="button" class="dclose" id="dClose" aria-label="Close"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        <div id="dBody"></div>
+      </aside>
+    </div>
+  </main>
+  <main id="vidView" hidden>
+    <div class="res">
+      <aside class="side" id="vSide" aria-label="Topics"></aside>
+      <div class="rmain">
+        <section class="rhead" id="vTop">
+          <p class="eyebrow">Altair Telescope</p>
+          <h1 data-i="vH">Learn by <em>Watching</em></h1>
+          <p class="lead2" data-i="vLead">Conversations from AI Creator Labs on learning, using and earning with AI. Press play and watch right here, no tab switching.</p>
+          <p class="rstats" id="vStats"></p>
+        </section>
+        <div class="vtool" id="vTool">
+          <input class="rq vq" id="vQ" type="search" autocomplete="off">
+          <select class="vsort" id="vSort"></select>
+        </div>
+        <p class="rcount vcount" id="vCount"></p>
+        <div class="vgrid" id="vGrid"></div>
+        <div class="rback"><a class="btn" href="#/" data-i="back">← Back to home</a></div>
+      </div>
+    </div>
+    <div class="drawer" id="vDrawer" hidden>
+      <div class="dback" data-close></div>
+      <aside class="dpanel vp" role="dialog" aria-modal="true" aria-labelledby="vTitle">
+        <button type="button" class="dclose" id="vClose" aria-label="Close"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        <div id="vBody"></div>
+      </aside>
+    </div>
+  </main>
+  <main id="artView" hidden>
+    <div class="res">
+      <aside class="side" id="aSide" aria-label="Tags"></aside>
+      <div class="rmain">
+        <div id="aHead"></div>
+        <div id="aTopWrap"><input class="rq vq" id="aQ" type="search" autocomplete="off" style="max-width:420px;margin-bottom:.5rem"></div>
+        <div id="aMain"></div>
+      </div>
+    </div>
+  </main>
+  <footer class="ifoot">
+    <div class="wrap">
+      <div class="vline" aria-hidden="true"></div>
+      <p class="tag">Explore Beyond <em>Intelligence</em></p>
+      <p class="s" data-i="fs">Altair Observatory is a learning portal by AI Creator Labs. Questions or collaborations? Say hello.</p>
+      <a class="btn" href="mailto:accounts@aicreatorlabs.id" data-i="fb">Contact us</a>
+      <p class="contact2"><span data-i="fw">or WhatsApp</span> <a href="https://wa.me/6285123177522" target="_blank" rel="noopener noreferrer">+62 851-2317-7522</a></p>
+      <div class="fbar">
+        <span>© 2026 Altair Observatory · by AI Creator Labs</span>
+        <nav aria-label="Social">
+          <a href="https://www.instagram.com/aicreatorlabs.id/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.tiktok.com/@aicreatorlabs.id" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://www.youtube.com/@aicreatorlabsid" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </nav>
+        <div class="themebox" data-themebox></div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+/* ============ BASICS ============ */
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var LANG='en';
+try{ var _s=localStorage.getItem('altair-lang'); if(_s==='id'||_s==='en') LANG=_s }catch(e){}
+
+/* ============ CONTENT DATA (counters + search read from here) ============ */
+var DATA = {
+  /* c = category 1-6 · l = level (b/i/a) · g = paths it suits ([] = all) · t/d = title/description · ti/di = Indonesian · x = skill text (English) */
+  resources: [
+    {id:"skill-starter-template",c:1,l:"b",g:[],t:"Skill Starter Template",ti:"Template Awal Skill",
+     d:"A fill-in-the-blank template for writing your first skill: name, when to use it, steps, and output format.",
+     di:"Template isian untuk menulis skill pertamamu: nama, kapan dipakai, langkah, dan format hasil.",
+     x:`NAME: [short name]
+USE WHEN: [the situation that should trigger this skill]
+STEPS:
+1. [first action]
+2. [second action]
+3. [check the result]
+OUTPUT: [format, length, tone]
+EXAMPLE: [one input and the ideal output]
+Fill in each bracket, keep it under one page, then test it on a real task.`},
+    {id:"skill-builder",c:1,l:"b",g:["agent"],t:"Skill Builder",ti:"Skill Builder",
+     d:"Interviews you about a task you repeat often, then writes a ready-to-use skill from your answers.",
+     di:"Mewawancaraimu soal tugas yang sering berulang, lalu menulis skill siap pakai dari jawabanmu.",
+     x:`ROLE: You help the user turn a repeated task into a reusable skill.
+STEPS:
+1. Ask one question at a time: what the task is, who it is for, what a great result looks like, and what usually goes wrong.
+2. Draft the skill using NAME, USE WHEN, STEPS, OUTPUT.
+3. Show the draft and ask what to tighten.
+OUTPUT: A single skill under one page, plus two test prompts.`},
+    {id:"prompting-basics",c:1,l:"b",g:["creator"],t:"Prompting Basics Cheatsheet",ti:"Cheatsheet Dasar Prompting",
+     d:"A one-page checklist for clearer prompts: role, goal, context, format, and examples.",
+     di:"Checklist satu halaman untuk prompt yang lebih jelas: peran, tujuan, konteks, format, dan contoh.",
+     x:`Before you send a prompt, check five things:
+1. ROLE: who should the AI act as?
+2. GOAL: what exactly do you want?
+3. CONTEXT: what does it need to know?
+4. FORMAT: list, table, email, steps? How long?
+5. EXAMPLE: show one good result if you have it.
+Template: "Act as [role]. My goal is [goal]. Context: [context]. Give me [format]. Example: [example]."`},
+
+    {id:"prompt-optimizer",c:2,l:"b",g:[],t:"Prompt Optimizer",ti:"Prompt Optimizer",
+     d:"Turns a rough idea into a clear, structured prompt you can paste into any AI.",
+     di:"Mengubah ide kasar jadi prompt terstruktur yang bisa ditempel ke AI mana pun.",
+     x:`ROLE: You rewrite rough prompts into clear, high-performing ones.
+STEPS:
+1. Read the user's draft and find the goal, audience, and missing details.
+2. Ask up to three short questions only if something critical is missing.
+3. Rewrite with role, task, context, constraints, and output format.
+OUTPUT: The improved prompt in a copy-ready block, then two lines on what changed.`},
+    {id:"researcher",c:2,l:"i",g:["income","creator"],t:"Researcher",ti:"Researcher",
+     d:"Plans a research question, gathers sources, and returns a short, cited answer you can trust.",
+     di:"Menyusun pertanyaan riset, mengumpulkan sumber, dan memberi jawaban ringkas bersumber yang bisa dipercaya.",
+     x:`ROLE: You are a careful research assistant.
+STEPS:
+1. Restate the question and list what would count as a good answer.
+2. Search or review the sources provided and note where each fact comes from.
+3. Compare sources and flag disagreements or gaps.
+OUTPUT: A short answer, key findings as bullets, a source list, and what is still uncertain. Never invent a source.`},
+    {id:"insight-extractor",c:2,l:"i",g:["income","agent"],t:"Insight Extractor",ti:"Insight Extractor",
+     d:"Reads long text, transcripts, or notes and pulls out the key insights, patterns, and next actions.",
+     di:"Membaca teks panjang, transkrip, atau catatan lalu menarik wawasan utama, pola, dan langkah lanjutan.",
+     x:`ROLE: You extract meaning from long material.
+STEPS:
+1. Skim the whole text and name its main theme.
+2. Pull out the top insights, each with a short quote or evidence.
+3. Group them into patterns and spot what is surprising.
+OUTPUT: Five key insights, three patterns, and three suggested next actions.`},
+
+    {id:"brand-voice-builder",c:3,l:"b",g:["creator"],t:"Brand Voice Builder",ti:"Brand Voice Builder",
+     d:"Defines how your brand sounds (tone, words to use, words to avoid) so every post feels like you.",
+     di:"Merumuskan karakter suara brand-mu (nada, kata yang dipakai, kata yang dihindari) agar setiap konten terasa seperti kamu.",
+     x:`ROLE: You define a brand's voice.
+STEPS:
+1. Ask about the audience, values, and three brands the user admires.
+2. Describe the voice in four traits, each with a do and a don't.
+3. Write three sample sentences in that voice.
+OUTPUT: A one-page voice guide with a short word list (use / avoid).`},
+    {id:"social-media-planner",c:3,l:"b",g:["creator"],t:"Social Media Planner",ti:"Social Media Planner",
+     d:"Builds a 30-day content calendar with topics, hooks, and formats for your platforms.",
+     di:"Menyusun kalender konten 30 hari berisi topik, hook, dan format untuk platform-mu.",
+     x:`ROLE: You plan social media content.
+STEPS:
+1. Ask for the niche, audience, platforms, and posting frequency.
+2. Propose four weekly themes.
+3. For each post give a hook, a format (reel, carousel, post), and a call to action.
+OUTPUT: A 30-day table: date, theme, hook, format, CTA.`},
+    {id:"marketing-copywriter",c:3,l:"i",g:["creator","income"],t:"Marketing Copywriter",ti:"Marketing Copywriter",
+     d:"Writes headlines, captions, and short sales copy that match your offer and audience.",
+     di:"Menulis judul, caption, dan copy penjualan singkat yang sesuai dengan penawaran dan audiensmu.",
+     x:`ROLE: You write persuasive but honest marketing copy.
+STEPS:
+1. Confirm the offer, audience, main pain point, and one proof point.
+2. Write three headline options and one body version.
+3. Add a clear call to action.
+OUTPUT: Three headlines, an 80-word body, and a CTA. Do not make claims the user cannot back up.`},
+
+    {id:"vibe-coding-page-builder",c:4,l:"i",g:["income"],t:"Vibe Coding Page Builder",ti:"Vibe Coding Page Builder",
+     d:"Guides you to describe a landing page in plain language and get clean, working code.",
+     di:"Memandumu mendeskripsikan landing page dengan bahasa sehari-hari dan menghasilkan kode yang rapi dan berfungsi.",
+     x:`ROLE: You build simple web pages from plain-language descriptions.
+STEPS:
+1. Ask for the page goal, audience, sections, and mood.
+2. Build one self-contained HTML file with a mobile-friendly layout.
+3. Explain how to preview it and what to change first.
+OUTPUT: One HTML file and a three-line change guide. Use only fonts and images you have the right to use.`},
+    {id:"agent-orchestrator",c:4,l:"a",g:["agent"],t:"Agent Orchestrator",ti:"Agent Orchestrator",
+     d:"Coordinates several skills or agents in sequence, passing each result to the next step.",
+     di:"Mengoordinasikan beberapa skill atau agent secara berurutan, meneruskan hasil tiap langkah ke langkah berikutnya.",
+     x:`ROLE: You are the coordinator of a small team of skills.
+STEPS:
+1. Break the goal into steps and assign each to a skill or agent.
+2. Run them in order and pass each output forward.
+3. After each step, check the result against the goal and retry or reroute if needed.
+OUTPUT: A short run log (step, owner, result) and the final deliverable.`},
+    {id:"quality-control-reviewer",c:4,l:"a",g:["agent"],t:"Quality Control Reviewer",ti:"Quality Control Reviewer",
+     d:"Checks any output against clear criteria and returns a pass, a fix list, or a reject.",
+     di:"Memeriksa hasil apa pun terhadap kriteria yang jelas dan memberi keputusan lolos, daftar perbaikan, atau tolak.",
+     x:`ROLE: You are a strict but fair reviewer.
+STEPS:
+1. Ask for the output and the criteria (or propose five).
+2. Score each criterion from 1 to 5 with one line of evidence.
+3. Decide: PASS, FIX, or REJECT.
+OUTPUT: A score table, a decision, and a prioritized fix list.`},
+    {id:"plan-stress-tester",c:4,l:"a",g:["agent","income"],t:"Plan Stress-Tester",ti:"Plan Stress-Tester",
+     d:"Interviews you with sharp questions until the weak spots in your plan are visible.",
+     di:"Mewawancaraimu dengan pertanyaan tajam sampai titik lemah rencanamu terlihat.",
+     x:`ROLE: You pressure-test plans by questioning, not by advising.
+STEPS:
+1. Ask the user to state the plan in three sentences.
+2. Ask one hard question at a time: assumptions, risks, costs, and what happens if it fails.
+3. After each answer, note the decision or open risk.
+OUTPUT: A decisions list, an open-risks list, and the next three actions.`},
+    {id:"bug-diagnoser",c:4,l:"a",g:["agent"],t:"Bug Diagnoser",ti:"Bug Diagnoser",
+     d:"Finds the root cause of a stubborn error step by step, starting from a way to reproduce it.",
+     di:"Mencari akar masalah dari error yang bandel langkah demi langkah, dimulai dari cara mereproduksinya.",
+     x:`ROLE: You diagnose problems methodically.
+STEPS:
+1. Get the exact error and the steps that trigger it.
+2. List three likely causes, most likely first.
+3. Give one small test for each cause and wait for the result.
+4. Narrow down, then propose the smallest fix.
+OUTPUT: The root cause, the fix, and how to confirm it worked.`},
+
+    {id:"client-outreach-writer",c:5,l:"b",g:["income"],t:"Client Outreach Writer",ti:"Client Outreach Writer",
+     d:"Drafts short, personal first messages to potential clients, plus a gentle follow-up.",
+     di:"Menulis pesan pertama yang singkat dan personal untuk calon klien, beserta follow-up yang halus.",
+     x:`ROLE: You write outreach that sounds human.
+STEPS:
+1. Ask what the user offers, who the prospect is, and one detail about them.
+2. Write a first message under 90 words with one clear ask.
+3. Write a follow-up for three days later.
+OUTPUT: Two messages. No hype, no false claims.`},
+    {id:"offer-pricing-builder",c:5,l:"i",g:["income"],t:"Offer & Pricing Builder",ti:"Offer & Pricing Builder",
+     d:"Shapes your service into a clear offer with scope, deliverables, and a price you can defend.",
+     di:"Merancang layananmu menjadi penawaran yang jelas dengan cakupan, hasil kerja, dan harga yang bisa dipertanggungjawabkan.",
+     x:`ROLE: You help package services into offers.
+STEPS:
+1. Ask about the result clients want, the work involved, and the time it takes.
+2. Define the scope, the deliverables, and what is not included.
+3. Suggest three price tiers with reasoning.
+OUTPUT: A one-page offer and a pricing table.`},
+    {id:"business-planner",c:5,l:"i",g:["income"],t:"Business Planner",ti:"Business Planner",
+     d:"Turns a business idea into a simple one-page plan: audience, offer, channels, and first steps.",
+     di:"Mengubah ide bisnis jadi rencana satu halaman yang sederhana: audiens, penawaran, kanal, dan langkah awal.",
+     x:`ROLE: You create lean business plans.
+STEPS:
+1. Ask who it is for, what problem it solves, and how it makes money.
+2. Outline audience, offer, channels, costs, and a 30-day plan.
+3. Point out the biggest risk.
+OUTPUT: A one-page plan with a 30-day action list.`},
+
+    {id:"daily-assistant",c:6,l:"b",g:[],t:"Daily Assistant",ti:"Daily Assistant",
+     d:"Starts your day with a short plan: top priorities, time blocks, and what to skip.",
+     di:"Memulai harimu dengan rencana singkat: prioritas utama, blok waktu, dan apa yang boleh ditunda.",
+     x:`ROLE: You are a calm daily planning assistant.
+STEPS:
+1. Ask for today's tasks, fixed commitments, and energy level.
+2. Pick the top three priorities.
+3. Place them in time blocks and name what can wait.
+OUTPUT: A simple schedule and a one-line focus for the day.`},
+    {id:"scheduler",c:6,l:"b",g:[],t:"Scheduler",ti:"Scheduler",
+     d:"Finds realistic time slots for tasks and meetings and avoids overbooking.",
+     di:"Menemukan slot waktu yang realistis untuk tugas dan pertemuan agar tidak kelebihan jadwal.",
+     x:`ROLE: You schedule tasks and meetings realistically.
+STEPS:
+1. Collect tasks with their duration and deadline, plus existing commitments.
+2. Place fixed items first, then fill the gaps with buffers.
+3. Flag conflicts and propose a fix.
+OUTPUT: A day-by-day schedule with buffers and a list of conflicts.`},
+    {id:"meeting-notes-summarizer",c:6,l:"i",g:[],t:"Meeting Notes Summarizer",ti:"Meeting Notes Summarizer",
+     d:"Turns messy meeting notes or transcripts into decisions, action items, and owners.",
+     di:"Mengubah catatan atau transkrip rapat yang berantakan menjadi keputusan, tugas, dan penanggung jawab.",
+     x:`ROLE: You summarize meetings clearly.
+STEPS:
+1. Read the notes and find the decisions made.
+2. List action items with an owner and a due date if stated.
+3. Note open questions.
+OUTPUT: A five-line summary, the decisions, an action items table, and open questions.`}
+  ],
+  /* ep = podcast number · topic = key in VT · dur mm:ss · views = YouTube count · date = upload date · start = optional start (seconds)
+     t = YouTube title (shown as-is) · img = optional local thumbnail path, e.g. 'images/podcast-6.jpg' */
+  videos: [
+    {slug:"podcast-6",yt:"j32ylCzCMZw",ep:6,topic:"understand",dur:"25:20",views:5716,date:"2026-04-18",
+     t:"Kenapa Kredit AI Lo cepat habis? Jawabannya di Sini - (Penjelasan lengkap Token & Context Window AI) | AI CREATOR LABS PODCAST #6",},
+    {slug:"podcast-5",yt:"AU4svOtansw",ep:5,topic:"understand",dur:"24:25",views:19332,date:"2026-04-05",start:535,
+     t:"Perbedaan AI Agent vs AI Tools Biasa (GPT, Claude, Gemini) | Apa Itu AI Agent? | AI CREATOR LABS PODCAST #5",},
+    {slug:"podcast-4",yt:"lwUwXkbTuAc",ep:4,topic:"risks",dur:"17:07",views:641,date:"2026-02-12",
+     t:"Sisi Gelap dan Bahaya Teknologi AI (Apa saja dan Bagaimana Cara Mencegahnya ? ) | AI CREATOR LABS PODCAST #4",},
+    {slug:"podcast-3",yt:"-86Vly6BYy4",ep:3,topic:"careers",dur:"11:05",views:922,date:"2026-02-08",
+     t:"Ini Pekerjaan yang Gak Akan Pernah Digantikan oleh AI | AI CREATOR LABS PODCAST #3",},
+    {slug:"podcast-2",yt:"DpiYhVdSpbI",ep:2,topic:"start",dur:"21:57",views:2031,date:"2026-01-30",
+     t:"99 Orang Tidak Tau Cara Belajar AI - Ini Panduan Dasar Belajar AI dari Nol untuk Pemula | AI CREATOR LABS PODCAST #2",},
+    {slug:"podcast-1",yt:"krZGmql_qag",ep:1,topic:"risks",dur:"18:38",views:1294,date:"2026-01-19",
+     t:"Apakah mungkin untuk Cuan dari AI ? atau malah scam... | AI CREATOR LABS PODCAST #1",}
+  ],
+  /* tag = key in AT · g = small tags (key in ST) · date = publish date · min = reading minutes · t/ti = title EN/ID · ex/exi = excerpt · b/bi = body HTML (EN/ID)
+     video = slug of a related video (optional) · skills = related skill ids (optional) · cta = course box (optional) */
+  articles: [
+    {slug:"what-is-a-prompt",tag:"start",g:["prompting","beginners"],date:"2026-11-23",min:5,
+     t:"What Is a Prompt? A Practical Guide to Talking to AI",
+     ti:"Apa Itu Prompt? Panduan Praktis Berbicara dengan AI",
+     ex:"A prompt is simply the instruction you give an AI. Here is how to write ones that work the first time.",
+     exi:"Prompt adalah instruksi yang kamu berikan kepada AI. Begini cara menulisnya agar hasilnya tepat sejak percobaan pertama.",
+     skills:["prompting-basics","prompt-optimizer"],
+     b:`<p>A prompt is the message you give an AI tool: a question, an instruction, or a description of a task. The AI can only work with what you write, so the quality of your prompt shapes the quality of the answer. Prompting is not a secret code. It is clear communication.</p>
+<h2>Why the same AI gives very different results</h2>
+<p>"Write about coffee" and "Write a 100-word Instagram caption for a small coffee shop in Bandung that opens at 7 a.m., friendly tone, one emoji" go to the same AI. The second works better because it removes the guessing.</p>
+<h2>The five parts of a good prompt</h2>
+<ol>
+<li><strong>Role:</strong> who the AI should act as, such as an experienced copywriter.</li>
+<li><strong>Goal:</strong> what you want done.</li>
+<li><strong>Context:</strong> what the AI needs to know, such as the audience, the situation, and any limits.</li>
+<li><strong>Format:</strong> a list, a table, an email, steps, and how long.</li>
+<li><strong>Example:</strong> one sample of a good result, if you have it.</li>
+</ol>
+<p>You do not need all five every time. Start with goal, context, and format.</p>
+<h2>A template you can reuse</h2>
+<pre>Act as [role]. My goal is [goal].
+Context: [context].
+Give me [format].
+Example of what I like: [example].</pre>
+<h2>Habits that make prompts better</h2>
+<ul>
+<li>Say what you want, not only what you do not want.</li>
+<li>Let the AI ask you questions: "Ask me up to three questions before you answer."</li>
+<li>Treat the first answer as a draft. Reply with "shorter", "more casual", or "add a real example".</li>
+<li>Paste your own material, such as notes, a draft, or data, instead of describing it.</li>
+</ul>
+<h2>When a prompt becomes a skill</h2>
+<p>If you keep pasting the same prompt, save it. A prompt you reuse, with clear steps and an output format, is what we call a skill. Read <a href="#/articles/what-is-a-skill">What Is a Skill?</a> next, or try the skills below.</p>`,
+     bi:`<p>Prompt adalah pesan yang kamu berikan kepada AI: pertanyaan, instruksi, atau deskripsi tugas. AI hanya bisa bekerja dari apa yang kamu tulis, jadi kualitas prompt menentukan kualitas jawabannya. Prompting bukan kode rahasia. Intinya komunikasi yang jelas.</p>
+<h2>Kenapa AI yang sama bisa memberi hasil yang jauh berbeda</h2>
+<p>"Tulis tentang kopi" dan "Tulis caption Instagram 100 kata untuk kedai kopi kecil di Bandung yang buka jam 7 pagi, nada ramah, satu emoji" dikirim ke AI yang sama. Yang kedua lebih berhasil karena AI tidak perlu menebak.</p>
+<h2>Lima bagian prompt yang baik</h2>
+<ol>
+<li><strong>Peran:</strong> AI bertindak sebagai siapa, misalnya copywriter berpengalaman.</li>
+<li><strong>Tujuan:</strong> apa yang ingin kamu selesaikan.</li>
+<li><strong>Konteks:</strong> hal yang perlu AI ketahui, seperti audiens, situasi, dan batasan.</li>
+<li><strong>Format:</strong> daftar, tabel, email, atau langkah-langkah, beserta panjangnya.</li>
+<li><strong>Contoh:</strong> satu contoh hasil yang bagus, kalau kamu punya.</li>
+</ol>
+<p>Tidak perlu memakai kelimanya setiap kali. Mulailah dengan tujuan, konteks, dan format.</p>
+<h2>Template yang bisa dipakai ulang</h2>
+<pre>Bertindaklah sebagai [peran]. Tujuanku adalah [tujuan].
+Konteks: [konteks].
+Berikan [format].
+Contoh yang kusuka: [contoh].</pre>
+<h2>Kebiasaan yang membuat prompt makin baik</h2>
+<ul>
+<li>Sebutkan apa yang kamu mau, bukan hanya apa yang tidak kamu mau.</li>
+<li>Biarkan AI bertanya balik: "Ajukan maksimal tiga pertanyaan sebelum menjawab."</li>
+<li>Anggap jawaban pertama sebagai draf. Balas dengan "lebih singkat", "lebih santai", atau "tambahkan contoh nyata".</li>
+<li>Tempelkan bahan milikmu sendiri, seperti catatan, draf, atau data, daripada mendeskripsikannya.</li>
+</ul>
+<h2>Saat prompt menjadi skill</h2>
+<p>Kalau kamu terus menempelkan prompt yang sama, simpanlah. Prompt yang dipakai ulang, lengkap dengan langkah dan format hasil, itulah yang kami sebut skill. Baca <a href="#/articles/what-is-a-skill">Apa Itu Skill?</a> selanjutnya, atau coba skill di bawah ini.</p>`},
+
+    {slug:"what-is-a-skill",tag:"start",g:["skills","prompting"],date:"2026-11-23",min:6,
+     t:"What Is a Skill? How to Build One and Put It to Work",
+     ti:"Apa Itu Skill? Cara Membuat dan Menggunakannya",
+     ex:"A skill is a reusable playbook for your AI. Learn what goes inside one, how to write your first, and how to use it.",
+     exi:"Skill adalah playbook yang bisa dipakai ulang untuk AI-mu. Pelajari isinya, cara menulis skill pertamamu, dan cara memakainya.",
+     skills:["skill-starter-template","skill-builder"],
+     b:`<p>A skill is a reusable set of instructions that tells an AI how to do one kind of task well. You write it once and use it every time. Think of a recipe card: you could improvise dinner each night, or follow a recipe that already works.</p>
+<h2>The problem skills solve</h2>
+<p>Without a process, AI guesses. You explain the same thing in every chat, and every chat gives a slightly different result. A skill writes down the good habit once, so the AI repeats it the same way each time.</p>
+<h2>What goes inside a skill</h2>
+<ul>
+<li><strong>Name:</strong> a short label you will recognize.</li>
+<li><strong>Use when:</strong> the situation that calls for it.</li>
+<li><strong>Steps:</strong> what the AI should do, in order.</li>
+<li><strong>Output:</strong> the format, length, and tone of the result.</li>
+</ul>
+<p>Here is a tiny example:</p>
+<pre>NAME: Meeting Notes Summarizer
+USE WHEN: I paste messy meeting notes.
+STEPS:
+1. Find the decisions made.
+2. List action items with an owner.
+3. Note open questions.
+OUTPUT: Five-line summary, decisions, action table.</pre>
+<h2>How to build your first skill</h2>
+<ol>
+<li><strong>Pick a task you repeat.</strong> Weekly reports, captions, client replies.</li>
+<li><strong>Do it once with AI</strong> and note what made the result good.</li>
+<li><strong>Write the steps and output format</strong> in the four parts above. The Skill Starter Template and the Skill Builder help with this.</li>
+<li><strong>Test it on a real task</strong> and tighten whatever felt vague.</li>
+</ol>
+<h2>How to use a skill</h2>
+<p>A skill is plain text, so it works with any AI. Copy it and paste it where your AI keeps instructions, such as project instructions, a custom assistant, or the start of a new chat. Then describe your task and answer the questions it asks.</p>
+<h2>Tips that keep skills useful</h2>
+<ul>
+<li>Keep it under one page. One skill, one job.</li>
+<li>Add a line like "Ask me what is missing before you start."</li>
+<li>Chain skills: let the output of one become the input of the next.</li>
+<li>Update it whenever the AI misses the mark. Skills get better with use.</li>
+</ul>
+<p>Want ready-made ones? The Altair Archive has 20 skills you can copy today.</p>`,
+     bi:`<p>Skill adalah sekumpulan instruksi yang bisa dipakai ulang untuk memberi tahu AI cara mengerjakan satu jenis tugas dengan baik. Kamu menulisnya sekali, lalu memakainya setiap saat. Bayangkan kartu resep: kamu bisa berimprovisasi memasak setiap malam, atau mengikuti resep yang sudah terbukti.</p>
+<h2>Masalah yang diselesaikan skill</h2>
+<p>Tanpa proses, AI menebak. Kamu menjelaskan hal yang sama di setiap obrolan, dan setiap obrolan memberi hasil yang sedikit berbeda. Skill menuliskan kebiasaan yang baik satu kali, sehingga AI mengulanginya dengan cara yang sama setiap kali.</p>
+<h2>Isi sebuah skill</h2>
+<ul>
+<li><strong>Nama:</strong> label singkat yang mudah kamu kenali.</li>
+<li><strong>Dipakai saat:</strong> situasi yang membutuhkannya.</li>
+<li><strong>Langkah:</strong> apa yang harus AI lakukan, berurutan.</li>
+<li><strong>Hasil:</strong> format, panjang, dan nada hasilnya.</li>
+</ul>
+<p>Ini contoh kecilnya:</p>
+<pre>NAMA: Peringkas Catatan Rapat
+DIPAKAI SAAT: Aku menempelkan catatan rapat yang berantakan.
+LANGKAH:
+1. Temukan keputusan yang diambil.
+2. Daftar tugas beserta penanggung jawabnya.
+3. Catat pertanyaan yang masih terbuka.
+HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
+<h2>Cara membuat skill pertamamu</h2>
+<ol>
+<li><strong>Pilih tugas yang sering berulang.</strong> Laporan mingguan, caption, balasan ke klien.</li>
+<li><strong>Kerjakan sekali dengan AI</strong> dan catat apa yang membuat hasilnya bagus.</li>
+<li><strong>Tulis langkah dan format hasilnya</strong> dalam empat bagian di atas. Skill Starter Template dan Skill Builder bisa membantu.</li>
+<li><strong>Uji pada tugas nyata</strong> dan perbaiki bagian yang terasa kurang jelas.</li>
+</ol>
+<h2>Cara memakai skill</h2>
+<p>Skill adalah teks biasa, jadi bisa dipakai di AI mana pun. Salin lalu tempel di tempat AI-mu menyimpan instruksi, seperti instruksi project, asisten kustom, atau awal obrolan baru. Setelah itu jelaskan tugasmu dan jawab pertanyaan yang diajukannya.</p>
+<h2>Tips agar skill tetap berguna</h2>
+<ul>
+<li>Jaga di bawah satu halaman. Satu skill, satu tugas.</li>
+<li>Tambahkan baris seperti "Tanyakan apa yang kurang sebelum mulai."</li>
+<li>Rangkai skill: hasil satu skill menjadi bahan untuk skill berikutnya.</li>
+<li>Perbarui setiap kali AI meleset. Skill makin baik seiring dipakai.</li>
+</ul>
+<p>Mau yang sudah jadi? Altair Archive punya 20 skill yang bisa kamu salin hari ini.</p>`},
+
+    {slug:"learning-ai-from-zero",tag:"start",g:["beginners","learning"],date:"2026-11-23",min:6,video:"podcast-2",
+     t:"Learning AI From Zero: A Beginner's Roadmap",
+     ti:"Belajar AI dari Nol: Peta Jalan untuk Pemula",
+     ex:"Most beginners try to learn everything and stall. A simple four-week path to start using AI with confidence.",
+     exi:"Kebanyakan pemula mencoba mempelajari semuanya lalu macet. Ini jalur empat minggu yang sederhana untuk mulai memakai AI dengan percaya diri.",
+     skills:["prompting-basics","skill-starter-template"],
+     b:`<p>Most beginners try to learn everything at once: every tool, every news story, every trick. Then they feel behind and stop. You do not need to know everything. You need a small path and the habit of using AI on real tasks.</p>
+<h2>A four-week path</h2>
+<ol>
+<li><strong>Week 1: use one tool daily.</strong> Pick one AI tool, such as Claude, ChatGPT, or Gemini, and use it for something real every day. Do not compare tools yet. Learn to write clear prompts; <a href="#/articles/what-is-a-prompt">What Is a Prompt?</a> shows how.</li>
+<li><strong>Week 2: choose one outcome.</strong> Content, income, productivity, or building agents. One focus keeps you from drifting.</li>
+<li><strong>Week 3: save what works.</strong> Turn prompts you reuse into skills. See <a href="#/articles/what-is-a-skill">What Is a Skill?</a>.</li>
+<li><strong>Week 4: ship something small.</strong> A content plan, a simple web page, a message to a first client. Finishing teaches more than reading.</li>
+</ol>
+<h2>Know the limits from day one</h2>
+<ul>
+<li>AI can be confidently wrong. Check facts, numbers, and sources before you share them.</li>
+<li>Do not paste private data, passwords, or other people's confidential information into a tool.</li>
+<li>AI is a strong assistant. You still decide what is good.</li>
+</ul>
+<h2>Mistakes to avoid</h2>
+<ul>
+<li><strong>Tool-hopping.</strong> Switching tools every few days resets your progress.</li>
+<li><strong>Only watching.</strong> Tutorials help, but skill comes from doing.</li>
+<li><strong>Expecting a perfect first answer.</strong> Iterate; the second and third answers are usually better.</li>
+<li><strong>Skipping the basics.</strong> A clear prompt beats a clever trick.</li>
+</ul>
+<h2>Keep going</h2>
+<p>Learning AI is a habit, not an event. Twenty focused minutes a day for four weeks will take you further than a weekend of binge-watching.</p>`,
+     bi:`<p>Kebanyakan pemula mencoba mempelajari semuanya sekaligus: semua tools, semua berita, semua trik. Lalu merasa tertinggal dan berhenti. Kamu tidak perlu tahu segalanya. Kamu butuh jalur kecil dan kebiasaan memakai AI untuk tugas nyata.</p>
+<h2>Jalur empat minggu</h2>
+<ol>
+<li><strong>Minggu 1: pakai satu tool setiap hari.</strong> Pilih satu AI, misalnya Claude, ChatGPT, atau Gemini, dan pakai untuk hal nyata setiap hari. Jangan dulu membandingkan tools. Belajarlah menulis prompt yang jelas; <a href="#/articles/what-is-a-prompt">Apa Itu Prompt?</a> menunjukkan caranya.</li>
+<li><strong>Minggu 2: pilih satu tujuan.</strong> Konten, penghasilan, produktivitas, atau membangun agent. Satu fokus mencegahmu melantur.</li>
+<li><strong>Minggu 3: simpan yang berhasil.</strong> Ubah prompt yang sering dipakai menjadi skill. Lihat <a href="#/articles/what-is-a-skill">Apa Itu Skill?</a>.</li>
+<li><strong>Minggu 4: selesaikan sesuatu yang kecil.</strong> Rencana konten, halaman web sederhana, atau pesan untuk klien pertama. Menyelesaikan mengajarkan lebih banyak daripada membaca.</li>
+</ol>
+<h2>Kenali batasannya sejak hari pertama</h2>
+<ul>
+<li>AI bisa salah dengan penuh percaya diri. Periksa fakta, angka, dan sumber sebelum membagikannya.</li>
+<li>Jangan menempelkan data pribadi, kata sandi, atau informasi rahasia milik orang lain ke tool apa pun.</li>
+<li>AI adalah asisten yang kuat. Kamu tetap yang menentukan mana yang bagus.</li>
+</ul>
+<h2>Kesalahan yang perlu dihindari</h2>
+<ul>
+<li><strong>Gonta-ganti tool.</strong> Berpindah tool tiap beberapa hari membuat progresmu mulai dari awal lagi.</li>
+<li><strong>Hanya menonton.</strong> Tutorial membantu, tapi kemampuan lahir dari praktik.</li>
+<li><strong>Mengharapkan jawaban pertama yang sempurna.</strong> Iterasi saja; jawaban kedua dan ketiga biasanya lebih baik.</li>
+<li><strong>Melewatkan dasar.</strong> Prompt yang jelas mengalahkan trik yang canggih.</li>
+</ul>
+<h2>Teruslah melangkah</h2>
+<p>Belajar AI adalah kebiasaan, bukan acara sekali jalan. Dua puluh menit terfokus setiap hari selama empat minggu akan membawamu lebih jauh daripada maraton menonton di akhir pekan.</p>`},
+
+    {slug:"why-ai-credits-run-out",tag:"understand",g:["tokens","context"],date:"2026-11-23",min:6,video:"podcast-6",
+     t:"Why Your AI Credits Run Out So Fast: Tokens and Context Windows Explained",
+     ti:"Kenapa Kredit AI Cepat Habis? Token dan Context Window Dijelaskan",
+     ex:"Credits and usage limits are counted in tokens. Here is what tokens and context windows are, and where your usage quietly goes.",
+     exi:"Kredit dan batas pemakaian dihitung dalam token. Ini penjelasan token dan context window, dan ke mana pemakaianmu diam-diam pergi.",
+     skills:["prompt-optimizer"],
+     b:`<p>You send a few messages, and your AI credits or usage limit are already almost gone. It feels unfair, but there is a clear reason. AI tools do not count messages. They count tokens.</p>
+<h2>What is a token?</h2>
+<p>A token is a small piece of text that an AI reads or writes: a short word, part of a longer word, or a punctuation mark. As a rough guide, one token is about four characters of English text. The same meaning written in Indonesian often uses more tokens than in English, so the same chat can cost a little more.</p>
+<h2>What is a context window?</h2>
+<p>The context window is how much text the AI can keep in view at once. It holds your instructions, every message in the chat, the AI's own replies, and any files you attached. Think of it as the AI's desk: everything on the desk is visible, and the desk has a limit.</p>
+<h2>Why usage grows faster than you expect</h2>
+<ul>
+<li><strong>The whole chat is read again.</strong> Each time you send a message, the AI usually reads the entire conversation so far, not just your new line. A long chat makes every new message more expensive.</li>
+<li><strong>Replies count too.</strong> Long answers use output tokens, and output is often priced higher than input.</li>
+<li><strong>Attachments are heavy.</strong> A long PDF or a big pasted document can use thousands of tokens on every turn.</li>
+<li><strong>Extra features add up.</strong> Web search, tools, and extended reasoning can use more tokens behind the scenes.</li>
+<li><strong>Retries multiply cost.</strong> Vague prompts lead to rewrites, and each rewrite is another round of tokens.</li>
+</ul>
+<h2>A simple mental model</h2>
+<p>Imagine a notebook the AI must re-read from page one before it writes each new line. The longer the notebook, the more reading it does, and you pay for that reading. A fresh notebook is cheaper than a thick one.</p>
+<h2>What to do about it</h2>
+<p>You do not need to use AI less. You need to use it more cleanly: start new chats for new topics, send only what is needed, and ask for the length you want. We collected practical habits in <a href="#/articles/save-ai-tokens">How to Save AI Tokens</a>.</p>
+<p>Details such as limits and pricing differ by tool and change over time, so check your own tool's usage page for the exact rules.</p>`,
+     bi:`<p>Kamu baru mengirim beberapa pesan, tapi kredit atau batas pemakaian AI-mu sudah hampir habis. Rasanya tidak adil, tapi ada alasan yang jelas. Tool AI tidak menghitung jumlah pesan. Mereka menghitung token.</p>
+<h2>Apa itu token?</h2>
+<p>Token adalah potongan kecil teks yang dibaca atau ditulis AI: kata pendek, bagian dari kata panjang, atau tanda baca. Sebagai patokan kasar, satu token kira-kira empat karakter teks bahasa Inggris. Makna yang sama dalam bahasa Indonesia sering memakai lebih banyak token daripada bahasa Inggris, jadi obrolan yang sama bisa sedikit lebih boros.</p>
+<h2>Apa itu context window?</h2>
+<p>Context window adalah seberapa banyak teks yang bisa AI simpan dalam pandangan sekaligus. Isinya instruksimu, semua pesan di obrolan, balasan AI sendiri, dan file yang kamu lampirkan. Bayangkan meja kerja AI: semua yang ada di meja terlihat, dan mejanya punya batas.</p>
+<h2>Kenapa pemakaian naik lebih cepat dari dugaan</h2>
+<ul>
+<li><strong>Seluruh obrolan dibaca ulang.</strong> Setiap kamu mengirim pesan, AI biasanya membaca seluruh percakapan sejauh ini, bukan hanya kalimat barumu. Obrolan yang panjang membuat setiap pesan baru makin mahal.</li>
+<li><strong>Balasan juga dihitung.</strong> Jawaban panjang memakai token output, dan output sering dihargai lebih tinggi daripada input.</li>
+<li><strong>Lampiran itu berat.</strong> PDF panjang atau dokumen besar yang ditempel bisa memakai ribuan token di setiap giliran.</li>
+<li><strong>Fitur tambahan menumpuk.</strong> Pencarian web, tools, dan penalaran yang diperpanjang bisa memakai lebih banyak token di belakang layar.</li>
+<li><strong>Percobaan ulang melipatgandakan biaya.</strong> Prompt yang kabur memicu penulisan ulang, dan tiap penulisan ulang adalah putaran token lagi.</li>
+</ul>
+<h2>Model berpikir yang sederhana</h2>
+<p>Bayangkan buku catatan yang harus dibaca ulang AI dari halaman pertama sebelum menulis tiap baris baru. Makin tebal bukunya, makin banyak yang dibaca, dan kamu membayar untuk bacaan itu. Buku baru lebih murah daripada buku yang tebal.</p>
+<h2>Apa yang bisa dilakukan</h2>
+<p>Kamu tidak perlu memakai AI lebih sedikit. Kamu perlu memakainya lebih rapi: mulai obrolan baru untuk topik baru, kirim hanya yang diperlukan, dan minta panjang jawaban yang kamu mau. Kebiasaan praktisnya kami kumpulkan di <a href="#/articles/save-ai-tokens">Cara Menghemat Token AI</a>.</p>
+<p>Rincian seperti batas pemakaian dan harga berbeda di tiap tool dan bisa berubah, jadi cek halaman pemakaian tool-mu untuk aturan yang tepat.</p>`},
+
+    {slug:"save-ai-tokens",tag:"understand",g:["tokens","productivity"],date:"2026-11-23",min:5,video:"podcast-6",
+     t:"How to Save AI Tokens: 9 Practical Habits",
+     ti:"Cara Menghemat Token AI: 9 Kebiasaan Praktis",
+     ex:"You do not need to use AI less, only more cleanly. Nine habits that stretch your credits without hurting results.",
+     exi:"Kamu tidak perlu memakai AI lebih sedikit, cukup lebih rapi. Sembilan kebiasaan yang memperpanjang kreditmu tanpa menurunkan hasil.",
+     skills:["prompt-optimizer","prompting-basics"],
+     b:`<p>Once you know that usage is counted in tokens (see <a href="#/articles/why-ai-credits-run-out">Why Your AI Credits Run Out So Fast</a>), saving them becomes simple. These nine habits work in most tools, though the exact features differ.</p>
+<ol>
+<li><strong>Start a new chat for a new topic.</strong> Old messages are read again on every turn. A fresh chat starts light.</li>
+<li><strong>Be specific the first time.</strong> A clear prompt saves the retries that quietly double your usage. A <a href="#/resources/prompt-optimizer">Prompt Optimizer</a> can help.</li>
+<li><strong>Ask for the length and format you need.</strong> "Under 150 words, as a bullet list" prevents long answers you will not read.</li>
+<li><strong>Paste only what is needed.</strong> Send the relevant section instead of the whole document or the whole thread.</li>
+<li><strong>Summarize long chats and move on.</strong> Ask "Summarize our decisions so far in 10 bullets", then paste that summary into a new chat and continue.</li>
+<li><strong>Keep repeated instructions in a skill or project.</strong> Instead of retyping your rules every time, save them once. See <a href="#/articles/what-is-a-skill">What Is a Skill?</a>.</li>
+<li><strong>Match the model to the task.</strong> Use a lighter, faster model for simple work such as rewriting or formatting, and a stronger one for hard reasoning.</li>
+<li><strong>Turn off what you do not need.</strong> Web search, long reasoning, and other tools can use extra tokens. Enable them when the task calls for them.</li>
+<li><strong>Fix with one clear follow-up.</strong> Instead of five small corrections, send one message that lists every change.</li>
+</ol>
+<h2>A quick check before you hit send</h2>
+<ul>
+<li>Is this a new topic? Start a new chat.</li>
+<li>Does the AI need all of this text, or only part of it?</li>
+<li>Did I say how long and in what format the answer should be?</li>
+</ul>
+<p>Saving tokens is not about being stingy. It is about keeping your chats short, clear, and focused, which usually gives better answers too.</p>`,
+     bi:`<p>Setelah tahu bahwa pemakaian dihitung dalam token (lihat <a href="#/articles/why-ai-credits-run-out">Kenapa Kredit AI Cepat Habis?</a>), menghematnya jadi sederhana. Sembilan kebiasaan ini berlaku di kebanyakan tool, walau fitur persisnya berbeda.</p>
+<ol>
+<li><strong>Mulai obrolan baru untuk topik baru.</strong> Pesan lama dibaca ulang di setiap giliran. Obrolan baru mulai dalam keadaan ringan.</li>
+<li><strong>Jelas sejak awal.</strong> Prompt yang jelas menghemat percobaan ulang yang diam-diam menggandakan pemakaianmu. <a href="#/resources/prompt-optimizer">Prompt Optimizer</a> bisa membantu.</li>
+<li><strong>Minta panjang dan format yang kamu perlukan.</strong> "Di bawah 150 kata, berupa poin" mencegah jawaban panjang yang tidak kamu baca.</li>
+<li><strong>Tempel yang diperlukan saja.</strong> Kirim bagian yang relevan, bukan seluruh dokumen atau seluruh percakapan.</li>
+<li><strong>Ringkas obrolan panjang lalu lanjut.</strong> Minta "Ringkas keputusan kita sejauh ini dalam 10 poin", lalu tempel ringkasan itu di obrolan baru dan lanjutkan.</li>
+<li><strong>Simpan instruksi berulang di skill atau project.</strong> Daripada mengetik ulang aturanmu setiap kali, simpan sekali. Lihat <a href="#/articles/what-is-a-skill">Apa Itu Skill?</a>.</li>
+<li><strong>Sesuaikan model dengan tugas.</strong> Pakai model yang lebih ringan dan cepat untuk pekerjaan sederhana seperti menulis ulang atau merapikan format, dan model yang lebih kuat untuk penalaran sulit.</li>
+<li><strong>Matikan yang tidak diperlukan.</strong> Pencarian web, penalaran panjang, dan tools lain bisa memakai token tambahan. Nyalakan saat tugasnya memang membutuhkan.</li>
+<li><strong>Koreksi dengan satu tindak lanjut yang jelas.</strong> Daripada lima koreksi kecil, kirim satu pesan yang memuat semua perubahan.</li>
+</ol>
+<h2>Cek cepat sebelum menekan kirim</h2>
+<ul>
+<li>Ini topik baru? Mulai obrolan baru.</li>
+<li>Apakah AI perlu semua teks ini, atau hanya sebagian?</li>
+<li>Sudahkah aku menyebut panjang dan format jawaban yang kuinginkan?</li>
+</ul>
+<p>Menghemat token bukan soal pelit. Ini soal menjaga obrolan tetap singkat, jelas, dan fokus, yang biasanya juga memberi jawaban yang lebih baik.</p>`},
+
+    {slug:"ai-agents-vs-ai-tools",tag:"understand",g:["ai-agents","tools"],date:"2026-11-23",min:6,video:"podcast-5",
+     t:"AI Agents vs Regular AI Tools: What Is the Difference?",
+     ti:"AI Agent vs AI Tools Biasa: Apa Bedanya?",
+     ex:"A chat tool answers when you ask. An agent works toward a goal on its own. Here is how to tell them apart and when to use each.",
+     exi:"Tool chat menjawab saat kamu bertanya. Agent bekerja menuju tujuan dengan sendirinya. Begini cara membedakannya dan kapan memakai masing-masing.",
+     skills:["agent-orchestrator","skill-builder"],
+     b:`<p>"AI agent" is one of the most used and least explained terms in AI. The core idea is simple once you compare it with the tools you already know.</p>
+<h2>A regular AI tool: you drive</h2>
+<p>With a chat tool such as GPT, Claude, or Gemini in a plain conversation, you ask and it answers. Every step is yours: you decide what to ask next, copy the result, and do the work elsewhere. It is like a very capable advisor sitting beside you.</p>
+<h2>An AI agent: you set the goal</h2>
+<p>An agent receives a goal and works toward it. It plans the steps, uses tools such as search, files, email, or a calendar, checks its own results, and keeps going until it finishes or needs your approval. It is closer to a team member than an advisor.</p>
+<h2>An example</h2>
+<ul>
+<li><strong>Chat tool:</strong> "Draft a polite reply to this client email." You get text and send it yourself.</li>
+<li><strong>Agent:</strong> "Handle this week's client emails." It reads the inbox, drafts replies, proposes meeting times, and asks you to approve before anything is sent.</li>
+</ul>
+<h2>What makes something an agent</h2>
+<ol>
+<li><strong>A goal</strong> instead of a single question.</li>
+<li><strong>Tools</strong> it can use to act, not only to talk.</li>
+<li><strong>A loop:</strong> plan, act, check, adjust.</li>
+<li><strong>Guardrails:</strong> clear limits on what it may do and when it must ask.</li>
+</ol>
+<p>Note that the same product can behave as either. Many AI apps can chat or act as an agent, depending on the features you switch on and how you use them.</p>
+<h2>Keep expectations realistic</h2>
+<ul>
+<li>Errors can compound across steps, so review the important results.</li>
+<li>Agents often use more tokens, because they do more steps.</li>
+<li>Give an agent only the access it needs, and require approval for actions you cannot undo.</li>
+</ul>
+<h2>Which should you use?</h2>
+<p>Use a chat tool for one-off questions, drafts, and brainstorming. Consider an agent for a repeated, multi-step workflow with clear rules. A good first step is to write that workflow down as a skill, since a clear skill is the foundation of a reliable agent. Browse the Build skills in the Archive, such as the <a href="#/resources/agent-orchestrator">Agent Orchestrator</a>.</p>`,
+     bi:`<p>"AI agent" adalah salah satu istilah yang paling sering dipakai tapi paling jarang dijelaskan. Intinya sederhana begitu dibandingkan dengan tools yang sudah kamu kenal.</p>
+<h2>Tool AI biasa: kamu yang mengemudi</h2>
+<p>Dengan tool chat seperti GPT, Claude, atau Gemini dalam percakapan biasa, kamu bertanya dan ia menjawab. Setiap langkah ada di tanganmu: kamu menentukan pertanyaan berikutnya, menyalin hasilnya, dan mengerjakan sisanya di tempat lain. Ia seperti penasihat yang sangat cakap di sebelahmu.</p>
+<h2>AI agent: kamu menetapkan tujuan</h2>
+<p>Agent menerima tujuan lalu bekerja menujunya. Ia merencanakan langkah, memakai tools seperti pencarian, file, email, atau kalender, memeriksa hasilnya sendiri, dan terus berjalan sampai selesai atau butuh persetujuanmu. Ia lebih mirip anggota tim daripada penasihat.</p>
+<h2>Contoh</h2>
+<ul>
+<li><strong>Tool chat:</strong> "Buatkan draf balasan sopan untuk email klien ini." Kamu mendapat teks dan mengirimnya sendiri.</li>
+<li><strong>Agent:</strong> "Urus email klien minggu ini." Ia membaca inbox, menulis draf balasan, mengusulkan jadwal pertemuan, dan meminta persetujuanmu sebelum apa pun dikirim.</li>
+</ul>
+<h2>Apa yang membuat sesuatu disebut agent</h2>
+<ol>
+<li><strong>Tujuan</strong> dan bukan hanya satu pertanyaan.</li>
+<li><strong>Tools</strong> yang bisa dipakai untuk bertindak, bukan hanya berbicara.</li>
+<li><strong>Siklus:</strong> rencanakan, bertindak, periksa, sesuaikan.</li>
+<li><strong>Pagar pengaman:</strong> batas yang jelas tentang apa yang boleh dilakukan dan kapan harus bertanya.</li>
+</ol>
+<p>Perlu dicatat, produk yang sama bisa berperan sebagai keduanya. Banyak aplikasi AI bisa berfungsi sebagai chat atau sebagai agent, tergantung fitur yang kamu aktifkan dan cara memakainya.</p>
+<h2>Jaga ekspektasi tetap realistis</h2>
+<ul>
+<li>Kesalahan bisa menumpuk di antara langkah, jadi periksa hasil yang penting.</li>
+<li>Agent sering memakai lebih banyak token karena langkahnya lebih banyak.</li>
+<li>Beri agent akses seperlunya saja, dan wajibkan persetujuan untuk tindakan yang tidak bisa dibatalkan.</li>
+</ul>
+<h2>Mana yang sebaiknya dipakai?</h2>
+<p>Pakai tool chat untuk pertanyaan sekali jalan, draf, dan brainstorming. Pertimbangkan agent untuk alur kerja berulang dengan banyak langkah dan aturan yang jelas. Langkah awal yang bagus adalah menuliskan alur kerja itu sebagai skill, karena skill yang jelas adalah fondasi agent yang andal. Lihat skill kategori Build di Archive, misalnya <a href="#/resources/agent-orchestrator">Agent Orchestrator</a>.</p>`}
+  ]
+};
+
+/* ============ TRANSLATIONS ============ */
+/* English is the text already in the HTML; ID holds the Indonesian version of each data-i key. */
+var ID = {
+  lead:"Jendela menuju semesta AI (Artificial Intelligence): skill, video, dan ide untuk belajar, membangun, dan bertumbuh.",
+  tabRes:"Sumber Daya", tabKnow:"Pengetahuan", tabArt:"Artikel",
+  c1:"Prompt Engineering", c2:"AI Agent", c3:"AI untuk Bisnis", c4:"Pembuatan Konten", c5:"Vibe Coding",
+  whyT:"Mengapa <em>AI?</em>",
+  whySub:"Jenis daya ungkit <em>baru</em>",
+  whyP:"AI bukan lagi gagasan yang jauh. Ia adalah daya ungkit jenis baru: membantu satu orang berpikir lebih cepat, berkarya lebih banyak, dan membangun apa yang dulu membutuhkan satu tim penuh. Keunggulan bukan milik mereka yang tahu paling banyak tools, tetapi mereka yang menggunakannya dengan jernih dan terus bergerak maju.",
+  rk1:"Kejelasan", rv1:"Ubah ide yang samar menjadi rencana yang jelas",
+  rk2:"Kecepatan", rv2:"Dari ide ke draf pertama jauh lebih cepat",
+  rk3:"Daya Ungkit", rv3:"Lakukan lebih banyak dengan waktu dan tim yang sama",
+  rk4:"Kreativitas", rv4:"Jelajahi pilihan yang tak terjangkau sendirian",
+  rk5:"Konsistensi", rv5:"Belajar dan membangun, selangkah demi selangkah",
+  cn1:"Skill &amp; Sumber Belajar", cn2:"Video", cn3:"Artikel",
+  arcH:"Jelajahi <em>Skill</em>",
+  arcD:"Kumpulan pilihan skill AI, prompt, sumber belajar, dan tools praktis untuk membantumu membangun, berkarya, dan bekerja lebih cerdas.",
+  arcB:"Jelajahi Sekarang",
+  vs:"Cuplikan 07:05–08:30 · Penuh 24:25",
+  telH:"Belajar dari <em>Video</em>",
+  telD:"Jelajahi pelajaran video, panduan langkah demi langkah, dan wawasan dari semesta belajar AI Creator Labs.",
+  telB:"Tonton sekarang",
+  jouH:"Ide Melampaui <em>Cakrawala</em>",
+  jouD:"Temukan artikel, sudut pandang, dan ide tentang kecerdasan buatan, kreativitas, dan masa depan dunia kerja.",
+  jouB:"Baca Sekarang",
+  qt:"Berpikirlah seperti pion dalam permainan catur. Jangan terpesona oleh menteri yang bisa bergerak ke mana saja. Ingatlah pion: ia tidak bisa mundur, hanya bisa maju, satu langkah demi satu langkah. Tetapi jika ia terus melangkah tanpa berhenti sampai ke ujung papan, ia bisa menjadi apa pun.",
+  fs:"Altair Observatory adalah portal belajar dari AI Creator Labs. Ada pertanyaan atau ingin berkolaborasi? Sapa kami.",
+  fb:"Hubungi kami", fw:"atau WhatsApp",
+  resH:"Skill AI untuk <em>Setiap Kreator</em>",
+  resLead:"Skill AI praktis untuk setiap level, dari prompt pertamamu sampai membangun agent sendiri. Pilih yang kamu butuhkan dan langsung pakai.",
+  whatEye:"Apa itu skill?",
+  whatStmt:"Skill adalah playbook yang bisa dipakai ulang untuk AI-mu: ditulis sekali, dipakai setiap saat. Tak perlu menjelaskan ulang keinginanmu; serahkan playbook-nya dan dapatkan hasil yang konsisten.",
+  prT:"Masalahnya", prP:"Tanpa proses, AI menebak. Kamu menjelaskan hal yang sama di setiap obrolan dan mendapat hasil yang berbeda-beda.",
+  fxT:"Solusinya", fxP:"Skill menuliskan satu kebiasaan yang baik (checklist, format, atau cara berpikir) agar AI mengulanginya dengan cara yang sama setiap kali.",
+  grT:"Mengapa terus berkembang", grP:"Skill bisa dirangkai: hasil satu skill dipakai skill berikutnya. Perbaiki satu langkah, dan seluruh alur kerjamu ikut membaik.",
+  worksT:"Bekerja dengan AI yang sudah kamu pakai", worksS:"Skill hanyalah teks biasa. Salin, tempel, dan sesuaikan.", anyAI:"AI apa pun",
+  chgEye:"Catatan Perubahan", chgStmt:"Yang baru di Archive. Skill baru ditambahkan di sini setiap kali dirilis.", chgTag:"Peluncuran",
+  chg1:"20 skill dalam 6 kategori, dari prompt pertamamu sampai membangun agent.",
+  chg2:"Filter berdasarkan level dan jalur: content creator, penghasilan dari AI, atau pembuat agent.",
+  chg3:"Teks skill siap salin di setiap panel detail, dengan antarmuka Inggris dan Indonesia.",
+  chgNext:"Segera hadir", chgSoon:"Segera",
+  chg4:"Altair Knowledges: pustaka video untuk belajar tiap skill lewat praktik langsung.",
+  chg5:"Altair Journal: artikel dan gagasan, dikelompokkan per topik.",
+  insEye:"Mulai", insStmt:"Pasang skill-nya dan mulai bekerja",
+  in1T:"Pilih skill", in1P:"Pilih yang cocok dengan tugasmu, atau mulai dari skill pertama di setiap kategori.",
+  in2T:"Tambahkan ke AI-mu", in2P:"Salin teks skill dan tempel di tempat AI-mu menyimpan instruksi: project, asisten kustom, atau awal obrolan baru.",
+  in3T:"Jelaskan tugasmu", in3P:"Ceritakan kebutuhanmu. AI mengikuti skill, menanyakan hal yang kurang, dan memberi hasil yang konsisten.",
+  inWT:"Tempel di mana?", inWS:"Claude: instruksi project · ChatGPT: project atau custom instructions · Gemini: Gem", inBtn:"Lihat semua skill ↑",
+  vH:"Belajar <em>Sambil Menonton</em>",
+  vLead:"Obrolan dari AI Creator Labs tentang belajar, memakai, dan menghasilkan uang dengan AI. Tekan play dan tonton langsung di sini, tanpa pindah tab.",
+  back:"← Kembali ke beranda"
+};
+var S = {
+  en:{
+    ph:"Search skills, videos, articles…",
+    none:"No results yet. Try “prompt”, “agent” or “business”.",
+    kind:{res:"Resource",vid:"Video",art:"Article"},
+    phrases:["What is an AI agent?","How do I write better prompts?","Build a website with AI…","How can AI help my business?"],
+    pages:{
+      resources:{label:"Altair Archive",title:"Resources",text:"This page is being built in the next stage: a card grid of AI skills, prompts and tools."},
+      knowledges:{label:"Altair Telescope",title:"Knowledges",text:"This page is being built in a later stage: a video library with thumbnails, titles and durations."},
+      articles:{label:"Altair Journal",title:"Articles",text:"This page is being built in a later stage: articles grouped by tag."}
+    }
+  },
+  id:{
+    ph:"Cari skill, video, artikel…",
+    none:"Belum ada hasil. Coba “prompt”, “agent” atau “bisnis”.",
+    kind:{res:"Sumber",vid:"Video",art:"Artikel"},
+    phrases:["Apa itu AI agent?","Bagaimana menulis prompt yang lebih baik?","Bangun website dengan AI…","Bagaimana AI membantu bisnis saya?"],
+    pages:{
+      resources:{label:"Altair Archive",title:"Sumber Daya",text:"Halaman ini dibangun di tahap berikutnya: kumpulan kartu skill, prompt, dan tools AI."},
+      knowledges:{label:"Altair Telescope",title:"Pengetahuan",text:"Halaman ini dibangun di tahap berikutnya: pustaka video dengan thumbnail, judul, dan durasi."},
+      articles:{label:"Altair Journal",title:"Artikel",text:"Halaman ini dibangun di tahap berikutnya: artikel yang dikelompokkan berdasarkan tag."}
+    }
+  }
+};
+
+/* ============ ROUTER ============ */
+var home=document.getElementById('home'), inner=document.getElementById('inner');
+var lastH='', artKey='';
+function parseHash(){
+  var p=location.hash.replace(/^#\/?/,'').split('?')[0].split('/');
+  return {h:S.en.pages[p[0]]?p[0]:'', sub:p[1]||'', sub2:p[2]||''};
+}
+function renderPage(){
+  var h=parseHash().h; if(!h) return;
+  var P=S[LANG].pages[h], isRes=h==='resources', isVid=h==='knowledges', isArt=h==='articles';
+  document.title=P.title+" · Altair Observatory";
+  document.getElementById('pageStub').hidden=isRes||isVid||isArt;
+  document.getElementById('artView').hidden=!isArt;
+  document.getElementById('resView').hidden=!isRes;
+  document.getElementById('vidView').hidden=!isVid;
+  if(isRes){ renderRes(); return }
+  if(isVid){ renderVid(); return }
+  if(isArt){ renderArt(); return }
+  document.getElementById('pLabel').textContent=P.label;
+  document.getElementById('pTitle').textContent=P.title;
+  document.getElementById('pText').textContent=P.text;
+}
+function route(){
+  var o=parseHash(), h=o.h;
+  if(h){
+    home.hidden=true; inner.hidden=false;
+    var ak=o.sub+'/'+o.sub2;
+    if(h!==lastH){ renderPage(); window.scrollTo(0,0); artKey=ak }
+    else if(h==='articles'&&ak!==artKey){ artKey=ak; renderArt(); window.scrollTo(0,0) }
+    inner.querySelectorAll('[data-tab]').forEach(function(a){
+      if(a.dataset.tab===h) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    lastH=h;
+    if(h==='resources'&&o.sub) openDetail(o.sub); else closeDetail();
+    if(h==='knowledges'&&o.sub) openVideo(o.sub); else closeVideo();
+  }else{
+    lastH=''; closeDetail(); closeVideo();
+    inner.hidden=true; home.hidden=false; document.title="Altair Observatory";
+    revealAll();
+  }
+}
+window.addEventListener('hashchange',route);
+
+/* ============ RESOURCES (Altair Archive) ============ */
+var PATHS=['creator','income','agent'];
+var SUFFIX="Always reply in the same language the user writes in.";
+var CATS=[
+  {n:'01',t:'Getting Started',ti:'Mulai Dari Sini',d:'Understand skills and set up your first one.',di:'Pahami skill dan siapkan skill pertamamu.',s:'skill-starter-template'},
+  {n:'02',t:'Think & Plan',ti:'Berpikir & Merencanakan',d:'Think clearly before you act: sharpen prompts, research, and find insights.',di:'Berpikir jernih sebelum bertindak: pertajam prompt, riset, dan temukan wawasan.',s:'prompt-optimizer'},
+  {n:'03',t:'Create',ti:'Berkarya',d:'Turn ideas into content that sounds like you.',di:'Ubah ide jadi konten yang terdengar seperti kamu.',s:'brand-voice-builder'},
+  {n:'04',t:'Build',ti:'Membangun',d:'Build pages, agents, and workflows that hold up.',di:'Bangun halaman, agent, dan alur kerja yang kokoh.',s:'vibe-coding-page-builder'},
+  {n:'05',t:'Business & Income',ti:'Bisnis & Penghasilan',d:'Find clients, shape offers, and earn with AI.',di:'Temukan klien, rancang penawaran, dan raih penghasilan dengan AI.',s:'client-outreach-writer'},
+  {n:'06',t:'Productivity',ti:'Produktivitas',d:'Run your day: plan, schedule, and summarize.',di:'Atur harimu: rencanakan, jadwalkan, dan rangkum.',s:'daily-assistant'}
+];
+var R={
+  en:{skills:'skills',cats:'categories',lv:'levels',pathL:'Pick your path',paths:['Become an AI Content Creator','Earn income with AI','Build AI agents'],
+      levelL:'Level',levels:['All levels','Beginner','Intermediate','Advanced'],search:'Search skills…',showing:'Showing {n} of {t} skills',reset:'Reset filters',
+      none:'No skills match these filters.',overview:'Overview',catsH:'Categories',whatIs:'What is a skill?',log:'Changelog',install:'Install & get to work',startWith:'Start with',bestFor:'Best for',
+      goalNames:{creator:'Content creators',income:'AI income',agent:'Agent builders'},goalAll:'Everyone',how:'How to use',
+      steps:['Copy the skill text below.','Paste it into your AI tool as instructions, or at the start of a new chat.','Describe your task and follow the questions it asks.'],
+      skillText:'Skill text',copy:'Copy',copied:'Copied ✓',note:'The skill text is in English. Your AI will still reply in the language you write in.',close:'Close'},
+  id:{skills:'skill',cats:'kategori',lv:'level',pathL:'Pilih jalurmu',paths:['Jadi AI Content Creator','Raih penghasilan dengan AI','Bangun AI agent'],
+      levelL:'Level',levels:['Semua level','Pemula','Menengah','Lanjutan'],search:'Cari skill…',showing:'Menampilkan {n} dari {t} skill',reset:'Atur ulang filter',
+      none:'Tidak ada skill yang cocok dengan filter ini.',overview:'Ringkasan',catsH:'Kategori',whatIs:'Apa itu skill?',log:'Catatan perubahan',install:'Pasang & mulai kerja',startWith:'Mulai dari',bestFor:'Cocok untuk',
+      goalNames:{creator:'Content creator',income:'Penghasilan dari AI',agent:'Pembuat agent'},goalAll:'Semua orang',how:'Cara memakai',
+      steps:['Salin teks skill di bawah.','Tempel ke AI yang kamu pakai sebagai instruksi, atau di awal obrolan baru.','Jelaskan tugasmu dan jawab pertanyaan yang diajukannya.'],
+      skillText:'Teks skill',copy:'Salin',copied:'Tersalin ✓',note:'Teks skill ditulis dalam bahasa Inggris. AI tetap akan membalas dalam bahasa yang kamu pakai.',close:'Tutup'}
+};
+var RS={path:'',level:'',q:''};
+function cname(c){ return esc(LANG==='id'?c.ti:c.t) }
+function tx(r,k){ return (LANG==='id'&&r[k+'i'])?r[k+'i']:r[k] }
+function glyph(seed){
+  var h=0,i; for(i=0;i<seed.length;i++) h=(h*31+seed.charCodeAt(i))>>>0;
+  var s=h||7; function rnd(){ s=(s*16807)%2147483647; return s/2147483647 }
+  var n=5+(h%3), pts=[], ln='', dt='';
+  for(i=0;i<n;i++) pts.push([14+rnd()*72,14+rnd()*72]);
+  for(i=0;i<n-1;i++) ln+='<line x1="'+pts[i][0].toFixed(1)+'" y1="'+pts[i][1].toFixed(1)+'" x2="'+pts[i+1][0].toFixed(1)+'" y2="'+pts[i+1][1].toFixed(1)+'"/>';
+  pts.forEach(function(p,k){ dt+='<circle cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="'+(k===0?5:3)+'" fill="'+(k===0?'#E8D5A3':'#EEF0FA')+'"/>' });
+  return '<svg viewBox="0 0 100 100" aria-hidden="true"><g stroke="rgba(238,240,250,.4)" stroke-width="2">'+ln+'</g>'+dt+'</svg>';
+}
+function lvl(l){
+  var n={b:1,i:2,a:3}[l], h='', k;
+  for(k=1;k<=3;k++) h+='<i'+(k<=n?' class="on"':'')+'></i>';
+  return '<span class="lvl">'+h+'<b>'+R[LANG].levels[n]+'</b></span>';
+}
+function vis(r){
+  if(RS.path&&r.g.length&&r.g.indexOf(RS.path)<0) return false;
+  if(RS.level&&r.l!==RS.level) return false;
+  if(RS.q){
+    var c=CATS[r.c-1], hay=[r.t,r.d,r.ti,r.di,c.t,c.ti].join(' ').toLowerCase(), ts=RS.q.toLowerCase().split(/\s+/).filter(Boolean);
+    for(var i=0;i<ts.length;i++) if(hay.indexOf(ts[i])<0) return false;
+  }
+  return true;
+}
+function card(r){
+  var c=CATS[r.c-1];
+  return '<button type="button" class="card" data-open="'+r.id+'"><span class="ct"><span class="glyph">'+glyph(r.id)+'</span>'+lvl(r.l)+'</span>'+
+    '<span class="cc">'+c.n+' · '+cname(c)+'</span><span class="ctitle">'+esc(tx(r,'t'))+'</span><span class="cd">'+esc(tx(r,'d'))+'</span><span class="ca" aria-hidden="true">→</span></button>';
+}
+function renderRes(){
+  var T=R[LANG], list=DATA.resources, shown=list.filter(vis), i;
+  document.getElementById('resStats').textContent=list.length+' '+T.skills+' · '+CATS.length+' '+T.cats+' · 3 '+T.lv;
+  var p='<span class="flabel">'+T.pathL+'</span>';
+  T.paths.forEach(function(n,k){ var on=RS.path===PATHS[k]; p+='<button type="button" class="chip'+(on?' on':'')+'" data-path="'+PATHS[k]+'" aria-pressed="'+on+'">'+n+'</button>' });
+  document.getElementById('resPaths').innerHTML=p;
+  var l='<span class="flabel">'+T.levelL+'</span>', lv=['','b','i','a'];
+  T.levels.forEach(function(n,k){ var on=RS.level===lv[k]; l+='<button type="button" class="chip'+(on?' on':'')+'" data-level="'+lv[k]+'" aria-pressed="'+on+'">'+n+'</button>' });
+  document.getElementById('resLevels').innerHTML=l;
+  var q=document.getElementById('resQ'); q.placeholder=T.search; q.setAttribute('aria-label',T.search);
+  var active=RS.path||RS.level||RS.q;
+  document.getElementById('resCount').innerHTML=active?esc(T.showing.replace('{n}',shown.length).replace('{t}',list.length))+' <button type="button" class="linkbtn" data-reset>'+T.reset+'</button>':'';
+  /* sidebar */
+  var s='<button type="button" class="sl on" data-sec="resTop"><span class="tt">'+T.overview+'</span></button><p class="side-h">'+T.catsH+'</p>';
+  CATS.forEach(function(c,k){
+    var n=shown.filter(function(r){return r.c===k+1}).length;
+    s+='<button type="button" class="sl'+(n?'':' off')+'" data-sec="g'+(k+1)+'"><span class="n">'+c.n+'</span><span class="tt">'+cname(c)+'</span><em>'+n+'</em></button>';
+  });
+  s+='<button type="button" class="sl" data-sec="resWhat"><span class="tt">'+T.whatIs+'</span></button><button type="button" class="sl" data-sec="resLog"><span class="tt">'+T.log+'</span></button><button type="button" class="sl" data-sec="resInstall"><span class="tt">'+T.install+'</span></button>'+exploreHtml('resources');
+  document.getElementById('side').innerHTML=s;
+  /* groups */
+  var g='';
+  CATS.forEach(function(c,k){
+    var items=shown.filter(function(r){return r.c===k+1}); if(!items.length) return;
+    var st=list.filter(function(r){return r.id===c.s})[0];
+    g+='<section class="grp" id="g'+(k+1)+'"><header class="gh"><span class="gn">'+c.n+'</span><h2>'+cname(c)+'</h2><p>'+esc(LANG==='id'?c.di:c.d)+'</p>'+
+       '<button type="button" class="start" data-open="'+st.id+'">'+T.startWith+' <b>'+esc(tx(st,'t'))+'</b> →</button></header><div class="cards">'+items.map(card).join('')+'</div></section>';
+  });
+  if(!shown.length) g='<p class="empty">'+T.none+' <button type="button" class="linkbtn" data-reset>'+T.reset+'</button></p>';
+  document.getElementById('resGroups').innerHTML=g;
+  spy();
+}
+/* sidebar highlight follows scroll */
+var spyRaf=0;
+function spy(){
+  spyRaf=0;
+  setStick();
+  var rv=document.getElementById('resView'); if(inner.hidden||rv.hidden) return;
+  var ids=['resTop'].concat(CATS.map(function(c,k){return 'g'+(k+1)})).concat(['resWhat','resLog','resInstall']), cur='resTop';
+  ids.forEach(function(id){ var el=document.getElementById(id); if(el&&el.getBoundingClientRect().top<=240) cur=id });
+  var side=document.getElementById('side');
+  side.querySelectorAll('.sl').forEach(function(b){
+    var on=b.dataset.sec===cur; b.classList.toggle('on',on);
+    if(on&&window.innerWidth<=860) side.scrollTo({left:Math.max(0,b.offsetLeft-side.clientWidth/2+b.clientWidth/2)});
+  });
+}
+window.addEventListener('scroll',function(){ if(!spyRaf) spyRaf=requestAnimationFrame(spy) },{passive:true});
+window.addEventListener('resize',function(){ if(!spyRaf) spyRaf=requestAnimationFrame(spy) });
+document.getElementById('resQ').addEventListener('input',function(){ RS.q=this.value.trim(); renderRes() });
+document.getElementById('resView').addEventListener('click',function(e){
+  var t;
+  if((t=e.target.closest('[data-go]'))){ if(t.dataset.go==='#/resources') window.scrollTo({top:0,behavior:'smooth'}); else location.hash=t.dataset.go; return }
+  if((t=e.target.closest('[data-open]'))){ location.hash='#/resources/'+t.dataset.open; return }
+  if((t=e.target.closest('[data-path]'))){ RS.path=(RS.path===t.dataset.path)?'':t.dataset.path; renderRes(); return }
+  if((t=e.target.closest('[data-level]'))){ RS.level=t.dataset.level; renderRes(); return }
+  if(e.target.closest('[data-reset]')){ RS={path:'',level:'',q:''}; document.getElementById('resQ').value=''; renderRes(); return }
+  if((t=e.target.closest('.sl'))){
+    var id=t.dataset.sec;
+    if(id==='resTop') window.scrollTo({top:0,behavior:'smooth'});
+    else{ var el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}) }
+  }
+});
+/* detail drawer */
+var drawer=document.getElementById('drawer'), lastFocus=null;
+function openDetail(id){
+  var r=DATA.resources.filter(function(x){return x.id===id})[0];
+  if(!r){ location.hash='#/resources'; return }
+  var T=R[LANG], c=CATS[r.c-1];
+  var goals=r.g.length?r.g.map(function(k){return T.goalNames[k]}).join(' · '):T.goalAll;
+  document.getElementById('dBody').innerHTML=
+    '<p class="eyebrow">'+c.n+' · '+cname(c)+'</p><h2 id="dTitle">'+esc(tx(r,'t'))+'</h2>'+
+    '<div class="dmeta">'+lvl(r.l)+'<span class="dgoal">'+T.bestFor+': '+goals+'</span></div><p class="ddesc">'+esc(tx(r,'d'))+'</p>'+
+    '<h3>'+T.how+'</h3><ol class="steps">'+T.steps.map(function(s){return '<li>'+s+'</li>'}).join('')+'</ol>'+
+    '<h3>'+T.skillText+'</h3><div class="code"><pre id="dCode"></pre><button type="button" class="copy" id="dCopy">'+T.copy+'</button></div><p class="note">'+T.note+'</p>';
+  document.getElementById('dCode').textContent=r.x+'\n\n'+SUFFIX;
+  document.getElementById('dClose').setAttribute('aria-label',T.close);
+  var panel=drawer.querySelector('.dpanel'); panel.scrollTop=0;
+  if(drawer.hidden){
+    lastFocus=document.activeElement; drawer.hidden=false;
+    document.body.style.overflow='hidden';
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ drawer.classList.add('open'); document.getElementById('dClose').focus({preventScroll:true}) }) });
+  }else drawer.classList.add('open');
+}
+function closeDetail(){
+  if(drawer.hidden) return;
+  drawer.classList.remove('open'); document.body.style.overflow='';
+  setTimeout(function(){ if(!drawer.classList.contains('open')) drawer.hidden=true },420);
+  if(lastFocus&&lastFocus.focus){ try{ lastFocus.focus({preventScroll:true}) }catch(e){} }
+}
+function copyText(t,done){
+  function fb(){ var a=document.createElement('textarea'); a.value=t; a.style.position='fixed'; a.style.opacity='0'; document.body.appendChild(a); a.select(); try{document.execCommand('copy')}catch(e){} a.remove(); done() }
+  if(navigator.clipboard&&window.isSecureContext){ navigator.clipboard.writeText(t).then(done,fb) } else fb();
+}
+drawer.addEventListener('click',function(e){
+  if(e.target.closest('[data-close]')||e.target.closest('#dClose')){ location.hash='#/resources'; return }
+  var b=e.target.closest('#dCopy');
+  if(b) copyText(document.getElementById('dCode').textContent,function(){ b.textContent=R[LANG].copied; setTimeout(function(){ b.textContent=R[LANG].copy },1800) });
+});
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!drawer.hidden&&drawer.classList.contains('open')) location.hash='#/resources' });
+
+/* ============ shared: explore group + sticky offset ============ */
+var XT={en:{h:'Explore',skills:'Skills',videos:'Videos',articles:'Articles'},id:{h:'Jelajahi',skills:'Skill',videos:'Video',articles:'Artikel'}};
+function exploreHtml(cur){
+  var T=XT[LANG];
+  var items=[['resources',T.skills],['knowledges',T.videos],['articles',T.articles]];
+  return '<p class="side-h xh">'+T.h+'</p>'+items.map(function(i){
+    var on=i[0]===cur;
+    return '<button type="button" class="sl xl'+(on?' cur':'')+'" data-go="#/'+i[0]+'"'+(on?' aria-current="page"':'')+'><span class="tt">'+i[1]+'</span><span class="ar" aria-hidden="true">'+(on?'●':'→')+'</span></button>';
+  }).join('');
+}
+function setStick(){
+  var v=document.getElementById('vidView'); if(v.hidden) return;
+  var b=document.querySelector('#inner .bar'), sd=document.getElementById('vSide');
+  v.style.setProperty('--stick',(window.innerWidth<=860?sd.offsetHeight:b.offsetHeight)+'px');
+}
+
+/* ============ KNOWLEDGES (Altair Telescope) ============ */
+var VT=[
+  {id:'start',t:'Start Here',ti:'Mulai Dari Sini'},
+  {id:'understand',t:'Understand AI',ti:'Memahami AI'},
+  {id:'risks',t:'Risks & Reality',ti:'Risiko & Realita'},
+  {id:'careers',t:'Careers',ti:'Karier'}
+];
+var V={
+  en:{videos:'videos',topics:'topics',total:'total',search:'Search videos…',sort:'Sort videos',sNew:'Newest first',sPop:'Most popular',sRel:'Relevance',all:'All videos',topicsH:'Topics',
+      showing:'Showing {n} of {t} videos',reset:'Reset filters',none:'No videos match your search.',watch:'Watch on YouTube',views:'views',ep:'Podcast',orig:'Original title',close:'Close',play:'Play'},
+  id:{videos:'video',topics:'topik',total:'total',search:'Cari video…',sort:'Urutkan video',sNew:'Terbaru',sPop:'Terpopuler',sRel:'Relevansi',all:'Semua video',topicsH:'Topik',
+      showing:'Menampilkan {n} dari {t} video',reset:'Atur ulang filter',none:'Tidak ada video yang cocok.',watch:'Tonton di YouTube',views:'x ditonton',ep:'Podcast',orig:'Judul asli',close:'Tutup',play:'Putar'}
+};
+var VS={topic:'',q:'',sort:'new',auto:true};
+function vt(v){ return v.t }
+function vtopic(v){ var t=VT.filter(function(x){return x.id===v.topic})[0]; return LANG==='id'?t.ti:t.t }
+function secs(d){ var p=d.split(':').map(Number); return p.length===3?p[0]*3600+p[1]*60+p[2]:p[0]*60+p[1] }
+function vdate(v){ return new Date(v.date+'T00:00:00Z').toLocaleDateString(LANG==='id'?'id-ID':'en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}) }
+function vviews(v){ return v.views.toLocaleString(LANG==='id'?'id-ID':'en-US')+(LANG==='id'?' ':' ')+V[LANG].views }
+function vtoks(){ return VS.q.toLowerCase().split(/\s+/).filter(function(w){return w.length>1&&!STOP[w]}).map(function(w){return w.replace(/s$/,'')}) }
+function vscore(v,toks){
+  var a=v.t.toLowerCase(), b=['podcast '+v.ep,VT.filter(function(x){return x.id===v.topic})[0].t,VT.filter(function(x){return x.id===v.topic})[0].ti].join(' ').toLowerCase(), n=0;
+  for(var i=0;i<toks.length;i++){ var x=toks[i], ia=a.indexOf(x)>-1, ib=b.indexOf(x)>-1; if(!ia&&!ib) return -1; n+=(ia?2:0)+(ib?1:0) }
+  return n;
+}
+function vsrc(v){
+  var a=['https://i.ytimg.com/vi/'+v.yt+'/hqdefault.jpg','https://img.youtube.com/vi/'+v.yt+'/hqdefault.jpg','https://i.ytimg.com/vi/'+v.yt+'/mqdefault.jpg'];
+  if(v.img) a.unshift(v.img);
+  return a;
+}
+function vthumb(v){
+  return '<span class="thumb"><svg class="tart" viewBox="0 0 100 56" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'+starsSvg(v.ep*13+3,26,100,56)+'</svg>'+
+    '<img src="'+vsrc(v)[0]+'" data-n="0" alt="" referrerpolicy="no-referrer">'+
+    '<span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="#E8D5A3"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="dur">'+v.dur+'</span></span>';
+}
+function renderVid(){
+  var T=V[LANG], list=DATA.videos, toks=vtoks(), i;
+  var rows=list.map(function(v){ return {v:v,s:toks.length?vscore(v,toks):0} }).filter(function(r){ return r.s>=0 });
+  var cnt={}; VT.forEach(function(t){ cnt[t.id]=rows.filter(function(r){return r.v.topic===t.id}).length });
+  var shown=rows.filter(function(r){ return !VS.topic||r.v.topic===VS.topic });
+  var mode=(VS.sort==='rel'&&!toks.length)?'new':VS.sort;
+  shown.sort(function(a,b){
+    if(mode==='pop') return b.v.views-a.v.views;
+    if(mode==='rel'&&b.s!==a.s) return b.s-a.s;
+    return b.v.date<a.v.date?-1:b.v.date>a.v.date?1:0;
+  });
+  var tot=list.reduce(function(n,v){return n+secs(v.dur)},0), h=Math.floor(tot/3600), m=Math.round((tot%3600)/60);
+  document.getElementById('vStats').textContent=list.length+' '+T.videos+' · '+VT.length+' '+T.topics+' · '+h+(LANG==='id'?'j ':'h ')+m+'m '+T.total;
+  var q=document.getElementById('vQ'); q.placeholder=T.search; q.setAttribute('aria-label',T.search);
+  var so=document.getElementById('vSort'); so.setAttribute('aria-label',T.sort);
+  so.innerHTML=[['new',T.sNew],['pop',T.sPop],['rel',T.sRel]].map(function(o){return '<option value="'+o[0]+'"'+(o[0]===VS.sort?' selected':'')+'>'+o[1]+'</option>'}).join('');
+  var active=VS.topic||VS.q;
+  document.getElementById('vCount').innerHTML=active?esc(T.showing.replace('{n}',shown.length).replace('{t}',list.length))+' <button type="button" class="linkbtn" data-vreset>'+T.reset+'</button>':'';
+  /* sidebar */
+  var s='<button type="button" class="sl'+(VS.topic?'':' on')+'" data-vt=""><span class="tt">'+T.all+'</span><em>'+rows.length+'</em></button><p class="side-h">'+T.topicsH+'</p>';
+  VT.forEach(function(t,k){ s+='<button type="button" class="sl'+(VS.topic===t.id?' on':'')+(cnt[t.id]?'':' off')+'" data-vt="'+t.id+'"><span class="n">0'+(k+1)+'</span><span class="tt">'+esc(LANG==='id'?t.ti:t.t)+'</span><em>'+cnt[t.id]+'</em></button>' });
+  document.getElementById('vSide').innerHTML=s+exploreHtml('knowledges');
+  /* grid */
+  document.getElementById('vGrid').innerHTML=shown.length?shown.map(function(r){ var v=r.v;
+    return '<button type="button" class="vcard" data-v="'+v.slug+'" aria-label="'+esc(T.play+': '+vt(v)+' ('+v.dur+')')+'">'+vthumb(v)+'<span class="vep">'+T.ep+' #'+v.ep+' · '+esc(vtopic(v))+'</span><span class="vtitle">'+esc(vt(v))+'</span></button>' }).join(''):'<p class="empty">'+T.none+' <button type="button" class="linkbtn" data-vreset>'+T.reset+'</button></p>';
+  setStick();
+}
+var vV=document.getElementById('vidView'), vDrawer=document.getElementById('vDrawer');
+vV.addEventListener('error',function(e){
+  var im=e.target; if(im.tagName!=='IMG') return;
+  var card=im.closest('[data-v]'), v=card&&DATA.videos.filter(function(x){return x.slug===card.dataset.v})[0], a=v?vsrc(v):[], n=(+im.dataset.n||0)+1;
+  if(n<a.length){ im.dataset.n=n; im.src=a[n] } else im.remove();
+},true);
+vV.addEventListener('click',function(e){
+  var t;
+  if((t=e.target.closest('[data-go]'))){ if(t.dataset.go==='#/knowledges') window.scrollTo({top:0,behavior:'smooth'}); else location.hash=t.dataset.go; return }
+  if((t=e.target.closest('[data-v]'))){ location.hash='#/knowledges/'+t.dataset.v; return }
+  if((t=e.target.closest('[data-vt]'))){ VS.topic=(VS.topic===t.dataset.vt)?'':t.dataset.vt; renderVid(); if(window.innerWidth>860) window.scrollTo({top:0,behavior:'smooth'}); return }
+  if(e.target.closest('[data-vreset]')){ VS.topic=''; VS.q=''; VS.sort='new'; VS.auto=true; document.getElementById('vQ').value=''; renderVid() }
+});
+document.getElementById('vQ').addEventListener('input',function(){
+  VS.q=this.value.trim();
+  if(VS.auto) VS.sort=VS.q?'rel':'new';
+  renderVid();
+});
+document.getElementById('vSort').addEventListener('change',function(){ VS.sort=this.value; VS.auto=false; renderVid() });
+window.addEventListener('resize',setStick);
+
+var vLast=null;
+function openVideo(slug){
+  var v=DATA.videos.filter(function(x){return x.slug===slug})[0];
+  if(!v){ location.hash='#/knowledges'; return }
+  var T=V[LANG], src='https://www.youtube.com/embed/'+v.yt+'?autoplay=1&rel=0&modestbranding=1'+(v.start?'&start='+v.start:'');
+  document.getElementById('vBody').innerHTML=
+    '<p class="eyebrow">'+T.ep+' #'+v.ep+' · '+esc(vtopic(v))+'</p><h2 id="vTitle">'+esc(vt(v))+'</h2>'+
+    '<div class="player"><iframe src="'+src+'" title="'+esc(vt(v))+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>'+
+    '<div class="vinfo"><span><b>'+v.dur+'</b></span><span>'+vviews(v)+'</span><span>'+vdate(v)+'</span></div>'+
+    '<a class="ytlink" href="https://www.youtube.com/watch?v='+v.yt+'" target="_blank" rel="noopener noreferrer">'+T.watch+' ↗</a>';
+  document.getElementById('vClose').setAttribute('aria-label',T.close);
+  vDrawer.querySelector('.dpanel').scrollTop=0;
+  if(vDrawer.hidden){
+    vLast=document.activeElement; vDrawer.hidden=false; document.body.style.overflow='hidden';
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ vDrawer.classList.add('open'); document.getElementById('vClose').focus({preventScroll:true}) }) });
+  }else vDrawer.classList.add('open');
+}
+function closeVideo(){
+  if(vDrawer.hidden) return;
+  var f=vDrawer.querySelector('iframe'); if(f) f.src='about:blank';
+  vDrawer.classList.remove('open'); document.body.style.overflow='';
+  setTimeout(function(){ if(!vDrawer.classList.contains('open')){ vDrawer.hidden=true; document.getElementById('vBody').innerHTML='' } },420);
+  if(vLast&&vLast.focus){ try{ vLast.focus({preventScroll:true}) }catch(e){} }
+}
+vDrawer.addEventListener('click',function(e){ if(e.target.closest('[data-close]')||e.target.closest('#vClose')) location.hash='#/knowledges' });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!vDrawer.hidden&&vDrawer.classList.contains('open')) location.hash='#/knowledges' });
+
+/* ============ ARTICLES (Altair Journal) ============ */
+var AT=[
+  {id:'start',t:'Start Here',ti:'Mulai Dari Sini',d:'First steps with AI: prompts, skills, and a simple path for beginners.',di:'Langkah pertama bersama AI: prompt, skill, dan jalur sederhana untuk pemula.'},
+  {id:'understand',t:'Understand AI',ti:'Memahami AI',d:'How AI really works: tokens, context, and the difference between tools and agents.',di:'Cara kerja AI yang sebenarnya: token, konteks, dan beda tools dengan agent.'},
+  {id:'build',t:'Build & Earn',ti:'Membangun & Menghasilkan',d:'Create content, build agents, and turn AI skills into income.',di:'Membuat konten, membangun agent, dan mengubah kemampuan AI menjadi penghasilan.'},
+  {id:'risks',t:'Risks & Future',ti:'Risiko & Masa Depan',d:'The honest side of AI: what to watch out for and where people still matter.',di:'Sisi jujur AI: apa yang perlu diwaspadai dan di mana manusia tetap berperan.'}
+];
+var ST=[
+  {id:'beginners',t:'Beginners',ti:'Pemula'},{id:'learning',t:'Learning',ti:'Belajar'},{id:'prompting',t:'Prompting',ti:'Prompting'},
+  {id:'skills',t:'Skills',ti:'Skill'},{id:'productivity',t:'Productivity',ti:'Produktivitas'},{id:'tokens',t:'Tokens',ti:'Token'},
+  {id:'context',t:'Context Window',ti:'Context Window'},{id:'tools',t:'AI Tools',ti:'Tools AI'},{id:'ai-agents',t:'AI Agents',ti:'AI Agent'},
+  {id:'building',t:'Building',ti:'Membangun'},{id:'income',t:'Income',ti:'Penghasilan'},{id:'content',t:'Content',ti:'Konten'},
+  {id:'safety',t:'Safety',ti:'Keamanan'},{id:'careers',t:'Careers',ti:'Karier'}
+];
+var A={
+  en:{allLink:'All articles by date →',allH:'All articles',moreT:'More topics',topicWord:'Topic',vid1:'video',vidN:'videos',eyebrow:'Altair Journal',h:'Ideas Beyond the <em>Horizon</em>',lead:'Plain-language articles on learning, using and earning with AI, grouped by tag. Pick a tag to see what is inside.',
+      articles:'articles',tags:'tags',search:'Search articles…',all:'All tags',tagsH:'Tags',startTag:'Start with a tag',latest:'Latest articles',soon:'Coming soon',tagWord:'Tag',min:'min read',by:'By AI Creator Labs',
+      back:'← All tags',noart:'Articles for this tag are on the way.',none:'No articles match your search.',showing:'Showing {n} of {t} articles',reset:'Reset search',
+      watchH:'Watch the video',watchP:'Prefer to watch? The full conversation is on video.',watchB:'Watch Podcast #',skillsH:'Try these skills',moreIn:'More in',read:'Read article',results:'Results'},
+  id:{allLink:'Semua artikel menurut tanggal →',allH:'Semua artikel',moreT:'Topik lainnya',topicWord:'Topik',vid1:'video',vidN:'video',eyebrow:'Altair Journal',h:'Gagasan Melampaui <em>Cakrawala</em>',lead:'Artikel berbahasa sederhana tentang belajar, memakai, dan menghasilkan uang dengan AI, dikelompokkan per tag. Pilih satu tag untuk melihat isinya.',
+      articles:'artikel',tags:'tag',search:'Cari artikel…',all:'Semua tag',tagsH:'Tag',startTag:'Mulai dari satu tag',latest:'Artikel terbaru',soon:'Segera hadir',tagWord:'Tag',min:'menit baca',by:'Oleh AI Creator Labs',
+      back:'← Semua tag',noart:'Artikel untuk tag ini segera hadir.',none:'Tidak ada artikel yang cocok.',showing:'Menampilkan {n} dari {t} artikel',reset:'Atur ulang pencarian',
+      watchH:'Tonton videonya',watchP:'Lebih suka menonton? Obrolan lengkapnya ada di video.',watchB:'Tonton Podcast #',skillsH:'Coba skill ini',moreIn:'Lainnya di',read:'Baca artikel',results:'Hasil'}
+};
+var AS={q:''};
+function atag(id){ return AT.filter(function(x){return x.id===id})[0] }
+function atn(g){ return LANG==='id'?g.ti:g.t }
+function at(a){ return LANG==='id'?a.ti:a.t }
+function aex(a){ return LANG==='id'?a.exi:a.ex }
+function adate(a){ return new Date(a.date+'T00:00:00Z').toLocaleDateString(LANG==='id'?'id-ID':'en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}) }
+function stag(id){ return ST.filter(function(x){return x.id===id})[0] }
+function stn(g){ return LANG==='id'?g.ti:g.t }
+function scount(id){ return DATA.articles.filter(function(a){return (a.g||[]).indexOf(id)>-1}).length }
+function tvids(id){ var o={}; DATA.articles.forEach(function(a){ if(a.tag===id&&a.video) o[a.video]=1 }); return Object.keys(o).length }
+function acount(id){ return DATA.articles.filter(function(a){return a.tag===id}).length }
+function bydate(l){ return l.slice().sort(function(a,b){ return b.date<a.date?-1:b.date>a.date?1:0 }) }
+function arow(a){
+  var T=A[LANG], g=atag(a.tag);
+  return '<a class="arow" href="#/articles/'+a.slug+'"><span class="am">'+esc(atn(g))+' · '+adate(a)+' · '+a.min+' '+T.min+'</span><span class="at">'+esc(at(a))+'</span><span class="ax">'+esc(aex(a))+'</span><span class="ar" aria-hidden="true">→</span></a>';
+}
+function ascore(a,toks){
+  var g=atag(a.tag), h=[a.t,a.ti,a.ex,a.exi,g.t,g.ti].join(' ').toLowerCase();
+  for(var i=0;i<toks.length;i++) if(h.indexOf(toks[i])<0) return false;
+  return true;
+}
+function renderArt(){
+  var T=A[LANG], o=parseHash(), view='index', tag=null, art=null, small=null, list=DATA.articles;
+  if(o.sub==='t'&&atag(o.sub2)){ view='tag'; tag=atag(o.sub2) }
+  else if(o.sub==='g'&&stag(o.sub2)){ view='small'; small=stag(o.sub2) }
+  else if(o.sub==='all'){ view='all' }
+  else if(o.sub&&o.sub!=='t'&&o.sub!=='g'){ art=list.filter(function(x){return x.slug===o.sub})[0]; if(art){ view='article'; tag=atag(art.tag) } }
+  var q=document.getElementById('aQ'); q.placeholder=T.search; q.setAttribute('aria-label',T.search);
+  document.getElementById('aTopWrap').style.display=(view==='index')?'':'none';
+  /* sidebar */
+  var sd='<button type="button" class="sl'+(view==='index'?' on':'')+'" data-go="#/articles"><span class="tt">'+T.all+'</span><em>'+list.length+'</em></button><p class="side-h">'+T.tagsH+'</p>';
+  AT.forEach(function(g,k){ var n=acount(g.id); sd+='<button type="button" class="sl'+((tag&&tag.id===g.id)?' on':'')+(n?'':' off')+'" data-go="#/articles/t/'+g.id+'"><span class="n">0'+(k+1)+'</span><span class="tt">'+esc(atn(g))+'</span><em>'+n+'</em></button>' });
+  document.getElementById('aSide').innerHTML=sd+exploreHtml('articles');
+  var m=document.getElementById('aMain'), h='', hh='';
+  if(view==='index'){
+    var toks=AS.q.toLowerCase().split(/\s+/).filter(function(w){return w.length>1&&!STOP[w]}).map(function(w){return w.replace(/s$/,'')});
+    hh='<section class="rhead ahead big" style="padding-bottom:1.6rem"><p class="eyebrow">'+T.eyebrow+'</p><h1>'+T.h+'</h1><p class="lead2">'+T.lead+'</p><p class="rstats">'+list.length+' '+T.articles+' · '+AT.length+' '+T.tags+'</p></section>';
+    if(AS.q){
+      var res=bydate(list).filter(function(a){return ascore(a,toks)});
+      h+='<p class="rcount">'+esc(T.showing.replace('{n}',res.length).replace('{t}',list.length))+' <button type="button" class="linkbtn" data-areset>'+T.reset+'</button></p>';
+      h+=res.length?'<div class="alist" style="margin-top:1rem">'+res.map(arow).join('')+'</div>':'<p class="empty">'+T.none+'</p>';
+    }else{
+      h+='<div class="shead row" style="margin-top:1.8rem"><h2>'+T.startTag+'</h2><a class="more" href="#/articles/all">'+T.allLink+'</a></div><div class="tags">'+AT.map(function(g,k){
+        var n=acount(g.id), nv=tvids(g.id), meta=n?n+' '+T.articles+(nv?' · '+nv+' '+(nv===1?T.vid1:T.vidN):''):T.soon;
+        return '<a class="tagcard" href="#/articles/t/'+g.id+'"><span class="tl">'+T.tagWord+' 0'+(k+1)+'</span><span class="tn">'+esc(atn(g))+'</span><span class="td">'+esc(LANG==='id'?g.di:g.d)+'</span><span class="tc"><span>'+meta+'</span><b aria-hidden="true">→</b></span></a>' }).join('')+'</div>';
+      var sm=ST.filter(function(g){return scount(g.id)>0}).sort(function(a,b){ return scount(b.id)-scount(a.id)||a.t.localeCompare(b.t) });
+      h+='<div class="shead"><h2>'+T.moreT+'</h2></div><div class="tpills">'+sm.map(function(g){ return '<a class="tpill" href="#/articles/g/'+g.id+'">'+esc(stn(g))+' <span>'+scount(g.id)+'</span></a>' }).join('')+'</div>';
+      h+='<div class="shead"><h2>'+T.latest+'</h2></div><div class="alist">'+bydate(list).slice(0,5).map(arow).join('')+'</div>';
+    }
+  }else if(view==='small'||view==='all'){
+    var its=view==='all'?bydate(list):bydate(list.filter(function(a){return (a.g||[]).indexOf(small.id)>-1}));
+    h='<section class="rhead ahead"><a class="crumb" href="#/articles">'+T.back+'</a><p class="eyebrow">'+(view==='all'?T.eyebrow:T.topicWord)+'</p><h1>'+(view==='all'?T.allH:esc(stn(small)))+'</h1><p class="rstats">'+its.length+' '+T.articles+'</p></section><div class="alist">'+its.map(arow).join('')+'</div>';
+  }else if(view==='tag'){
+    var items=bydate(list.filter(function(a){return a.tag===tag.id}));
+    h='<section class="rhead ahead"><a class="crumb" href="#/articles">'+T.back+'</a><p class="eyebrow">'+T.tagWord+' 0'+(AT.indexOf(tag)+1)+'</p><h1>'+esc(atn(tag))+'</h1><p class="lead2">'+esc(LANG==='id'?tag.di:tag.d)+'</p><p class="rstats">'+items.length+' '+T.articles+'</p></section>'+
+      (items.length?'<div class="alist">'+items.map(arow).join('')+'</div>':'<p class="empty">'+T.noart+'</p>');
+  }else{
+    var body=LANG==='id'?art.bi:art.b;
+    h='<article><section class="rhead ahead"><a class="crumb" href="#/articles/t/'+tag.id+'">← '+esc(atn(tag))+'</a><p class="eyebrow">'+esc(atn(tag))+'</p><h1>'+esc(at(art))+'</h1><p class="ameta">'+T.by+' · '+adate(art)+' · '+art.min+' '+T.min+'</p></section><div class="prose">'+body+'</div>';
+    var end='';
+    if(art.video){ var v=DATA.videos.filter(function(x){return x.slug===art.video})[0]; if(v) end+='<div class="abox"><h3>'+T.watchH+'</h3><p>'+T.watchP+'</p><a class="btn" href="#/knowledges/'+v.slug+'">'+T.watchB+v.ep+'</a></div>' }
+    if(art.skills&&art.skills.length) end+='<div class="abox"><h3>'+T.skillsH+'</h3><div class="chips2">'+art.skills.map(function(id){ var r=DATA.resources.filter(function(x){return x.id===id})[0]; return r?'<a class="chip" href="#/resources/'+r.id+'">'+esc(tx(r,'t'))+'</a>':'' }).join('')+'</div></div>';
+    if(art.cta) end+='<div class="abox"><h3>'+esc(LANG==='id'?art.cta.ti:art.cta.t)+'</h3><p>'+esc(LANG==='id'?art.cta.di:art.cta.d)+'</p><a class="btn" href="'+art.cta.url+'" target="_blank" rel="noopener noreferrer">'+esc(LANG==='id'?art.cta.bi:art.cta.b)+' ↗</a></div>';
+    var more=bydate(list.filter(function(a){return a.tag===tag.id&&a.slug!==art.slug}));
+    h+='<div class="aend">'+end+'</div>';
+    if(more.length) h+='<div class="shead"><h2>'+T.moreIn+' '+esc(atn(tag))+'</h2></div><div class="alist">'+more.map(arow).join('')+'</div>';
+    h+='</article>';
+  }
+  h+='<div class="rback"><a class="btn" href="#/" data-i="back">'+(LANG==='id'?ID.back:'← Back to home')+'</a></div>';
+  document.getElementById('aHead').innerHTML=hh;
+  m.innerHTML=h;
+}
+document.getElementById('aQ').addEventListener('input',function(){ AS.q=this.value.trim(); renderArt() });
+document.getElementById('artView').addEventListener('click',function(e){
+  var t;
+  if((t=e.target.closest('[data-go]'))){ location.hash=t.dataset.go; return }
+  if(e.target.closest('[data-areset]')){ AS.q=''; document.getElementById('aQ').value=''; renderArt() }
+});
+
+/* ============ SEARCH ============ */
+var q=document.getElementById('q'), box=document.getElementById('results');
+var STOP={ai:1,"for":1,the:1,a:1,an:1,of:1,"with":1,and:1,to:1,"in":1,untuk:1,dan:1,yang:1,dengan:1,di:1,ke:1,apa:1,itu:1};
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function score(hay,toks){ var n=0; hay=hay.toLowerCase(); toks.forEach(function(t){ if(hay.indexOf(t)>-1) n++ }); return n }
+function search(term){
+  term=term.trim().toLowerCase(); if(!term) return [];
+  var toks=term.split(/\s+/).filter(function(w){return w.length>1&&!STOP[w]}).map(function(w){return w.replace(/s$/,'')});
+  if(!toks.length) toks=[term];
+  var out=[],s;
+  DATA.resources.forEach(function(r){ var c=CATS[r.c-1]; s=score([r.t,r.d,r.ti,r.di,c.t,c.ti].join(' '),toks); if(s) out.push({t:LANG==='id'?r.ti:r.t,k:'res',h:'#/resources/'+r.id,s:s}) });
+  DATA.videos.forEach(function(v){ s=score([v.t,'podcast '+v.ep].join(' '),toks); if(s) out.push({t:v.t,k:'vid',h:'#/knowledges/'+v.slug,s:s}) });
+  DATA.articles.forEach(function(a){ var g=AT.filter(function(x){return x.id===a.tag})[0]; s=score([a.t,a.ti,a.ex,a.exi,g.t,g.ti].join(' '),toks); if(s) out.push({t:LANG==='id'?a.ti:a.t,k:'art',h:'#/articles/'+a.slug,s:s}) });
+  out.sort(function(a,b){return b.s-a.s});
+  return out;
+}
+function render(){
+  var term=q.value.trim();
+  if(!term){box.classList.remove('open');box.innerHTML='';return}
+  var r=search(term).slice(0,6), K=S[LANG].kind;
+  box.innerHTML=r.length?r.map(function(x){return '<a href="'+x.h+'"><span class="t">'+esc(x.t)+'</span><span class="k">'+K[x.k]+'</span></a>'}).join(''):'<div class="none">'+esc(S[LANG].none)+'</div>';
+  box.classList.add('open');
+}
+q.addEventListener('input',render);
+q.addEventListener('keydown',function(e){ if(e.key==='Escape'){box.classList.remove('open')} });
+document.getElementById('searchForm').addEventListener('submit',function(e){
+  e.preventDefault(); var r=search(q.value);
+  if(r.length){ location.hash=r[0].h; } else render();
+});
+document.getElementById('chips').addEventListener('click',function(e){
+  var c=e.target.closest('.chip'); if(!c) return;
+  q.value=c.textContent; render(); q.focus({preventScroll:true});
+});
+document.addEventListener('click',function(e){ if(!e.target.closest('.searchbox')) box.classList.remove('open') });
+
+/* ============ TYPING PLACEHOLDER ============ */
+var ty={pi:0,ci:0,del:false,to:0,on:false};
+function tyTick(){
+  if(!ty.on) return;
+  var ph=S[LANG].phrases, p=ph[ty.pi%ph.length], wait=ty.del?22:60;
+  if(!ty.del){
+    ty.ci++; q.placeholder=p.slice(0,ty.ci)+'│';
+    if(ty.ci>=p.length){ ty.del=true; wait=1900 }
+  }else{
+    ty.ci--; q.placeholder=ty.ci>0?p.slice(0,ty.ci)+'│':'│';
+    if(ty.ci<=0){ ty.del=false; ty.pi=(ty.pi+1)%ph.length; wait=350 }
+  }
+  ty.to=setTimeout(tyTick,wait);
+}
+function tyStop(){ ty.on=false; clearTimeout(ty.to); q.placeholder=S[LANG].ph }
+function tyGo(){
+  clearTimeout(ty.to);
+  if(document.activeElement===q||q.value||reduce){ tyStop(); return }
+  ty.on=true; ty.pi=0; ty.ci=0; ty.del=false; ty.to=setTimeout(tyTick,400);
+}
+q.addEventListener('focus',tyStop);
+q.addEventListener('blur',tyGo);
+
+/* ============ LANGUAGE SWITCH (EN / ID) ============ */
+function applyLang(l){
+  LANG=l; document.documentElement.lang=l;
+  document.querySelectorAll('[data-i]').forEach(function(el){
+    if(el._en===undefined) el._en=el.innerHTML;
+    var k=el.dataset.i;
+    el.innerHTML=(l==='id'&&ID[k]!==undefined)?ID[k]:el._en;
+  });
+  document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed',b.dataset.lang===l?'true':'false') });
+  q.setAttribute('aria-label',l==='id'?'Cari skill, video, atau artikel':'Search skills, videos, or articles');
+  document.getElementById('featVideo').setAttribute('aria-label',(l==='id'?'Putar cuplikan: ':'Play preview: ')+'Perbedaan AI Agent vs AI Tools Biasa');
+  if(box.classList.contains('open')) render();
+  renderPage();
+  var _o=parseHash(); if(_o.h==='resources'&&_o.sub) openDetail(_o.sub); if(_o.h==='knowledges'&&_o.sub) openVideo(_o.sub);
+  tyGo();
+  buildTheme();
+}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.lang button'); if(!b) return;
+  var l=b.dataset.lang; if(l===LANG) return;
+  try{ localStorage.setItem('altair-lang',l) }catch(err){}
+  applyLang(l);
+});
+
+/* ============ COUNTERS: count 0 -> total when scrolled into view ============ */
+function setFinal(el){ el.textContent=DATA[el.dataset.count].length }
+function resetCount(el){ cancelAnimationFrame(el._raf); clearTimeout(el._to); el.textContent='0' }
+function countUp(el,delay){
+  var target=DATA[el.dataset.count].length;
+  cancelAnimationFrame(el._raf); clearTimeout(el._to);
+  el.textContent='0';
+  if(target===0) return;
+  el._to=setTimeout(function(){
+    var t0=null,dur=reduce?1200:2200;
+    function step(t){
+      if(!t0) t0=t;
+      var p=Math.min((t-t0)/dur,1), e=1-Math.pow(1-p,4);
+      el.textContent=Math.round(target*e);
+      if(p<1) el._raf=requestAnimationFrame(step); else setFinal(el);
+    }
+    el._raf=requestAnimationFrame(step);
+  },delay||0);
+}
+(function(){
+  var sec=document.querySelector('.counters'), els=sec.querySelectorAll('[data-count]');
+  els.forEach(resetCount);
+  if(!('IntersectionObserver' in window)){ els.forEach(setFinal); return }
+  new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){ els.forEach(function(el,i){ countUp(el,i*250) }) }
+      else{ els.forEach(resetCount) }
+    });
+  },{threshold:.4}).observe(sec);
+})();
+
+/* ============ REVEAL ON SCROLL ============ */
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target) }
+  });
+},{threshold:.18}):null;
+function revealAll(){
+  document.querySelectorAll('.reveal').forEach(function(el){
+    if(io){ if(!el.classList.contains('in')) io.observe(el) }
+    else{ el.classList.add('in') }
+  });
+}
+
+/* ============ HOME ART (original, generated) ============ */
+/* Drop your own images here later, e.g. archive:'images/archive.webp'. Leave '' to keep the generated art. */
+var IMG={archive:'',journal:''};
+function starsSvg(seed,n,w,h){
+  var s=seed; function rnd(){ s=(s*16807)%2147483647; return s/2147483647 }
+  var o='',i; for(i=0;i<n;i++){ var r=.12+rnd()*.3;
+    o+='<circle cx="'+(rnd()*w).toFixed(1)+'" cy="'+(rnd()*h).toFixed(1)+'" r="'+r.toFixed(2)+'" fill="#EEF0FA" opacity="'+(.3+rnd()*.6).toFixed(2)+'"/>' }
+  return o;
+}
+function artArchive(){
+  var rings='',bodies='',k,R=[22,34,46],D=[9,14,20];
+  for(k=0;k<3;k++){
+    rings+='<ellipse cx="50" cy="50" rx="'+R[k]+'" ry="'+(R[k]*.42)+'" transform="rotate(-24 50 50)" fill="none" stroke="rgba(238,240,250,'+(.28-k*.06)+')" stroke-width=".3"/>';
+    bodies+='<circle r="'+(1.3-k*.2)+'" fill="'+(k===1?'#E8D5A3':'#EEF0FA')+'"><animateMotion dur="'+D[k]+'s" repeatCount="indefinite" path="M '+(50-R[k])+' 50 a '+R[k]+' '+(R[k]*.42)+' 0 1 0 '+(R[k]*2)+' 0 a '+R[k]+' '+(R[k]*.42)+' 0 1 0 '+(-R[k]*2)+' 0" rotate="auto"/></circle>';
+  }
+  var rays='';
+  for(k=0;k<4;k++){ var a=k*Math.PI/2+Math.PI/4, l=k%2?9:15; rays+='<line x1="50" y1="50" x2="'+(50+Math.cos(a)*l).toFixed(1)+'" y2="'+(50+Math.sin(a)*l).toFixed(1)+'"/>' }
+  rays+='<line x1="50" y1="30" x2="50" y2="70"/><line x1="30" y1="50" x2="70" y2="50"/>';
+  return '<svg class="art" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="aG"><stop offset="0" stop-color="#E8D5A3" stop-opacity=".9"/><stop offset=".25" stop-color="#E8D5A3" stop-opacity=".25"/><stop offset="1" stop-color="#E8D5A3" stop-opacity="0"/></radialGradient></defs>'+
+    starsSvg(11,40,100,100)+'<circle cx="50" cy="50" r="26" fill="url(#aG)"/>'+rings+'<g stroke="#E8D5A3" stroke-width=".35" opacity=".8">'+rays+'</g><circle cx="50" cy="50" r="2.2" fill="#FFF6DA"/>'+bodies+'</svg>';
+}
+function artJournal(){
+  return '<svg class="art" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs>'+
+    '<radialGradient id="jP" cx=".5" cy=".35" r=".8"><stop offset="0" stop-color="#2A2A6E"/><stop offset="1" stop-color="#0A0B1E"/></radialGradient>'+
+    '<linearGradient id="jR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8D5A3" stop-opacity=".95"/><stop offset=".3" stop-color="#B89BFF" stop-opacity=".45"/><stop offset="1" stop-color="#B89BFF" stop-opacity="0"/></linearGradient></defs>'+
+    starsSvg(29,46,100,62)+
+    '<ellipse cx="50" cy="112" rx="88" ry="52" fill="#B89BFF" opacity=".18" filter="blur(0)"/>'+
+    '<ellipse cx="50" cy="110" rx="80" ry="48" fill="url(#jR)"/>'+
+    '<ellipse cx="50" cy="113" rx="78" ry="48" fill="url(#jP)"/>'+
+    '<path d="M18 28 L30 20 L42 30 L55 17 L70 26" fill="none" stroke="rgba(238,240,250,.3)" stroke-width=".3"/>'+
+    '<g fill="#E8D5A3"><circle cx="18" cy="28" r="1"/><circle cx="30" cy="20" r=".8"/><circle cx="42" cy="30" r="1.1"/><circle cx="55" cy="17" r="1.3"/><circle cx="70" cy="26" r=".9"/></g></svg>';
+}
+function mountMedia(id,key,svg){
+  var el=document.getElementById(id);
+  if(IMG[key]){
+    var im=new Image(); im.className='slot'; im.alt=''; im.loading='lazy';
+    im.onload=function(){ el.insertAdjacentElement('afterbegin',im) };
+    im.src=IMG[key];
+  }
+  el.insertAdjacentHTML('afterbegin',svg);
+}
+mountMedia('mediaArchive','archive',artArchive());
+mountMedia('mediaJournal','journal',artJournal());
+
+/* ============ FEATURED VIDEO (preview 07:05-08:30) ============ */
+(function(){
+  var v=document.getElementById('featVideo'), img=document.getElementById('thumb');
+  img.addEventListener('error',function(){ img.style.display='none' });
+  v.addEventListener('click',function(){
+    if(v.classList.contains('playing')) return;
+    v.classList.add('playing');
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube.com/embed/AU4svOtansw?start=425&end=510&autoplay=1&rel=0&modestbranding=1';
+    f.title='Preview: AI Agent vs AI Tools Biasa';
+    f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.setAttribute('allowfullscreen','');
+    v.appendChild(f);
+  });
+})();
+
+/* ============ THEME (dark / light / system) ============ */
+var TM='dark'; try{ TM=localStorage.getItem('altair-theme')||'dark' }catch(e){}
+if(['dark','light','system'].indexOf(TM)<0) TM='dark';
+var mqL=window.matchMedia?window.matchMedia('(prefers-color-scheme: light)'):null;
+var TT={en:{dark:'Dark',light:'Light',system:'System',aria:'Choose theme'},id:{dark:'Gelap',light:'Terang',system:'Sistem',aria:'Pilih tema'}};
+var TI={
+  dark:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/></svg>',
+  light:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+  system:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>'
+};
+function themeLabel(m){ return LANG==='id'?'Tema '+TT.id[m].toLowerCase():TT.en[m]+' theme' }
+function resolveTheme(){ return TM==='system'?((mqL&&mqL.matches)?'light':'dark'):TM }
+function buildTheme(){
+  document.querySelectorAll('[data-themebox]').forEach(function(box){
+    var open=box.classList.contains('open');
+    box.innerHTML='<button type="button" class="tbtn" aria-haspopup="menu" aria-expanded="'+open+'" aria-label="'+TT[LANG].aria+': '+themeLabel(TM)+'">'+TI[TM]+'<span>'+themeLabel(TM)+'</span></button>'+
+      '<div class="tmenu" role="menu"'+(open?'':' hidden')+'>'+['dark','light','system'].map(function(m){
+        return '<button type="button" role="menuitemradio" aria-checked="'+(m===TM)+'" data-theme-set="'+m+'">'+TI[m]+'<span>'+TT[LANG][m]+'</span>'+(m===TM?'<i>✓</i>':'')+'</button>' }).join('')+'</div>';
+  });
+}
+function applyTheme(){
+  var r=resolveTheme(); document.documentElement.setAttribute('data-theme',r);
+  var mt=document.querySelector('meta[name="theme-color"]'); if(mt) mt.setAttribute('content',r==='light'?'#F6F4EE':'#05060F');
+  buildTheme();
+}
+function closeThemeMenus(){ document.querySelectorAll('[data-themebox].open').forEach(function(b){ b.classList.remove('open') }); buildTheme() }
+document.addEventListener('click',function(e){
+  var set=e.target.closest('[data-theme-set]');
+  if(set){ TM=set.dataset.themeSet; try{ localStorage.setItem('altair-theme',TM) }catch(err){} document.querySelectorAll('[data-themebox]').forEach(function(b){ b.classList.remove('open') }); applyTheme(); return }
+  var tb=e.target.closest('.tbtn');
+  if(tb){ var box=tb.closest('[data-themebox]'), was=box.classList.contains('open'); document.querySelectorAll('[data-themebox]').forEach(function(b){ b.classList.remove('open') }); if(!was) box.classList.add('open'); buildTheme(); if(!was){ var f=box.querySelector('[aria-checked="true"]'); if(f) f.focus() } else { var nb=box.querySelector('.tbtn'); if(nb) nb.focus() } return }
+  if(!e.target.closest('.tmenu')&&document.querySelector('[data-themebox].open')) closeThemeMenus();
+});
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&document.querySelector('[data-themebox].open')){ var b=document.querySelector('[data-themebox].open .tbtn'); closeThemeMenus(); if(b) { var nb=document.querySelector('[data-themebox] .tbtn'); } } });
+if(mqL){ var onMq=function(){ if(TM==='system') applyTheme() }; if(mqL.addEventListener) mqL.addEventListener('change',onMq); else if(mqL.addListener) mqL.addListener(onMq) }
+
+/* ============ PARTICLES (always drifting; gentler if reduced motion is on) ============ */
+(function(){
+  var c=document.getElementById('stars'), ctx=c.getContext('2d'), P=[], W=0,H=0, raf=0, last=0, dpr=Math.min(window.devicePixelRatio||1,2);
+  var PD={cols:['238,240,250','232,213,163','190,175,255'],link:'170,160,255',pulse:'232,213,163',k:1}, PL={cols:['52,58,120','138,104,28','110,80,180'],link:'96,84,176',pulse:'138,104,28',k:1.7};
+  function pal(){ return document.documentElement.getAttribute('data-theme')==='light'?PL:PD }
+  var spd=reduce?.55:1, pulses=[], lastSpawn=0;
+  function init(){
+    W=window.innerWidth;H=window.innerHeight;
+    c.width=W*dpr;c.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    var n=Math.max(28,Math.min(90,Math.round(W*H/17000)));
+    pulses=[]; P=[]; for(var i=0;i<n;i++) P.push({
+      x:Math.random()*W,y:Math.random()*H,r:.4+Math.random()*1.3,
+      vx:(Math.random()-.5)*20,            /* px per second */
+      vy:-(7+Math.random()*18),            /* drift upward  */
+      a:.25+Math.random()*.6,ph:Math.random()*6.28,sp:.4+Math.random()*1.1,
+      c:(Math.random()<.7?0:(Math.random()<.5?1:2))
+    });
+    last=0; draw(0);
+  }
+  function draw(t){
+    var dt=last?Math.min((t-last)/1000,.05):0; last=t;
+    ctx.clearRect(0,0,W,H);
+    var i,j,k,p, Q=pal();
+    for(i=0;i<P.length;i++){
+      p=P[i];
+      p.x+=p.vx*dt*spd; p.y+=p.vy*dt*spd;
+      if(p.y<-4){p.y=H+4;p.x=Math.random()*W}
+      if(p.x<-4)p.x=W+4; if(p.x>W+4)p.x=-4;
+    }
+    /* neural links: faint lines between nearby stars */
+    var D=W<700?115:155, D2=D*D, links=[];
+    ctx.lineWidth=.6;
+    for(i=0;i<P.length;i++){
+      for(j=i+1;j<P.length;j++){
+        var dx=P[i].x-P[j].x, dy=P[i].y-P[j].y, d2=dx*dx+dy*dy;
+        if(d2<D2){
+          var a=(1-Math.sqrt(d2)/D)*.2;
+          ctx.strokeStyle='rgba('+Q.link+','+Math.min(1,a*Q.k).toFixed(3)+')';
+          ctx.beginPath(); ctx.moveTo(P[i].x,P[i].y); ctx.lineTo(P[j].x,P[j].y); ctx.stroke();
+          links.push([i,j]);
+        }
+      }
+    }
+    /* signal pulses travelling along links */
+    if(!reduce){
+      if(links.length&&pulses.length<4&&t-lastSpawn>1100){
+        var l=links[(Math.random()*links.length)|0]; pulses.push({a:l[0],b:l[1],s:t}); lastSpawn=t;
+      }
+      for(k=pulses.length-1;k>=0;k--){
+        var u=pulses[k], pr=(t-u.s)/1700, A=P[u.a], B=P[u.b];
+        if(pr>=1||!A||!B||Math.hypot(A.x-B.x,A.y-B.y)>D*1.25){ pulses.splice(k,1); continue }
+        var x=A.x+(B.x-A.x)*pr, y=A.y+(B.y-A.y)*pr, f=Math.sin(pr*Math.PI);
+        ctx.beginPath(); ctx.fillStyle='rgba('+Q.pulse+','+(.16*f*Q.k).toFixed(3)+')'; ctx.arc(x,y,6,0,6.283); ctx.fill();
+        ctx.beginPath(); ctx.fillStyle='rgba('+Q.pulse+','+(.9*f).toFixed(3)+')'; ctx.arc(x,y,1.7,0,6.283); ctx.fill();
+      }
+    }
+    /* stars */
+    for(i=0;i<P.length;i++){
+      p=P[i];
+      var tw=reduce?1:(.6+.4*Math.sin(t/1000*p.sp+p.ph));
+      ctx.beginPath(); ctx.fillStyle='rgba('+Q.cols[p.c]+','+Math.min(1,p.a*tw*Q.k).toFixed(3)+')';
+      ctx.arc(p.x,p.y,p.r,0,6.283); ctx.fill();
+    }
+  }
+  function loop(t){ draw(t); raf=requestAnimationFrame(loop) }
+  function start(){ if(raf) return; last=0; raf=requestAnimationFrame(loop) }
+  function stop(){ cancelAnimationFrame(raf); raf=0 }
+  document.addEventListener('visibilitychange',function(){ document.hidden?stop():start() });
+  var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(function(){init()},200) });
+  init(); start();
+})();
+
+applyTheme();
+applyLang(LANG);
+route();
+</script>
+</body>
+</html>
