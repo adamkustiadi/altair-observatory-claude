@@ -1299,7 +1299,357 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <li>Beri agent akses seperlunya saja, dan wajibkan persetujuan untuk tindakan yang tidak bisa dibatalkan.</li>
 </ul>
 <h2>Mana yang sebaiknya dipakai?</h2>
-<p>Pakai tool chat untuk pertanyaan sekali jalan, draf, dan brainstorming. Pertimbangkan agent untuk alur kerja berulang dengan banyak langkah dan aturan yang jelas. Langkah awal yang bagus adalah menuliskan alur kerja itu sebagai skill, karena skill yang jelas adalah fondasi agent yang andal. Lihat skill kategori Build di Archive, misalnya <a href="#/resources/agent-orchestrator">Agent Orchestrator</a>.</p>`}
+<p>Pakai tool chat untuk pertanyaan sekali jalan, draf, dan brainstorming. Pertimbangkan agent untuk alur kerja berulang dengan banyak langkah dan aturan yang jelas. Langkah awal yang bagus adalah menuliskan alur kerja itu sebagai skill, karena skill yang jelas adalah fondasi agent yang andal. Lihat skill kategori Build di Archive, misalnya <a href="#/resources/agent-orchestrator">Agent Orchestrator</a>.</p>`},
+
+    {slug:"build-your-first-ai-agent",tag:"build",g:["ai-agents","building"],date:"2026-11-23",min:7,video:"podcast-5",
+     t:"How to Build Your First AI Agent, Step by Step",
+     ti:"Cara Membuat AI Agent Pertamamu, Langkah demi Langkah",
+     ex:"You do not need to code to start. Pick one repeated workflow, write it down as a skill, and add tools and approvals one at a time.",
+     exi:"Kamu tidak perlu bisa coding untuk memulai. Pilih satu alur kerja berulang, tulis sebagai skill, lalu tambahkan tools dan persetujuan satu per satu.",
+     skills:["skill-builder","agent-orchestrator","quality-control-reviewer"],
+     cta:{t:"Go deeper with AI Agent Builder",ti:"Pelajari lebih dalam lewat AI Agent Builder",
+          d:"AI Agent Builder is a class from AI Creator Labs for people who want to build AI agents. See the details on the AI Creator Labs website.",
+          di:"AI Agent Builder adalah kelas dari AI Creator Labs untuk kamu yang ingin membangun AI agent. Lihat detailnya di website AI Creator Labs.",
+          b:"Visit AI Creator Labs",bi:"Kunjungi AI Creator Labs",url:"https://www.aicreatorlabs.id/",b2:"Follow on Instagram",bi2:"Ikuti di Instagram",url2:"https://www.instagram.com/aicreatorlabs.id/"},
+     b:`<p>An AI agent sounds advanced, but your first one can be simple. If you have read <a href="#/articles/ai-agents-vs-ai-tools">AI Agents vs Regular AI Tools</a>, you already know the idea: you give a goal, and the agent plans, uses tools, checks its work, and asks when it is unsure. Here is a practical way to build one.</p>
+<h2>Step 1: pick one workflow</h2>
+<p>Choose a task that repeats, has several steps, and follows clear rules. Good examples are a weekly content plan, sorting incoming client messages, or summarizing meetings into action items. Avoid anything vague like "run my business".</p>
+<h2>Step 2: write it down as a skill</h2>
+<p>List the steps a careful person would follow, then add the output you expect. This is your agent's playbook. The <a href="#/resources/skill-builder">Skill Builder</a> can interview you and draft it. See <a href="#/articles/what-is-a-skill">What Is a Skill?</a> if you need a refresher.</p>
+<h2>Step 3: decide what it may touch</h2>
+<p>List the tools it needs, such as search, a document folder, email, or a calendar. Give it the least access that gets the job done, and mark every action that must wait for your approval, especially anything that sends, deletes, or spends.</p>
+<h2>Step 4: do a manual dry run</h2>
+<p>Before connecting anything, paste your skill into a normal chat and run the steps with sample data. If the output is weak, the problem is in the instructions, not in the tools. Fix it here, where it is cheap.</p>
+<h2>Step 5: connect tools gradually</h2>
+<p>Use an AI app or automation platform that supports agent features, and add one tool at a time. After each one, run a small test before adding the next.</p>
+<h2>Step 6: add a reviewer</h2>
+<p>A second pass catches mistakes. A <a href="#/resources/quality-control-reviewer">Quality Control Reviewer</a> skill can check each result against your criteria and return pass, fix, or reject.</p>
+<h2>Step 7: test, log, improve</h2>
+<p>Run it on a handful of real cases and keep a short log of what went wrong. Update the skill, and repeat. Agents become reliable through iteration, not on the first try.</p>
+<h2>Common mistakes</h2>
+<ul>
+<li>Starting with a huge goal instead of one small workflow.</li>
+<li>Giving broad access before the agent has earned trust.</li>
+<li>Skipping approvals on actions you cannot undo.</li>
+<li>Not checking results, since errors can compound across steps.</li>
+</ul>
+<p>For more complex setups with several skills working together, see the <a href="#/resources/agent-orchestrator">Agent Orchestrator</a>.</p>`,
+     bi:`<p>AI agent terdengar canggih, tapi agent pertamamu bisa sederhana. Kalau sudah membaca <a href="#/articles/ai-agents-vs-ai-tools">AI Agent vs AI Tools Biasa</a>, kamu sudah paham idenya: kamu memberi tujuan, lalu agent merencanakan, memakai tools, memeriksa hasil, dan bertanya saat ragu. Ini cara praktis membuatnya.</p>
+<h2>Langkah 1: pilih satu alur kerja</h2>
+<p>Pilih tugas yang berulang, punya beberapa langkah, dan aturannya jelas. Contoh yang bagus: rencana konten mingguan, memilah pesan klien yang masuk, atau merangkum rapat menjadi daftar tugas. Hindari yang kabur seperti "jalankan bisnisku".</p>
+<h2>Langkah 2: tulis sebagai skill</h2>
+<p>Daftar langkah yang akan diikuti orang yang teliti, lalu tambahkan hasil yang kamu harapkan. Inilah playbook agent-mu. <a href="#/resources/skill-builder">Skill Builder</a> bisa mewawancaraimu dan menyusun drafnya. Lihat <a href="#/articles/what-is-a-skill">Apa Itu Skill?</a> kalau perlu penyegaran.</p>
+<h2>Langkah 3: tentukan apa yang boleh disentuh</h2>
+<p>Daftar tools yang dibutuhkan, misalnya pencarian, folder dokumen, email, atau kalender. Beri akses sekecil mungkin yang cukup untuk menyelesaikan tugas, dan tandai setiap tindakan yang harus menunggu persetujuanmu, terutama yang mengirim, menghapus, atau mengeluarkan uang.</p>
+<h2>Langkah 4: uji coba manual</h2>
+<p>Sebelum menyambungkan apa pun, tempel skill-mu ke obrolan biasa dan jalankan langkahnya dengan data contoh. Kalau hasilnya lemah, masalahnya ada di instruksi, bukan di tools. Perbaiki di sini, saat biayanya masih murah.</p>
+<h2>Langkah 5: sambungkan tools bertahap</h2>
+<p>Pakai aplikasi AI atau platform otomasi yang mendukung fitur agent, dan tambahkan satu tool dalam satu waktu. Setelah tiap tool, jalankan tes kecil sebelum menambah yang berikutnya.</p>
+<h2>Langkah 6: tambahkan pemeriksa</h2>
+<p>Pemeriksaan kedua menangkap kesalahan. Skill <a href="#/resources/quality-control-reviewer">Quality Control Reviewer</a> bisa memeriksa tiap hasil terhadap kriteriamu dan memberi keputusan lolos, perbaiki, atau tolak.</p>
+<h2>Langkah 7: uji, catat, perbaiki</h2>
+<p>Jalankan pada beberapa kasus nyata dan catat singkat apa yang salah. Perbarui skill-nya, lalu ulangi. Agent menjadi andal lewat iterasi, bukan percobaan pertama.</p>
+<h2>Kesalahan yang umum</h2>
+<ul>
+<li>Memulai dari tujuan raksasa, bukan satu alur kerja kecil.</li>
+<li>Memberi akses luas sebelum agent terbukti bisa dipercaya.</li>
+<li>Melewatkan persetujuan untuk tindakan yang tidak bisa dibatalkan.</li>
+<li>Tidak memeriksa hasil, padahal kesalahan bisa menumpuk antar langkah.</li>
+</ul>
+<p>Untuk susunan yang lebih rumit dengan beberapa skill yang bekerja bersama, lihat <a href="#/resources/agent-orchestrator">Agent Orchestrator</a>.</p>`},
+
+    {slug:"earn-money-with-ai",tag:"build",g:["income","building"],date:"2026-11-23",min:7,video:"podcast-1",
+     t:"How to Earn Money With AI: A Practical Path for Beginners",
+     ti:"Cara Menghasilkan Uang dengan AI: Jalur Praktis untuk Pemula",
+     ex:"AI does not pay you. Solving a problem for someone does. A step-by-step path from your first offer to your first client.",
+     exi:"AI tidak membayarmu. Yang membayarmu adalah menyelesaikan masalah orang lain. Jalur bertahap dari penawaran pertama sampai klien pertama.",
+     skills:["offer-pricing-builder","client-outreach-writer","business-planner"],
+     cta:{t:"Learn more with AI Income Workshop",ti:"Pelajari lebih lanjut lewat AI Income Workshop",
+          d:"AI Income Workshop is a class from AI Creator Labs about turning AI skills into income. See the details on the AI Creator Labs website.",
+          di:"AI Income Workshop adalah kelas dari AI Creator Labs tentang mengubah kemampuan AI menjadi penghasilan. Lihat detailnya di website AI Creator Labs.",
+          b:"Visit AI Creator Labs",bi:"Kunjungi AI Creator Labs",url:"https://www.aicreatorlabs.id/",b2:"Follow on Instagram",bi2:"Ikuti di Instagram",url2:"https://www.instagram.com/aicreatorlabs.id/"},
+     b:`<p>AI is a tool, and tools do not pay you. People pay you when you solve a problem for them, and AI can help you do that faster and better. This article gives you a realistic path. It does not promise results, because income depends on your effort, your offer, and the market.</p>
+<h2>Step 1: pick something people already pay for</h2>
+<p>Start with work where AI saves real time and a person still reviews the result. Examples are social media content, research summaries, customer reply drafts, simple web pages, and editing or translation with human checking.</p>
+<h2>Step 2: turn it into a clear offer</h2>
+<p>An offer says what result the client gets, what is included, how long it takes, and what it costs. Vague services are hard to buy. The <a href="#/resources/offer-pricing-builder">Offer & Pricing Builder</a> helps you shape this, and the <a href="#/resources/business-planner">Business Planner</a> helps you plan the first 30 days.</p>
+<h2>Step 3: make a small sample</h2>
+<p>Create two or three examples of your work, for instance a week of content for a made-up shop, or a one-page summary of a real topic. Samples show what you can do before anyone has hired you.</p>
+<h2>Step 4: reach out to your first prospects</h2>
+<p>Make a short list of people or small businesses that could use your service. Write a personal first message with one clear ask. The <a href="#/resources/client-outreach-writer">Client Outreach Writer</a> drafts a message and a follow-up. Keep it honest and specific.</p>
+<h2>Step 5: deliver with quality control</h2>
+<p>AI drafts, you decide. Check facts, fix the tone, and remove anything generic. Your reputation is built on the final result, not on the tool you used.</p>
+<h2>Step 6: improve and raise your price</h2>
+<p>After each project, ask the client what worked, save what you learned as a skill, and adjust your offer. As you get faster and clearer, your price can reflect the value you deliver rather than only the hours you spend.</p>
+<h2>A realistic mindset</h2>
+<ul>
+<li>The first client usually takes longer than expected. Treat it as practice.</li>
+<li>Be open about how you use AI when a client or platform expects it.</li>
+<li>Never copy other people's work or use someone's face or voice without permission.</li>
+<li>Offer services first. They give faster feedback than products.</li>
+</ul>
+<p>Not sure whether an opportunity you found is genuine? Read <a href="#/articles/ai-income-scam-or-real">Can You Really Earn From AI, or Is It a Scam?</a>.</p>`,
+     bi:`<p>AI adalah alat, dan alat tidak membayarmu. Orang membayarmu ketika kamu menyelesaikan masalah mereka, dan AI bisa membantumu melakukannya lebih cepat dan lebih baik. Artikel ini memberi jalur yang realistis. Ia tidak menjanjikan hasil, karena penghasilan bergantung pada usahamu, penawaranmu, dan pasar.</p>
+<h2>Langkah 1: pilih sesuatu yang memang sudah dibayar orang</h2>
+<p>Mulailah dari pekerjaan di mana AI menghemat waktu nyata dan hasilnya tetap diperiksa manusia. Contohnya konten media sosial, ringkasan riset, draf balasan pelanggan, halaman web sederhana, serta penyuntingan atau penerjemahan yang diperiksa manusia.</p>
+<h2>Langkah 2: ubah menjadi penawaran yang jelas</h2>
+<p>Penawaran menyebut hasil yang didapat klien, apa saja yang termasuk, berapa lama pengerjaannya, dan berapa harganya. Layanan yang kabur sulit dibeli. <a href="#/resources/offer-pricing-builder">Offer & Pricing Builder</a> membantumu membentuknya, dan <a href="#/resources/business-planner">Business Planner</a> membantu merencanakan 30 hari pertama.</p>
+<h2>Langkah 3: buat contoh kecil</h2>
+<p>Buat dua atau tiga contoh karyamu, misalnya konten seminggu untuk toko rekaan, atau ringkasan satu halaman tentang topik nyata. Contoh menunjukkan kemampuanmu sebelum ada yang menyewamu.</p>
+<h2>Langkah 4: hubungi calon klien pertama</h2>
+<p>Buat daftar singkat orang atau usaha kecil yang mungkin membutuhkan layananmu. Tulis pesan pertama yang personal dengan satu permintaan yang jelas. <a href="#/resources/client-outreach-writer">Client Outreach Writer</a> menyusun pesan beserta follow-up-nya. Tetap jujur dan spesifik.</p>
+<h2>Langkah 5: serahkan hasil dengan kontrol kualitas</h2>
+<p>AI membuat draf, kamu yang memutuskan. Periksa fakta, rapikan nada, dan buang yang terasa generik. Reputasimu dibangun dari hasil akhir, bukan dari alat yang kamu pakai.</p>
+<h2>Langkah 6: perbaiki dan naikkan harga</h2>
+<p>Setelah tiap proyek, tanyakan kepada klien apa yang berhasil, simpan pelajaranmu sebagai skill, dan sesuaikan penawaranmu. Saat kamu makin cepat dan jelas, harga bisa mencerminkan nilai yang kamu berikan, bukan hanya jam kerja.</p>
+<h2>Pola pikir yang realistis</h2>
+<ul>
+<li>Klien pertama biasanya butuh waktu lebih lama dari perkiraan. Anggap sebagai latihan.</li>
+<li>Terbukalah soal pemakaian AI saat klien atau platform mengharapkannya.</li>
+<li>Jangan menyalin karya orang lain atau memakai wajah atau suara seseorang tanpa izin.</li>
+<li>Tawarkan jasa dulu. Jasa memberi umpan balik lebih cepat daripada produk.</li>
+</ul>
+<p>Tidak yakin apakah peluang yang kamu temukan itu asli? Baca <a href="#/articles/ai-income-scam-or-real">Benarkah Bisa Cuan dari AI, atau Itu Penipuan?</a>.</p>`},
+
+    {slug:"ai-income-scam-or-real",tag:"build",g:["income","safety"],date:"2026-11-23",min:6,video:"podcast-1",
+     t:"Can You Really Earn From AI, or Is It a Scam?",
+     ti:"Benarkah Bisa Cuan dari AI, atau Itu Penipuan?",
+     ex:"People do earn with AI skills, and scams use the same words. Learn the warning signs and a few questions that protect you.",
+     exi:"Orang memang bisa menghasilkan dari kemampuan AI, dan penipuan memakai kata-kata yang sama. Kenali tanda bahayanya dan beberapa pertanyaan yang melindungimu.",
+     skills:["plan-stress-tester","business-planner"],
+     b:`<p>Both things are true. People do earn money by using AI skills to serve clients or build products, and many scams use the exact same promises. The goal is not to avoid every opportunity. It is to know how to tell them apart.</p>
+<h2>How real income from AI works</h2>
+<p>It looks like ordinary work. Someone has a problem, you solve it using AI as a tool, and they pay you. You can usually explain who pays, for what, and why. It takes time, and results vary from person to person.</p>
+<h2>Warning signs of a scam</h2>
+<ul>
+<li><strong>Guaranteed income.</strong> No honest opportunity can guarantee how much you will earn, or how fast.</li>
+<li><strong>Money for recruiting.</strong> If you earn mainly by bringing in other people, it is a recruitment scheme, not real work.</li>
+<li><strong>Vague about the actual work.</strong> If no one can say clearly what you will do all day, be careful.</li>
+<li><strong>Pressure and urgency.</strong> "Only today" and "last slots" are used to stop you from thinking.</li>
+<li><strong>Proof by screenshots only.</strong> Income screenshots are easy to fake.</li>
+<li><strong>Requests for secrets.</strong> Never share passwords, one-time codes, or banking access. Be cautious about any deposit that you must send first.</li>
+<li><strong>"AI bot" that trades for you with guaranteed profit.</strong> Treat this as a red flag.</li>
+</ul>
+<h2>Questions to ask before you join or pay</h2>
+<ol>
+<li>What exactly is the product or service, and who pays for it?</li>
+<li>Can I see real, verifiable examples, not only testimonials?</li>
+<li>What is the refund or exit policy, in writing?</li>
+<li>What is the most I could lose?</li>
+<li>Can I start with a small, free test first?</li>
+</ol>
+<h2>A safer way to start</h2>
+<ul>
+<li>Begin with skills you control: learn to use AI well, then offer a small service to people you can verify.</li>
+<li>Spend little or nothing until you see a real result.</li>
+<li>Check the organizer's identity, history, and independent reviews.</li>
+<li>Talk it through with someone you trust before you pay.</li>
+</ul>
+<p>You can also run any opportunity through the <a href="#/resources/plan-stress-tester">Plan Stress-Tester</a> skill, which asks the hard questions about assumptions, risks, and what happens if it fails. For a constructive path, read <a href="#/articles/earn-money-with-ai">How to Earn Money With AI</a>.</p>`,
+     bi:`<p>Keduanya benar. Orang memang menghasilkan uang dengan memakai kemampuan AI untuk melayani klien atau membangun produk, dan banyak penipuan memakai janji yang persis sama. Tujuannya bukan menghindari semua peluang, tapi tahu cara membedakannya.</p>
+<h2>Bagaimana penghasilan nyata dari AI bekerja</h2>
+<p>Tampilannya seperti pekerjaan biasa. Ada orang yang punya masalah, kamu menyelesaikannya dengan AI sebagai alat, dan mereka membayarmu. Kamu biasanya bisa menjelaskan siapa yang membayar, untuk apa, dan mengapa. Butuh waktu, dan hasilnya berbeda-beda untuk tiap orang.</p>
+<h2>Tanda bahaya penipuan</h2>
+<ul>
+<li><strong>Penghasilan dijamin.</strong> Tidak ada peluang yang jujur yang bisa menjamin berapa banyak atau seberapa cepat kamu menghasilkan.</li>
+<li><strong>Uang dari merekrut.</strong> Kalau penghasilan utama datang dari membawa orang lain, itu skema rekrutmen, bukan pekerjaan nyata.</li>
+<li><strong>Tidak jelas pekerjaan sebenarnya.</strong> Kalau tidak ada yang bisa menjelaskan apa yang akan kamu kerjakan sehari-hari, berhati-hatilah.</li>
+<li><strong>Tekanan dan desakan waktu.</strong> "Hanya hari ini" dan "slot terakhir" dipakai agar kamu tidak sempat berpikir.</li>
+<li><strong>Bukti hanya berupa screenshot.</strong> Screenshot penghasilan mudah dipalsukan.</li>
+<li><strong>Meminta data rahasia.</strong> Jangan pernah membagikan kata sandi, kode OTP, atau akses perbankan. Waspadai setoran yang harus kamu kirim di awal.</li>
+<li><strong>"Bot AI" yang trading untukmu dengan untung dijamin.</strong> Anggap ini tanda bahaya.</li>
+</ul>
+<h2>Pertanyaan sebelum bergabung atau membayar</h2>
+<ol>
+<li>Apa sebenarnya produk atau layanannya, dan siapa yang membayarnya?</li>
+<li>Bisakah aku melihat contoh nyata yang bisa diverifikasi, bukan hanya testimoni?</li>
+<li>Bagaimana kebijakan pengembalian dana atau keluar, secara tertulis?</li>
+<li>Berapa kerugian terbesar yang mungkin kualami?</li>
+<li>Bisakah aku mulai dengan tes kecil yang gratis?</li>
+</ol>
+<h2>Cara memulai yang lebih aman</h2>
+<ul>
+<li>Mulailah dari kemampuan yang kamu kendalikan: belajar memakai AI dengan baik, lalu tawarkan layanan kecil kepada orang yang bisa kamu verifikasi.</li>
+<li>Keluarkan sedikit atau tidak sama sekali sampai kamu melihat hasil nyata.</li>
+<li>Periksa identitas, rekam jejak, dan ulasan independen penyelenggara.</li>
+<li>Bicarakan dengan orang yang kamu percaya sebelum membayar.</li>
+</ul>
+<p>Kamu juga bisa menguji peluang apa pun dengan skill <a href="#/resources/plan-stress-tester">Plan Stress-Tester</a>, yang mengajukan pertanyaan sulit soal asumsi, risiko, dan apa yang terjadi kalau gagal. Untuk jalur yang konstruktif, baca <a href="#/articles/earn-money-with-ai">Cara Menghasilkan Uang dengan AI</a>.</p>`},
+
+    {slug:"create-content-with-ai",tag:"build",g:["content","income"],date:"2026-11-23",min:6,
+     t:"Can You Create Content With AI? Yes, With Your Own Voice",
+     ti:"Bisakah Membuat Konten dengan AI? Bisa, dengan Suaramu Sendiri",
+     ex:"AI is great for ideas, drafts, and planning. The difference-maker is still you: your voice, stories, and judgment.",
+     exi:"AI sangat membantu untuk ide, draf, dan perencanaan. Pembedanya tetap kamu: suara, cerita, dan penilaianmu.",
+     skills:["brand-voice-builder","social-media-planner","marketing-copywriter"],
+     cta:{t:"Explore AI Creator Incubator",ti:"Kenali AI Creator Incubator",
+          d:"AI Creator Incubator is a class from AI Creator Labs for people who want to create content with AI. See the details on the AI Creator Labs website.",
+          di:"AI Creator Incubator adalah kelas dari AI Creator Labs untuk kamu yang ingin membuat konten dengan AI. Lihat detailnya di website AI Creator Labs.",
+          b:"Visit AI Creator Labs",bi:"Kunjungi AI Creator Labs",url:"https://www.aicreatorlabs.id/",b2:"Follow on Instagram",bi2:"Ikuti di Instagram",url2:"https://www.instagram.com/aicreatorlabs.id/"},
+     b:`<p>Yes, you can create content with AI. The better question is how to do it without sounding like everyone else. AI is a strong assistant for ideas, drafts, and planning, but audiences follow people, and people have a voice.</p>
+<h2>What AI is good at</h2>
+<ul>
+<li>Brainstorming topics and angles when you feel stuck.</li>
+<li>Drafting captions, scripts, and outlines you can edit.</li>
+<li>Planning a content calendar and repurposing one idea into several formats.</li>
+<li>Tidying language, shortening, and adapting tone for each platform.</li>
+</ul>
+<h2>A simple workflow</h2>
+<ol>
+<li><strong>Define your audience and voice.</strong> Write down who you speak to and how you sound. The <a href="#/resources/brand-voice-builder">Brand Voice Builder</a> turns this into a one-page guide.</li>
+<li><strong>Plan a month.</strong> Use the <a href="#/resources/social-media-planner">Social Media Planner</a> to get themes, hooks, and formats.</li>
+<li><strong>Draft with AI, then edit.</strong> Give it your voice guide and your own notes. Treat the draft as a starting point.</li>
+<li><strong>Add the human parts.</strong> Real stories, opinions, examples, and mistakes. This is what AI cannot invent for you.</li>
+<li><strong>Polish the copy.</strong> The <a href="#/resources/marketing-copywriter">Marketing Copywriter</a> helps with headlines and calls to action.</li>
+<li><strong>Publish, measure, learn.</strong> Keep what people respond to, and save it back into your skills.</li>
+</ol>
+<h2>Pitfalls to avoid</h2>
+<ul>
+<li><strong>Generic content.</strong> If it could belong to anyone, it will be ignored. Add specifics only you know.</li>
+<li><strong>Unchecked facts.</strong> AI can state wrong things confidently. Verify before you publish.</li>
+<li><strong>Copyright and likeness.</strong> Do not use other people's work, face, or voice without permission.</li>
+<li><strong>Platform rules.</strong> Some platforms ask you to label AI-generated content. Check the current rules of each platform you use.</li>
+<li><strong>Posting too much, too fast.</strong> Consistency beats volume.</li>
+</ul>
+<h2>Can it become income?</h2>
+<p>It can, through your own audience or through services for others, but it takes time and no result is guaranteed. If you want a structured path, see <a href="#/articles/earn-money-with-ai">How to Earn Money With AI</a>.</p>`,
+     bi:`<p>Bisa, kamu bisa membuat konten dengan AI. Pertanyaan yang lebih baik adalah bagaimana melakukannya tanpa terdengar seperti semua orang. AI adalah asisten yang kuat untuk ide, draf, dan perencanaan, tapi audiens mengikuti manusia, dan manusia punya suara.</p>
+<h2>Hal yang dikuasai AI</h2>
+<ul>
+<li>Brainstorming topik dan sudut pandang saat kamu buntu.</li>
+<li>Menyusun draf caption, naskah, dan kerangka yang bisa kamu sunting.</li>
+<li>Merencanakan kalender konten dan mengubah satu ide menjadi beberapa format.</li>
+<li>Merapikan bahasa, memperpendek, dan menyesuaikan nada untuk tiap platform.</li>
+</ul>
+<h2>Alur kerja sederhana</h2>
+<ol>
+<li><strong>Tentukan audiens dan suaramu.</strong> Tulis siapa yang kamu ajak bicara dan bagaimana gayamu. <a href="#/resources/brand-voice-builder">Brand Voice Builder</a> mengubahnya jadi panduan satu halaman.</li>
+<li><strong>Rencanakan sebulan.</strong> Pakai <a href="#/resources/social-media-planner">Social Media Planner</a> untuk mendapat tema, hook, dan format.</li>
+<li><strong>Buat draf dengan AI, lalu sunting.</strong> Berikan panduan suaramu dan catatanmu sendiri. Anggap draf sebagai titik awal.</li>
+<li><strong>Tambahkan bagian yang manusiawi.</strong> Cerita nyata, opini, contoh, dan kesalahan. Ini yang tidak bisa AI karang untukmu.</li>
+<li><strong>Poles copy-nya.</strong> <a href="#/resources/marketing-copywriter">Marketing Copywriter</a> membantu judul dan ajakan bertindak.</li>
+<li><strong>Publikasikan, ukur, pelajari.</strong> Pertahankan yang disukai orang, lalu simpan kembali ke skill-mu.</li>
+</ol>
+<h2>Jebakan yang perlu dihindari</h2>
+<ul>
+<li><strong>Konten generik.</strong> Kalau bisa milik siapa saja, ia akan diabaikan. Tambahkan detail yang hanya kamu tahu.</li>
+<li><strong>Fakta yang tidak diperiksa.</strong> AI bisa menyatakan hal yang salah dengan penuh percaya diri. Verifikasi sebelum publikasi.</li>
+<li><strong>Hak cipta dan kemiripan.</strong> Jangan memakai karya, wajah, atau suara orang lain tanpa izin.</li>
+<li><strong>Aturan platform.</strong> Beberapa platform meminta konten buatan AI diberi label. Cek aturan terbaru tiap platform yang kamu pakai.</li>
+<li><strong>Posting terlalu banyak dan terlalu cepat.</strong> Konsistensi mengalahkan volume.</li>
+</ul>
+<h2>Bisakah jadi penghasilan?</h2>
+<p>Bisa, lewat audiensmu sendiri atau lewat layanan untuk orang lain, tapi butuh waktu dan tidak ada hasil yang dijamin. Kalau ingin jalur yang terstruktur, lihat <a href="#/articles/earn-money-with-ai">Cara Menghasilkan Uang dengan AI</a>.</p>`},
+
+    {slug:"dark-side-of-ai",tag:"risks",g:["safety"],date:"2026-11-23",min:7,video:"podcast-4",
+     t:"The Dark Side of AI: Real Risks and How to Protect Yourself",
+     ti:"Sisi Gelap AI: Risiko Nyata dan Cara Melindungi Dirimu",
+     ex:"AI brings real risks: scams, fake content, wrong answers, and leaked data. Here is what to watch for and simple habits that reduce the danger.",
+     exi:"AI membawa risiko nyata: penipuan, konten palsu, jawaban keliru, dan kebocoran data. Ini yang perlu diwaspadai dan kebiasaan sederhana untuk menguranginya.",
+     skills:["researcher","quality-control-reviewer","plan-stress-tester"],
+     b:`<p>AI is useful, and it is also powerful in the wrong hands or when used carelessly. Knowing the risks does not mean fearing the technology. It means using it with open eyes. Here are the main ones and how to reduce them.</p>
+<h2>1. Scams that sound convincing</h2>
+<p>AI makes it cheap to write polished messages, fake websites, and personalized pitches. A message can now look professional and still be a trap. <strong>Protect yourself:</strong> verify through a separate channel, never share passwords or one-time codes, and be wary of urgency. See <a href="#/articles/ai-income-scam-or-real">Can You Really Earn From AI, or Is It a Scam?</a> for more warning signs.</p>
+<h2>2. Fake images, voices, and videos</h2>
+<p>Synthetic media can imitate a face or a voice. A "call from a relative" or a "video of a public figure" may not be real. <strong>Protect yourself:</strong> pause before reacting, confirm with the person directly, agree on a family check question, and look for the original source before sharing.</p>
+<h2>3. Confident but wrong answers</h2>
+<p>AI can state false facts, invent sources, and sound sure while doing it. <strong>Protect yourself:</strong> check important claims against reliable sources, ask the AI for its sources and then open them, and use a second pass such as the <a href="#/resources/quality-control-reviewer">Quality Control Reviewer</a>. For research, the <a href="#/resources/researcher">Researcher</a> skill keeps facts and assumptions separate.</p>
+<h2>4. Privacy and data leaks</h2>
+<p>What you paste into an AI tool may be stored or used according to that service's policy. <strong>Protect yourself:</strong> do not paste passwords, ID numbers, banking details, client secrets, or private medical or legal records. Read the privacy settings, and remove names and sensitive details before you share a document.</p>
+<h2>5. Bias and unfair results</h2>
+<p>AI learns from human data, so it can repeat stereotypes and gaps. <strong>Protect yourself:</strong> do not let it make decisions about people on its own, and review results that affect hiring, money, or health.</p>
+<h2>6. Over-reliance</h2>
+<p>If you let AI do all the thinking, your own judgment weakens. <strong>Protect yourself:</strong> decide the goal yourself, use AI to draft and explore, and keep practicing the skills that matter to you.</p>
+<h2>7. Copyright and likeness</h2>
+<p>Using other people's work, face, or voice without permission can cause legal and ethical problems. <strong>Protect yourself:</strong> use your own material or content you have the right to use, and follow each platform's rules.</p>
+<h2>A short safety checklist</h2>
+<ul>
+<li>Verify before you trust, especially money, identity, and health.</li>
+<li>Keep sensitive data out of AI tools.</li>
+<li>Keep a human in charge of final decisions.</li>
+<li>Slow down when something feels urgent.</li>
+<li>Test big plans with the <a href="#/resources/plan-stress-tester">Plan Stress-Tester</a> before you act.</li>
+</ul>
+<p>Worried about your work? Read <a href="#/articles/jobs-ai-will-not-replace">Jobs AI Will Not Replace</a>.</p>`,
+     bi:`<p>AI itu berguna, tapi juga kuat di tangan yang salah atau saat dipakai sembarangan. Mengenal risikonya bukan berarti takut pada teknologinya, melainkan memakainya dengan mata terbuka. Ini risiko utamanya dan cara menguranginya.</p>
+<h2>1. Penipuan yang terdengar meyakinkan</h2>
+<p>AI membuat pesan rapi, situs palsu, dan bujukan yang dipersonalisasi jadi murah dibuat. Pesan bisa tampak profesional padahal jebakan. <strong>Lindungi dirimu:</strong> verifikasi lewat saluran lain, jangan pernah membagikan kata sandi atau kode OTP, dan waspadai desakan waktu. Lihat <a href="#/articles/ai-income-scam-or-real">Benarkah Bisa Cuan dari AI, atau Itu Penipuan?</a> untuk tanda bahaya lainnya.</p>
+<h2>2. Gambar, suara, dan video palsu</h2>
+<p>Media sintetis bisa meniru wajah atau suara. "Telepon dari saudara" atau "video tokoh publik" bisa jadi tidak asli. <strong>Lindungi dirimu:</strong> jeda dulu sebelum bereaksi, konfirmasi langsung ke orangnya, sepakati pertanyaan pengecekan dalam keluarga, dan cari sumber aslinya sebelum membagikan.</p>
+<h2>3. Jawaban yakin tapi salah</h2>
+<p>AI bisa menyebut fakta keliru, mengarang sumber, dan tetap terdengar yakin. <strong>Lindungi dirimu:</strong> cek klaim penting ke sumber tepercaya, minta AI menyebut sumbernya lalu buka sendiri, dan gunakan pemeriksaan kedua seperti <a href="#/resources/quality-control-reviewer">Quality Control Reviewer</a>. Untuk riset, skill <a href="#/resources/researcher">Researcher</a> memisahkan fakta dari asumsi.</p>
+<h2>4. Privasi dan kebocoran data</h2>
+<p>Apa yang kamu tempel ke alat AI bisa disimpan atau dipakai sesuai kebijakan layanannya. <strong>Lindungi dirimu:</strong> jangan menempel kata sandi, nomor identitas, data perbankan, rahasia klien, atau catatan medis dan hukum pribadi. Baca pengaturan privasi, dan hapus nama serta detail sensitif sebelum membagikan dokumen.</p>
+<h2>5. Bias dan hasil yang tidak adil</h2>
+<p>AI belajar dari data manusia, jadi bisa mengulang stereotip dan kesenjangan. <strong>Lindungi dirimu:</strong> jangan biarkan AI memutuskan hal tentang orang sendirian, dan tinjau hasil yang menyangkut perekrutan, uang, atau kesehatan.</p>
+<h2>6. Terlalu bergantung</h2>
+<p>Kalau semua pemikiran diserahkan ke AI, penilaianmu sendiri melemah. <strong>Lindungi dirimu:</strong> tentukan tujuan sendiri, pakai AI untuk menyusun draf dan menjelajah, dan terus latih kemampuan yang penting bagimu.</p>
+<h2>7. Hak cipta dan kemiripan</h2>
+<p>Memakai karya, wajah, atau suara orang lain tanpa izin bisa menimbulkan masalah hukum dan etika. <strong>Lindungi dirimu:</strong> pakai materi sendiri atau konten yang kamu berhak memakainya, dan ikuti aturan tiap platform.</p>
+<h2>Daftar periksa keamanan singkat</h2>
+<ul>
+<li>Verifikasi sebelum percaya, terutama soal uang, identitas, dan kesehatan.</li>
+<li>Jauhkan data sensitif dari alat AI.</li>
+<li>Tetap pegang keputusan akhir sebagai manusia.</li>
+<li>Pelan-pelan saat sesuatu terasa mendesak.</li>
+<li>Uji rencana besar dengan <a href="#/resources/plan-stress-tester">Plan Stress-Tester</a> sebelum bertindak.</li>
+</ul>
+<p>Khawatir soal pekerjaanmu? Baca <a href="#/articles/jobs-ai-will-not-replace">Pekerjaan yang Tidak Akan Digantikan AI</a>.</p>`},
+
+    {slug:"jobs-ai-will-not-replace",tag:"risks",g:["careers"],date:"2026-11-23",min:6,video:"podcast-3",
+     t:"Jobs AI Will Not Replace, and How to Stay Valuable",
+     ti:"Pekerjaan yang Tidak Akan Digantikan AI, dan Cara Tetap Berharga",
+     ex:"No one can predict the future exactly, but some human strengths stay valuable. See which ones and how to build them next to AI.",
+     exi:"Tidak ada yang bisa memprediksi masa depan dengan pasti, tapi sejumlah kekuatan manusia tetap bernilai. Lihat apa saja dan cara membangunnya bersama AI.",
+     skills:["business-planner","skill-builder","offer-pricing-builder"],
+     b:`<p>Will AI take my job? Honest answer: nobody knows exactly. Some tasks will be automated, some jobs will change, and new ones will appear. What we can do is look at which human strengths are hard to replace, and build them on purpose.</p>
+<h2>Tasks change faster than whole jobs</h2>
+<p>A job is a bundle of tasks. AI tends to take over the repetitive, rule-based ones first, such as drafting standard text, sorting data, or summarizing. The rest of the bundle, like judgment and relationships, often becomes more important. People who learn to use AI for the routine part usually have an advantage over those who ignore it.</p>
+<h2>Strengths that stay valuable</h2>
+<ul>
+<li><strong>Trust and relationships.</strong> People buy from and work with people they trust: caregivers, teachers, consultants, negotiators.</li>
+<li><strong>Judgment and responsibility.</strong> Someone must decide, and answer for the result when it affects health, money, or safety.</li>
+<li><strong>Physical, hands-on work.</strong> Craft, repair, fieldwork, and care work in real places are hard to automate.</li>
+<li><strong>Empathy and communication.</strong> Listening, calming, motivating, and explaining with care.</li>
+<li><strong>Creativity with a point of view.</strong> Original taste, stories, and ideas drawn from lived experience.</li>
+<li><strong>Domain expertise plus AI.</strong> Deep knowledge of a field lets you ask better questions and catch AI mistakes.</li>
+<li><strong>Leadership and ethics.</strong> Setting direction, resolving conflict, and deciding what should be done, not only what can be done.</li>
+</ul>
+<h2>What to do about it</h2>
+<ol>
+<li><strong>Map your tasks.</strong> List what you do in a week and mark which are routine and which need judgment or people skills.</li>
+<li><strong>Hand over the routine part.</strong> Turn repeated tasks into skills. The <a href="#/resources/skill-builder">Skill Builder</a> helps, and <a href="#/articles/what-is-a-skill">What Is a Skill?</a> explains the idea.</li>
+<li><strong>Invest the saved time</strong> in the human strengths above: talk to clients, learn deeper, build your reputation.</li>
+<li><strong>Combine skills.</strong> Expertise in your field plus AI fluency is a strong mix. Few people have both.</li>
+<li><strong>Keep learning in small steps.</strong> New tools appear often. A little practice each week beats a big push once a year.</li>
+<li><strong>Build optional income.</strong> A small side offer adds resilience. The <a href="#/resources/business-planner">Business Planner</a> and <a href="#/resources/offer-pricing-builder">Offer & Pricing Builder</a> can help you plan it. See <a href="#/articles/earn-money-with-ai">How to Earn Money With AI</a>.</li>
+</ol>
+<h2>A balanced view</h2>
+<p>Some people will be affected, and that concern is real. Staying informed, practicing with AI, and strengthening what is uniquely human is a sensible response. Read about the risks in <a href="#/articles/dark-side-of-ai">The Dark Side of AI</a>, and start from the basics in <a href="#/articles/learning-ai-from-zero">Learning AI From Zero</a> if you are new.</p>`,
+     bi:`<p>Apakah AI akan mengambil pekerjaanku? Jawaban jujurnya: tidak ada yang tahu persis. Sebagian tugas akan diotomatisasi, sebagian pekerjaan berubah, dan yang baru akan muncul. Yang bisa kita lakukan adalah melihat kekuatan manusia mana yang sulit digantikan, lalu membangunnya dengan sengaja.</p>
+<h2>Tugas berubah lebih cepat daripada pekerjaan</h2>
+<p>Pekerjaan adalah kumpulan tugas. AI cenderung mengambil alih yang berulang dan berbasis aturan lebih dulu, seperti menyusun teks standar, memilah data, atau meringkas. Sisanya, seperti penilaian dan hubungan antarmanusia, sering justru makin penting. Orang yang belajar memakai AI untuk bagian rutin biasanya lebih unggul daripada yang mengabaikannya.</p>
+<h2>Kekuatan yang tetap bernilai</h2>
+<ul>
+<li><strong>Kepercayaan dan hubungan.</strong> Orang membeli dan bekerja sama dengan yang mereka percaya: tenaga perawatan, guru, konsultan, negosiator.</li>
+<li><strong>Penilaian dan tanggung jawab.</strong> Harus ada yang memutuskan dan bertanggung jawab atas hasilnya ketika menyangkut kesehatan, uang, atau keselamatan.</li>
+<li><strong>Pekerjaan fisik langsung.</strong> Kerajinan, perbaikan, kerja lapangan, dan perawatan di tempat nyata sulit diotomatisasi.</li>
+<li><strong>Empati dan komunikasi.</strong> Mendengarkan, menenangkan, memotivasi, dan menjelaskan dengan peduli.</li>
+<li><strong>Kreativitas dengan sudut pandang.</strong> Selera, cerita, dan ide orisinal dari pengalaman hidup.</li>
+<li><strong>Keahlian bidang plus AI.</strong> Pengetahuan mendalam membuatmu bertanya lebih baik dan menangkap kesalahan AI.</li>
+<li><strong>Kepemimpinan dan etika.</strong> Menentukan arah, menyelesaikan konflik, dan memutuskan apa yang seharusnya dilakukan, bukan hanya apa yang bisa.</li>
+</ul>
+<h2>Apa yang bisa dilakukan</h2>
+<ol>
+<li><strong>Petakan tugasmu.</strong> Daftar yang kamu kerjakan dalam seminggu dan tandai mana yang rutin dan mana yang butuh penilaian atau kemampuan antarmanusia.</li>
+<li><strong>Serahkan bagian rutin.</strong> Ubah tugas berulang jadi skill. <a href="#/resources/skill-builder">Skill Builder</a> membantu, dan <a href="#/articles/what-is-a-skill">Apa Itu Skill?</a> menjelaskan idenya.</li>
+<li><strong>Investasikan waktu yang terhemat</strong> pada kekuatan manusiawi di atas: bicara dengan klien, belajar lebih dalam, bangun reputasi.</li>
+<li><strong>Gabungkan kemampuan.</strong> Keahlian di bidangmu plus kemampuan AI adalah kombinasi kuat. Sedikit orang yang punya keduanya.</li>
+<li><strong>Belajar terus dalam langkah kecil.</strong> Alat baru sering muncul. Latihan sedikit tiap minggu mengalahkan usaha besar setahun sekali.</li>
+<li><strong>Bangun penghasilan tambahan.</strong> Penawaran sampingan kecil menambah ketahanan. <a href="#/resources/business-planner">Business Planner</a> dan <a href="#/resources/offer-pricing-builder">Offer & Pricing Builder</a> bisa membantu merencanakannya. Lihat <a href="#/articles/earn-money-with-ai">Cara Menghasilkan Uang dengan AI</a>.</li>
+</ol>
+<h2>Pandangan yang seimbang</h2>
+<p>Sebagian orang akan terdampak, dan kekhawatiran itu nyata. Tetap mengikuti perkembangan, berlatih dengan AI, dan memperkuat hal yang khas manusia adalah respons yang masuk akal. Baca risikonya di <a href="#/articles/dark-side-of-ai">Sisi Gelap AI</a>, dan mulai dari dasar lewat <a href="#/articles/learning-ai-from-zero">Belajar AI dari Nol</a> kalau kamu baru mulai.</p>`}
   ]
 };
 
@@ -1791,7 +2141,7 @@ function renderArt(){
     var end='';
     if(art.video){ var v=DATA.videos.filter(function(x){return x.slug===art.video})[0]; if(v) end+='<div class="abox"><h3>'+T.watchH+'</h3><p>'+T.watchP+'</p><a class="btn" href="#/knowledges/'+v.slug+'">'+T.watchB+v.ep+'</a></div>' }
     if(art.skills&&art.skills.length) end+='<div class="abox"><h3>'+T.skillsH+'</h3><div class="chips2">'+art.skills.map(function(id){ var r=DATA.resources.filter(function(x){return x.id===id})[0]; return r?'<a class="chip" href="#/resources/'+r.id+'">'+esc(tx(r,'t'))+'</a>':'' }).join('')+'</div></div>';
-    if(art.cta) end+='<div class="abox"><h3>'+esc(LANG==='id'?art.cta.ti:art.cta.t)+'</h3><p>'+esc(LANG==='id'?art.cta.di:art.cta.d)+'</p><a class="btn" href="'+art.cta.url+'" target="_blank" rel="noopener noreferrer">'+esc(LANG==='id'?art.cta.bi:art.cta.b)+' ↗</a></div>';
+    if(art.cta) end+='<div class="abox"><h3>'+esc(LANG==='id'?art.cta.ti:art.cta.t)+'</h3><p>'+esc(LANG==='id'?art.cta.di:art.cta.d)+'</p><div class="chips2"><a class="btn" href="'+art.cta.url+'" target="_blank" rel="noopener noreferrer">'+esc(LANG==='id'?art.cta.bi:art.cta.b)+' ↗</a>'+(art.cta.url2?'<a class="btn" href="'+art.cta.url2+'" target="_blank" rel="noopener noreferrer">'+esc(LANG==='id'?art.cta.bi2:art.cta.b2)+' ↗</a>':'')+'</div></div>';
     var more=bydate(list.filter(function(a){return a.tag===tag.id&&a.slug!==art.slug}));
     h+='<div class="aend">'+end+'</div>';
     if(more.length) h+='<div class="shead"><h2>'+T.moreIn+' '+esc(atn(tag))+'</h2></div><div class="alist">'+more.map(arow).join('')+'</div>';
