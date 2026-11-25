@@ -9,7 +9,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2305060F'/%3E%3Cpath d='M16 5l2.2 8.8L27 16l-8.8 2.2L16 27l-2.2-8.8L5 16l8.8-2.2z' fill='%23E8D5A3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <script>(function(){var d=document.documentElement;try{var m=localStorage.getItem('altair-theme')||'dark';var r=m==='system'?(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):m;d.setAttribute('data-theme',r==='light'?'light':'dark')}catch(e){d.setAttribute('data-theme','dark')}})()</script>
 <style>
 :root{
@@ -21,6 +21,7 @@
   --glass:rgba(14,16,40,.55);
   --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
   --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --head:Manrope,Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --gutter:clamp(20px,5vw,72px);
 }
 /* light theme: warm paper, deep navy ink, antique-gold accent */
@@ -219,8 +220,10 @@ footer .btn{margin-top:1.8rem}
 
 /* ---------- video detail page ---------- */
 .vhead{padding-bottom:0}
-.rhead h1.vh1{font-family:var(--serif);font-weight:400;font-size:clamp(1.55rem,2.8vw,2.3rem);line-height:1.18;margin:.9rem 0 .2rem;max-width:52rem}
+.rhead h1.vh1{font-family:var(--head);font-weight:800;letter-spacing:-.015em;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.15;margin:.9rem 0 .2rem;max-width:52rem}
 .vwrap{max-width:920px}
+.vorig{margin:.7rem 0 0;font-size:.78rem;line-height:1.5;color:var(--muted);max-width:46rem}
+.vorig span{letter-spacing:.14em;text-transform:uppercase;font-size:.64rem;color:var(--gold);margin-right:.35rem}
 .vprose{margin-top:1.2rem;max-width:none}
 .vprose p,.vprose ul,.vprose ol{max-width:46rem}
 .vprose h2,.vrel h2{font-family:var(--serif);font-weight:400;font-size:1.8rem;line-height:1.15;margin:2.4rem 0 .8rem}
@@ -239,12 +242,22 @@ details.fq p{margin:.7rem 0 0;font-size:1rem;line-height:1.7;color:rgba(var(--in
 a.rk{display:flex;flex-direction:column;gap:.4rem;border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--glass);color:inherit;transition:border-color .25s,transform .25s}
 a.rk:hover,a.rk:focus-visible{border-color:rgba(var(--gd),.6);transform:translateY(-2px)}
 .rkt{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
-.rkn{color:var(--hi);font-size:.95rem;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rkn{font-family:var(--head);font-weight:700;color:var(--hi);font-size:.95rem;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .rkm{margin-top:auto;font-size:.76rem;color:var(--muted)}
 .vrel .abox{max-width:46rem}
 .vrel .abox h3{margin-bottom:.4rem}
 .vrel .abox .ctt{font-family:var(--serif);font-size:1.5rem;line-height:1.15;color:var(--hi);margin:0 0 .5rem}
 @media (max-width:860px){ .vprose h2,.vrel h2{font-size:1.5rem} }
+
+
+/* ---------- header panel (layered intro) ---------- */
+.rhead.rpanel{position:relative;overflow:hidden;margin-top:clamp(18px,3vw,34px);padding:clamp(28px,4vw,52px) clamp(22px,3.6vw,52px);border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,rgba(var(--gd),.10),rgba(124,92,214,.10) 55%,rgba(var(--wh),.02));-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.rhead.rpanel::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--gold),transparent)}
+.rhead.rpanel>*{position:relative}
+.rhead.rpanel:not(.big) h1{font-size:clamp(2.3rem,4.8vw,4rem)}
+.rhead.rpanel .wm{position:absolute;right:clamp(14px,3vw,44px);top:50%;transform:translateY(-50%);font-family:var(--head);font-weight:800;font-size:clamp(6rem,15vw,12rem);line-height:1;color:var(--gold);opacity:.08;pointer-events:none;user-select:none}
+html[data-theme="light"] .rhead.rpanel{background:linear-gradient(135deg,rgba(75,46,131,.07),rgba(var(--gd),.10) 60%,rgba(var(--wh),.5))}
+@media (max-width:860px){.rhead.rpanel{border-radius:16px}}
 
 /* ---------- resources page ---------- */
 .res{--sw:244px;position:relative;width:100%;margin:0;display:grid;grid-template-columns:var(--sw) minmax(0,1fr);gap:0;align-items:start;padding-bottom:clamp(50px,7vw,100px);transition:grid-template-columns .28s ease}
@@ -308,7 +321,7 @@ html.sc .sbtn svg{transform:rotate(180deg)}
 .glyph{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,rgba(42,42,110,.6),rgba(75,46,131,.3))}
 .glyph svg{width:30px;height:30px}
 .cc{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
-.ctitle{font-family:var(--serif);font-size:1.5rem;line-height:1.1;color:var(--hi);font-weight:500}
+.ctitle{font-family:var(--head);font-size:1.12rem;line-height:1.25;color:var(--hi);font-weight:700;letter-spacing:-.005em}
 .cd{font-size:.88rem;color:rgba(var(--ink),.72);line-height:1.5;flex:1}
 .ca{align-self:flex-end;color:var(--gold);transition:transform .25s}
 .card:hover .ca{transform:translateX(4px)}
@@ -405,7 +418,7 @@ html.sc .sbtn svg{transform:rotate(180deg)}
 .vcard:hover .thumb img{transform:scale(1.04)}
 .vcard:hover .play,.vcard:focus-visible .play{opacity:1;transform:none}
 .vep{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
-.vtitle{font-family:var(--serif);font-size:1.22rem;line-height:1.25;font-weight:400;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.vtitle{font-family:var(--head);font-size:1.08rem;line-height:1.3;font-weight:700;letter-spacing:-.005em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .dpanel.vp{width:min(720px,100vw)}
 .player{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000;margin:1.2rem 0 1rem}
 .player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -430,12 +443,14 @@ html.sc .sbtn svg{transform:rotate(180deg)}
 }
 
 /* ---------- articles ---------- */
-.tags{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:18px}
-.tagcard{display:flex;flex-direction:column;gap:.55rem;min-height:200px;padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--glass);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:inherit;transition:transform .3s,border-color .3s,box-shadow .3s}
+.tags{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+@media (max-width:1100px){.tags{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.tags{grid-template-columns:1fr}}
+.tagcard{display:flex;flex-direction:column;gap:.7rem;min-height:270px;padding:clamp(22px,2.2vw,30px);border:1px solid var(--line);border-radius:16px;background:var(--glass);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:inherit;transition:transform .3s,border-color .3s,box-shadow .3s}
 .tagcard:hover,.tagcard:focus-visible{transform:translateY(-4px);border-color:rgba(var(--gd),.55);box-shadow:0 14px 40px rgba(75,46,131,.28)}
 .tagcard .tl{font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
-.tagcard .tn{font-family:var(--serif);font-size:1.9rem;line-height:1.05;color:var(--hi)}
-.tagcard .td{flex:1;color:var(--muted);font-size:.9rem}
+.tagcard .tn{font-family:var(--head);font-weight:800;font-size:clamp(1.45rem,2vw,1.8rem);line-height:1.12;letter-spacing:-.01em;color:var(--hi)}
+.tagcard .td{flex:1;color:var(--muted);font-size:.95rem;line-height:1.6}
 .tagcard .tc{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .tagcard .tc b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(var(--gd),.14);border:1px solid rgba(var(--gd),.35);font-weight:400;color:var(--gold);font-size:.95rem;letter-spacing:0;transition:background .25s}
 .tagcard:hover .tc b{background:rgba(var(--gd),.28)}
@@ -452,7 +467,7 @@ html.sc .sbtn svg{transform:rotate(180deg)}
 .arow{display:grid;grid-template-columns:1fr auto;column-gap:1.5rem;row-gap:.35rem;padding:1.5rem 0;border-bottom:1px solid var(--line);color:inherit;transition:padding .3s}
 .arow:hover,.arow:focus-visible{padding-left:.7rem}
 .arow .am{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.arow .at{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.15;color:var(--hi)}
+.arow .at{font-family:var(--head);font-weight:700;font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.25;letter-spacing:-.01em;color:var(--hi)}
 .arow .ax{color:var(--muted);font-size:.93rem;max-width:42rem}
 .arow .ar{grid-column:2;grid-row:1/4;align-self:center;color:var(--gold);font-size:1.25rem}
 .crumb{display:inline-block;margin-bottom:1.6rem;font-size:.8rem;color:var(--muted);border-bottom:1px solid var(--line)}
@@ -672,7 +687,7 @@ html.sc .sbtn svg{transform:rotate(180deg)}
     <div class="res">
       <aside class="side" id="side" aria-label="Categories"></aside>
       <div class="rmain">
-        <section class="rhead" id="resTop">
+        <section class="rhead rpanel" id="resTop">
           <p class="eyebrow">Altair Archive</p>
           <h1 data-i="resH">AI Skills for <em>Every Creator</em></h1>
           <p class="lead2" data-i="resLead">Practical AI skills for every level, from your first prompt to building your own agents. Pick the ones you need and put them to work.</p>
@@ -744,7 +759,7 @@ html.sc .sbtn svg{transform:rotate(180deg)}
       <aside class="side" id="vSide" aria-label="Topics"></aside>
       <div class="rmain">
         <div id="vList">
-        <section class="rhead" id="vTop">
+        <section class="rhead rpanel" id="vTop">
           <p class="eyebrow">Altair Telescope</p>
           <h1 data-i="vH">Learn by <em>Watching</em></h1>
           <p class="lead2" data-i="vLead">Conversations from AI Creator Labs on learning, using and earning with AI. Press play and watch right here, no tab switching.</p>
@@ -2026,14 +2041,23 @@ var V={
       showing:'Menampilkan {n} dari {t} video',reset:'Atur ulang filter',none:'Tidak ada video yang cocok.',watch:'Tonton di YouTube',views:'x ditonton',ep:'Podcast',orig:'Judul asli',close:'Tutup',play:'Putar',allv:'← Semua video',about:'Tentang video ini',learn:'Yang akan kamu pelajari',take:'Poin penting & insight praktis',faq:'Pertanyaan umum',relk:'Pengetahuan terkait',kVid:'Video',kArt:'Artikel',kSkill:'Skill',kClass:'Kelas AI Creator Labs',visit:'Kunjungi AI Creator Labs',ig:'Ikuti di Instagram',min:'menit baca',skl:'Buka skill'}
 };
 var VS={topic:'',q:'',sort:'new',auto:true};
-function vt(v){ return v.t }
+var VSH={
+  'podcast-1':{en:'Can You Really Earn From AI?',id:'Cuan dari AI: Mungkin atau Scam?'},
+  'podcast-2':{en:'Learn AI From Zero',id:'Belajar AI dari Nol untuk Pemula'},
+  'podcast-3':{en:'Jobs AI Won\'t Replace',id:'Pekerjaan yang Tak Akan Digantikan AI'},
+  'podcast-4':{en:'The Dark Side of AI',id:'Sisi Gelap dan Bahaya Teknologi AI'},
+  'podcast-5':{en:'AI Agent vs Regular AI Tools',id:'AI Agent vs AI Tools Biasa'},
+  'podcast-6':{en:'Why Your AI Credits Run Out',id:'Kenapa Kredit AI Cepat Habis?'}
+};
+function vt(v){ var x=VSH[v.slug]; return x?(LANG==='id'?x.id:x.en):v.t }
+function vfull(v){ return v.t }
 function vtopic(v){ var t=VT.filter(function(x){return x.id===v.topic})[0]; return LANG==='id'?t.ti:t.t }
 function secs(d){ var p=d.split(':').map(Number); return p.length===3?p[0]*3600+p[1]*60+p[2]:p[0]*60+p[1] }
 function vdate(v){ return new Date(v.date+'T00:00:00Z').toLocaleDateString(LANG==='id'?'id-ID':'en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}) }
 function vviews(v){ return v.views.toLocaleString(LANG==='id'?'id-ID':'en-US')+(LANG==='id'?' ':' ')+V[LANG].views }
 function vtoks(){ return VS.q.toLowerCase().split(/\s+/).filter(function(w){return w.length>1&&!STOP[w]}).map(function(w){return w.replace(/s$/,'')}) }
 function vscore(v,toks){
-  var a=v.t.toLowerCase(), b=['podcast '+v.ep,VT.filter(function(x){return x.id===v.topic})[0].t,VT.filter(function(x){return x.id===v.topic})[0].ti].join(' ').toLowerCase(), n=0;
+  var a=(v.t+' '+(VSH[v.slug]?VSH[v.slug].en+' '+VSH[v.slug].id:'')).toLowerCase(), b=['podcast '+v.ep,VT.filter(function(x){return x.id===v.topic})[0].t,VT.filter(function(x){return x.id===v.topic})[0].ti].join(' ').toLowerCase(), n=0;
   for(var i=0;i<toks.length;i++){ var x=toks[i], ia=a.indexOf(x)>-1, ib=b.indexOf(x)>-1; if(!ia&&!ib) return -1; n+=(ia?2:0)+(ib?1:0) }
   return n;
 }
@@ -2052,7 +2076,7 @@ function renderVid(){
   var vsub=parseHash().sub, dv=vsub?list.filter(function(x){return x.slug===vsub})[0]:null;
   if(vsub&&!dv){ location.replace('#/knowledges'); return }
   document.getElementById('vList').hidden=!!dv; var vp=document.getElementById('vPage'); vp.hidden=!dv; vp.innerHTML=dv?vpage(dv):'';
-  if(dv) document.title=dv.t.split(' | ')[0]+' · Altair Observatory';
+  if(dv) document.title=vt(dv)+' · Altair Observatory';
   var rows=list.map(function(v){ return {v:v,s:toks.length?vscore(v,toks):0} }).filter(function(r){ return r.s>=0 });
   var cnt={}; VT.forEach(function(t){ cnt[t.id]=rows.filter(function(r){return r.v.topic===t.id}).length });
   var shown=rows.filter(function(r){ return !VS.topic||r.v.topic===VS.topic });
@@ -2504,6 +2528,7 @@ function vpage(v){
   var h='<section class="rhead vhead"><a class="crumb" href="#/knowledges">'+T.allv+'</a><p class="eyebrow">'+T.ep+' #'+v.ep+' · '+esc(vtopic(v))+'</p><h1 class="vh1">'+esc(vt(v))+'</h1></section><div class="vwrap">'+
     '<div class="player"><iframe src="'+src+'" title="'+esc(vt(v))+'" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>'+
     '<div class="vinfo"><span><b>'+v.dur+'</b></span><span>'+vviews(v)+'</span><span>'+vdate(v)+'</span></div>'+
+    '<p class="vorig"><span>'+T.orig+':</span> '+esc(vfull(v))+'</p>'+
     '<a class="ytlink" href="https://www.youtube.com/watch?v='+v.yt+'" target="_blank" rel="noopener noreferrer">'+T.watch+' ↗</a>';
   h+='<div class="vprose"><h2>'+T.about+'</h2><p>'+esc(g('ab'))+'</p><h2>'+T.learn+'</h2>'+ul('ul',g('lr'))+'<h2>'+T.take+'</h2>'+ul('ol',g('tk'));
   if(D.fq&&D.fq.length){ h+='<h2>'+T.faq+'</h2>'+D.fq.map(function(f,k){ return '<details class="fq"'+(k===0?' open':'')+'><summary>'+esc(id?f[1]:f[0])+'</summary><p>'+esc(id?f[3]:f[2])+'</p></details>' }).join('') }
@@ -2579,7 +2604,7 @@ function renderArt(){
   var m=document.getElementById('aMain'), h='', hh='';
   if(view==='index'){
     var toks=AS.q.toLowerCase().split(/\s+/).filter(function(w){return w.length>1&&!STOP[w]}).map(function(w){return w.replace(/s$/,'')});
-    hh='<section class="rhead ahead big" style="padding-bottom:1.6rem"><p class="eyebrow">'+T.eyebrow+'</p><h1>'+T.h+'</h1><p class="lead2">'+T.lead+'</p><p class="rstats">'+list.length+' '+T.articles+' · '+AT.length+' '+T.tags+'</p></section>';
+    hh='<section class="rhead ahead big rpanel"><p class="eyebrow">'+T.eyebrow+'</p><h1>'+T.h+'</h1><p class="lead2">'+T.lead+'</p><p class="rstats">'+list.length+' '+T.articles+' · '+AT.length+' '+T.tags+'</p></section>';
     if(AS.q){
       var res=bydate(list).filter(function(a){return ascore(a,toks)});
       h+='<p class="rcount">'+esc(T.showing.replace('{n}',res.length).replace('{t}',list.length))+' <button type="button" class="linkbtn" data-areset>'+T.reset+'</button></p>';
@@ -2594,10 +2619,10 @@ function renderArt(){
     }
   }else if(view==='small'||view==='all'){
     var its=view==='all'?bydate(list):bydate(list.filter(function(a){return (a.g||[]).indexOf(small.id)>-1}));
-    h='<section class="rhead ahead"><a class="crumb" href="#/articles">'+T.back+'</a><p class="eyebrow">'+(view==='all'?T.eyebrow:T.topicWord)+'</p><h1>'+(view==='all'?T.allH:esc(stn(small)))+'</h1><p class="rstats">'+its.length+' '+T.articles+'</p></section><div class="alist">'+its.map(arow).join('')+'</div>';
+    h='<section class="rhead ahead rpanel"><span class="wm" aria-hidden="true">'+(view==='all'?'∞':'#')+'</span><a class="crumb" href="#/articles">'+T.back+'</a><p class="eyebrow">'+(view==='all'?T.eyebrow:T.topicWord)+'</p><h1>'+(view==='all'?T.allH:esc(stn(small)))+'</h1><p class="rstats">'+its.length+' '+T.articles+'</p></section><div class="alist">'+its.map(arow).join('')+'</div>';
   }else if(view==='tag'){
     var items=bydate(list.filter(function(a){return a.tag===tag.id}));
-    h='<section class="rhead ahead"><a class="crumb" href="#/articles">'+T.back+'</a><p class="eyebrow">'+T.tagWord+' 0'+(AT.indexOf(tag)+1)+'</p><h1>'+esc(atn(tag))+'</h1><p class="lead2">'+esc(LANG==='id'?tag.di:tag.d)+'</p><p class="rstats">'+items.length+' '+T.articles+'</p></section>'+
+    h='<section class="rhead ahead rpanel"><span class="wm" aria-hidden="true">0'+(AT.indexOf(tag)+1)+'</span><a class="crumb" href="#/articles">'+T.back+'</a><p class="eyebrow">'+T.tagWord+' 0'+(AT.indexOf(tag)+1)+'</p><h1>'+esc(atn(tag))+'</h1><p class="lead2">'+esc(LANG==='id'?tag.di:tag.d)+'</p><p class="rstats">'+items.length+' '+T.articles+'</p></section>'+
       (items.length?'<div class="alist">'+items.map(arow).join('')+'</div>':'<p class="empty">'+T.noart+'</p>');
   }else{
     var body=LANG==='id'?art.bi:art.b;
@@ -2633,7 +2658,7 @@ function search(term){
   if(!toks.length) toks=[term];
   var out=[],s;
   DATA.resources.forEach(function(r){ var c=CATS[r.c-1]; s=score([r.t,r.d,r.ti,r.di,c.t,c.ti].join(' '),toks); if(s) out.push({t:LANG==='id'?r.ti:r.t,k:'res',h:'#/resources/'+r.id,s:s}) });
-  DATA.videos.forEach(function(v){ s=score([v.t,'podcast '+v.ep].join(' '),toks); if(s) out.push({t:v.t,k:'vid',h:'#/knowledges/'+v.slug,s:s}) });
+  DATA.videos.forEach(function(v){ s=score([v.t,VSH[v.slug]?VSH[v.slug].en+' '+VSH[v.slug].id:'','podcast '+v.ep].join(' '),toks); if(s) out.push({t:vt(v),k:'vid',h:'#/knowledges/'+v.slug,s:s}) });
   DATA.articles.forEach(function(a){ var g=AT.filter(function(x){return x.id===a.tag})[0]; s=score([a.t,a.ti,a.ex,a.exi,g.t,g.ti].join(' '),toks); if(s) out.push({t:LANG==='id'?a.ti:a.t,k:'art',h:'#/articles/'+a.slug,s:s}) });
   out.sort(function(a,b){return b.s-a.s});
   return out;
