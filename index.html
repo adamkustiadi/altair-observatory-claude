@@ -216,6 +216,36 @@ footer .btn{margin-top:1.8rem}
 .media img.slot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
 .media .tag{z-index:2}
 
+
+/* ---------- video detail page ---------- */
+.vhead{padding-bottom:0}
+.rhead h1.vh1{font-family:var(--serif);font-weight:400;font-size:clamp(1.55rem,2.8vw,2.3rem);line-height:1.18;margin:.9rem 0 .2rem;max-width:52rem}
+.vwrap{max-width:920px}
+.vprose{margin-top:1.2rem;max-width:none}
+.vprose p,.vprose ul,.vprose ol{max-width:46rem}
+.vprose h2,.vrel h2{font-family:var(--serif);font-weight:400;font-size:1.8rem;line-height:1.15;margin:2.4rem 0 .8rem}
+.vprose p{margin:0 0 1.15rem;font-size:1.04rem;line-height:1.78;color:rgba(var(--ink),.88)}
+.vprose ul,.vprose ol{margin:0 0 1.3rem 1.3rem;color:rgba(var(--ink),.88);font-size:1.02rem;line-height:1.7}
+.vprose li{margin:.5rem 0;padding-left:.2rem}
+.vprose li::marker{color:var(--gold)}
+details.fq{border-bottom:1px solid var(--line);padding:.95rem 0;max-width:46rem}
+details.fq:first-of-type{border-top:1px solid var(--line)}
+details.fq summary{cursor:pointer;color:var(--hi);font-size:1.02rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+details.fq summary::-webkit-details-marker{display:none}
+details.fq summary::after{content:"+";color:var(--gold);font-size:1.2rem;line-height:1}
+details.fq[open] summary::after{content:"\2212"}
+details.fq p{margin:.7rem 0 0;font-size:1rem;line-height:1.7;color:rgba(var(--ink),.85)}
+.rkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:0 0 1.2rem}
+a.rk{display:flex;flex-direction:column;gap:.4rem;border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--glass);color:inherit;transition:border-color .25s,transform .25s}
+a.rk:hover,a.rk:focus-visible{border-color:rgba(var(--gd),.6);transform:translateY(-2px)}
+.rkt{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.rkn{color:var(--hi);font-size:.95rem;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rkm{margin-top:auto;font-size:.76rem;color:var(--muted)}
+.vrel .abox{max-width:46rem}
+.vrel .abox h3{margin-bottom:.4rem}
+.vrel .abox .ctt{font-family:var(--serif);font-size:1.5rem;line-height:1.15;color:var(--hi);margin:0 0 .5rem}
+@media (max-width:860px){ .vprose h2,.vrel h2{font-size:1.5rem} }
+
 /* ---------- resources page ---------- */
 .res{--sw:244px;position:relative;width:100%;margin:0;display:grid;grid-template-columns:var(--sw) minmax(0,1fr);gap:0;align-items:start;padding-bottom:clamp(50px,7vw,100px);transition:grid-template-columns .28s ease}
 html.sc .res{--sw:68px}
@@ -713,6 +743,7 @@ html.sc .sbtn svg{transform:rotate(180deg)}
     <div class="res">
       <aside class="side" id="vSide" aria-label="Topics"></aside>
       <div class="rmain">
+        <div id="vList">
         <section class="rhead" id="vTop">
           <p class="eyebrow">Altair Telescope</p>
           <h1 data-i="vH">Learn by <em>Watching</em></h1>
@@ -726,14 +757,9 @@ html.sc .sbtn svg{transform:rotate(180deg)}
         <p class="rcount vcount" id="vCount"></p>
         <div class="vgrid" id="vGrid"></div>
         <div class="rback"><a class="btn" href="#/" data-i="back">← Back to home</a></div>
+        </div>
+        <div id="vPage" hidden></div>
       </div>
-    </div>
-    <div class="drawer" id="vDrawer" hidden>
-      <div class="dback" data-close></div>
-      <aside class="dpanel vp" role="dialog" aria-modal="true" aria-labelledby="vTitle">
-        <button type="button" class="dclose" id="vClose" aria-label="Close"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-        <div id="vBody"></div>
-      </aside>
     </div>
   </main>
   <main id="artView" hidden>
@@ -1198,7 +1224,7 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <p>Imagine a notebook the AI must re-read from page one before it writes each new line. The longer the notebook, the more reading it does, and you pay for that reading. A fresh notebook is cheaper than a thick one.</p>
 <h2>What to do about it</h2>
 <p>You do not need to use AI less. You need to use it more cleanly: start new chats for new topics, send only what is needed, and ask for the length you want. We collected practical habits in <a href="#/articles/save-ai-tokens">How to Save AI Tokens</a>.</p>
-<p>Details such as limits and pricing differ by tool and change over time, so check your own tool's usage page for the exact rules.</p>`,
+<p>Details such as limits and pricing differ by tool and change over time, so check your own tool's usage page for the exact rules.</p><h2>Context engineering, from the video</h2><p>The episode (<a href="#/knowledges/podcast-6">Podcast #6</a>) frames the fix as <strong>context engineering</strong>: arrange your input so the AI works better. Send only the relevant information, not all your raw data. When a conversation gets full, ask the AI to summarize the earlier work and continue from the summary. And choose a model for the task: a balanced model for everyday text, a model with a large context window for creative work or big data, and a model that is strong at coding or math for those jobs.</p>`,
      bi:`<p>Kamu baru mengirim beberapa pesan, tapi kredit atau batas pemakaian AI-mu sudah hampir habis. Rasanya tidak adil, tapi ada alasan yang jelas. Tool AI tidak menghitung jumlah pesan. Mereka menghitung token.</p>
 <h2>Apa itu token?</h2>
 <p>Token adalah potongan kecil teks yang dibaca atau ditulis AI: kata pendek, bagian dari kata panjang, atau tanda baca. Sebagai patokan kasar, satu token kira-kira empat karakter teks bahasa Inggris. Makna yang sama dalam bahasa Indonesia sering memakai lebih banyak token daripada bahasa Inggris, jadi obrolan yang sama bisa sedikit lebih boros.</p>
@@ -1216,7 +1242,7 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <p>Bayangkan buku catatan yang harus dibaca ulang AI dari halaman pertama sebelum menulis tiap baris baru. Makin tebal bukunya, makin banyak yang dibaca, dan kamu membayar untuk bacaan itu. Buku baru lebih murah daripada buku yang tebal.</p>
 <h2>Apa yang bisa dilakukan</h2>
 <p>Kamu tidak perlu memakai AI lebih sedikit. Kamu perlu memakainya lebih rapi: mulai obrolan baru untuk topik baru, kirim hanya yang diperlukan, dan minta panjang jawaban yang kamu mau. Kebiasaan praktisnya kami kumpulkan di <a href="#/articles/save-ai-tokens">Cara Menghemat Token AI</a>.</p>
-<p>Rincian seperti batas pemakaian dan harga berbeda di tiap tool dan bisa berubah, jadi cek halaman pemakaian tool-mu untuk aturan yang tepat.</p>`},
+<p>Rincian seperti batas pemakaian dan harga berbeda di tiap tool dan bisa berubah, jadi cek halaman pemakaian tool-mu untuk aturan yang tepat.</p><h2>Context engineering, dari videonya</h2><p>Episode ini (<a href="#/knowledges/podcast-6">Podcast #6</a>) menyebut solusinya sebagai <strong>context engineering</strong>: menyusun input agar AI bekerja lebih baik. Kirim hanya informasi yang relevan, bukan semua data mentah. Saat percakapan penuh, minta AI merangkum hasil sebelumnya lalu lanjutkan dari ringkasan itu. Dan pilih model sesuai tugas: model seimbang untuk teks sehari-hari, model dengan context window besar untuk tugas kreatif atau data besar, serta model yang kuat di coding atau matematika untuk pekerjaan itu.</p>`},
 
     {slug:"save-ai-tokens",tag:"understand",g:["tokens","productivity"],date:"2026-11-23",min:5,video:"podcast-6",
      t:"How to Save AI Tokens: 9 Practical Habits",
@@ -1242,7 +1268,7 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <li>Does the AI need all of this text, or only part of it?</li>
 <li>Did I say how long and in what format the answer should be?</li>
 </ul>
-<p>Saving tokens is not about being stingy. It is about keeping your chats short, clear, and focused, which usually gives better answers too.</p>`,
+<p>Saving tokens is not about being stingy. It is about keeping your chats short, clear, and focused, which usually gives better answers too.</p><h2>One more habit from the video</h2><p>Keep your context lean: include only what is relevant, and when the chat grows long, summarize and continue from the summary. See <a href="#/knowledges/podcast-6">Podcast #6</a> for the full explanation of tokens and context windows.</p>`,
      bi:`<p>Setelah tahu bahwa pemakaian dihitung dalam token (lihat <a href="#/articles/why-ai-credits-run-out">Kenapa Kredit AI Cepat Habis?</a>), menghematnya jadi sederhana. Sembilan kebiasaan ini berlaku di kebanyakan tool, walau fitur persisnya berbeda.</p>
 <ol>
 <li><strong>Mulai obrolan baru untuk topik baru.</strong> Pesan lama dibaca ulang di setiap giliran. Obrolan baru mulai dalam keadaan ringan.</li>
@@ -1261,7 +1287,7 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <li>Apakah AI perlu semua teks ini, atau hanya sebagian?</li>
 <li>Sudahkah aku menyebut panjang dan format jawaban yang kuinginkan?</li>
 </ul>
-<p>Menghemat token bukan soal pelit. Ini soal menjaga obrolan tetap singkat, jelas, dan fokus, yang biasanya juga memberi jawaban yang lebih baik.</p>`},
+<p>Menghemat token bukan soal pelit. Ini soal menjaga obrolan tetap singkat, jelas, dan fokus, yang biasanya juga memberi jawaban yang lebih baik.</p><h2>Satu kebiasaan lagi dari videonya</h2><p>Jaga konteks tetap ramping: masukkan hanya yang relevan, dan saat chat makin panjang, rangkum lalu lanjutkan dari ringkasan. Lihat <a href="#/knowledges/podcast-6">Podcast #6</a> untuk penjelasan lengkap soal token dan context window.</p>`},
 
     {slug:"ai-agents-vs-ai-tools",tag:"understand",g:["ai-agents","tools"],date:"2026-11-23",min:6,video:"podcast-5",
      t:"AI Agents vs Regular AI Tools: What Is the Difference?",
@@ -1294,7 +1320,7 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <li>Give an agent only the access it needs, and require approval for actions you cannot undo.</li>
 </ul>
 <h2>Which should you use?</h2>
-<p>Use a chat tool for one-off questions, drafts, and brainstorming. Consider an agent for a repeated, multi-step workflow with clear rules. A good first step is to write that workflow down as a skill, since a clear skill is the foundation of a reliable agent. Browse the Build skills in the Archive, such as the <a href="#/resources/agent-orchestrator">Agent Orchestrator</a>.</p>`,
+<p>Use a chat tool for one-off questions, drafts, and brainstorming. Consider an agent for a repeated, multi-step workflow with clear rules. A good first step is to write that workflow down as a skill, since a clear skill is the foundation of a reliable agent. Browse the Build skills in the Archive, such as the <a href="#/resources/agent-orchestrator">Agent Orchestrator</a>.</p><h2>Types of agents, and outcome vs output</h2><p>The AI Creator Labs episode (<a href="#/knowledges/podcast-5">Podcast #5</a>) describes three kinds of agents: a <strong>single agent</strong> (one agent, one task), a <strong>multi-agent</strong> setup (several agents coordinated by one controller), and an <strong>autonomous or long-running agent</strong> that works more independently. It also suggests that an agent's result is better called an <strong>outcome</strong> than an output, because the agent plans, executes, and reviews its own work toward a goal.</p>`,
      bi:`<p>"AI agent" adalah salah satu istilah yang paling sering dipakai tapi paling jarang dijelaskan. Intinya sederhana begitu dibandingkan dengan tools yang sudah kamu kenal.</p>
 <h2>Tool AI biasa: kamu yang mengemudi</h2>
 <p>Dengan tool chat seperti GPT, Claude, atau Gemini dalam percakapan biasa, kamu bertanya dan ia menjawab. Setiap langkah ada di tanganmu: kamu menentukan pertanyaan berikutnya, menyalin hasilnya, dan mengerjakan sisanya di tempat lain. Ia seperti penasihat yang sangat cakap di sebelahmu.</p>
@@ -1320,7 +1346,7 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <li>Beri agent akses seperlunya saja, dan wajibkan persetujuan untuk tindakan yang tidak bisa dibatalkan.</li>
 </ul>
 <h2>Mana yang sebaiknya dipakai?</h2>
-<p>Pakai tool chat untuk pertanyaan sekali jalan, draf, dan brainstorming. Pertimbangkan agent untuk alur kerja berulang dengan banyak langkah dan aturan yang jelas. Langkah awal yang bagus adalah menuliskan alur kerja itu sebagai skill, karena skill yang jelas adalah fondasi agent yang andal. Lihat skill kategori Build di Archive, misalnya <a href="#/resources/agent-orchestrator">Agent Orchestrator</a>.</p>`},
+<p>Pakai tool chat untuk pertanyaan sekali jalan, draf, dan brainstorming. Pertimbangkan agent untuk alur kerja berulang dengan banyak langkah dan aturan yang jelas. Langkah awal yang bagus adalah menuliskan alur kerja itu sebagai skill, karena skill yang jelas adalah fondasi agent yang andal. Lihat skill kategori Build di Archive, misalnya <a href="#/resources/agent-orchestrator">Agent Orchestrator</a>.</p><h2>Jenis agent, dan outcome vs output</h2><p>Episode AI Creator Labs (<a href="#/knowledges/podcast-5">Podcast #5</a>) menjelaskan tiga jenis agent: <strong>single agent</strong> (satu agent satu tugas), <strong>multi-agent</strong> (beberapa agent yang dikoordinasikan satu pengendali), dan <strong>autonomous atau long-running agent</strong> yang bekerja lebih mandiri. Episode itu juga menyebut hasil kerja agent lebih tepat disebut <strong>outcome</strong> daripada output, karena agent merencanakan, mengeksekusi, dan me-review pekerjaannya sendiri untuk mencapai tujuan.</p>`},
 
     {slug:"build-your-first-ai-agent",tag:"build",g:["ai-agents","building"],date:"2026-11-23",min:7,video:"podcast-5",
      t:"How to Build Your First AI Agent, Step by Step",
@@ -1354,7 +1380,7 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <li>Skipping approvals on actions you cannot undo.</li>
 <li>Not checking results, since errors can compound across steps.</li>
 </ul>
-<p>For more complex setups with several skills working together, see the <a href="#/resources/agent-orchestrator">Agent Orchestrator</a>.</p>`,
+<p>For more complex setups with several skills working together, see the <a href="#/resources/agent-orchestrator">Agent Orchestrator</a>.</p><h2>Where agents can create value</h2><p>According to <a href="#/knowledges/podcast-5">Podcast #5</a>, people build business around agents in three ways: project-based work, recurring maintenance after a project, and efficiency inside their own business. Builders may use a subscription platform, pay-per-use through an API, or white label. As no-code AI platforms grow, critical thinking about which tools to use and whether a solution is truly useful matters more and more.</p>`,
      bi:`<p>AI agent terdengar canggih, tapi agent pertamamu bisa sederhana. Kalau sudah membaca <a href="#/articles/ai-agents-vs-ai-tools">AI Agent vs AI Tools Biasa</a>, kamu sudah paham idenya: kamu memberi tujuan, lalu agent merencanakan, memakai tools, memeriksa hasil, dan bertanya saat ragu. Ini cara praktis membuatnya.</p>
 <h2>Langkah 1: pilih satu alur kerja</h2>
 <p>Pilih tugas yang berulang, punya beberapa langkah, dan aturannya jelas. Contoh yang bagus: rencana konten mingguan, memilah pesan klien yang masuk, atau merangkum rapat menjadi daftar tugas. Hindari yang kabur seperti "jalankan bisnisku".</p>
@@ -1377,7 +1403,7 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <li>Melewatkan persetujuan untuk tindakan yang tidak bisa dibatalkan.</li>
 <li>Tidak memeriksa hasil, padahal kesalahan bisa menumpuk antar langkah.</li>
 </ul>
-<p>Untuk susunan yang lebih rumit dengan beberapa skill yang bekerja bersama, lihat <a href="#/resources/agent-orchestrator">Agent Orchestrator</a>.</p>`},
+<p>Untuk susunan yang lebih rumit dengan beberapa skill yang bekerja bersama, lihat <a href="#/resources/agent-orchestrator">Agent Orchestrator</a>.</p><h2>Di mana agent bisa memberi nilai</h2><p>Menurut <a href="#/knowledges/podcast-5">Podcast #5</a>, orang membangun bisnis dari agent lewat tiga cara: kerja berbasis proyek, perawatan berulang setelah proyek, dan efisiensi di bisnis sendiri. Builder bisa memakai platform langganan, bayar per pemakaian lewat API, atau white label. Seiring makin banyaknya platform AI tanpa coding, berpikir kritis dalam memilih tools dan menilai apakah solusi benar-benar berguna jadi makin penting.</p>`},
 
     {slug:"earn-money-with-ai",tag:"build",g:["income","building"],date:"2026-11-23",min:7,video:"podcast-1",
      t:"How to Earn Money With AI: A Practical Path for Beginners",
@@ -1409,7 +1435,7 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <li>Never copy other people's work or use someone's face or voice without permission.</li>
 <li>Offer services first. They give faster feedback than products.</li>
 </ul>
-<p>Not sure whether an opportunity you found is genuine? Read <a href="#/articles/ai-income-scam-or-real">Can You Really Earn From AI, or Is It a Scam?</a>.</p>`,
+<p>Not sure whether an opportunity you found is genuine? Read <a href="#/articles/ai-income-scam-or-real">Can You Really Earn From AI, or Is It a Scam?</a>.</p><h2>What the video emphasizes</h2><p>In <a href="#/knowledges/podcast-1">Podcast #1</a>, the message is that AI does not replace skill. Earning with AI rests on two things: understanding AI fundamentals and understanding the industry you want to work in. The episode also warns against passing AI-heavy work off as fully manual.</p>`,
      bi:`<p>AI adalah alat, dan alat tidak membayarmu. Orang membayarmu ketika kamu menyelesaikan masalah mereka, dan AI bisa membantumu melakukannya lebih cepat dan lebih baik. Artikel ini memberi jalur yang realistis. Ia tidak menjanjikan hasil, karena penghasilan bergantung pada usahamu, penawaranmu, dan pasar.</p>
 <h2>Langkah 1: pilih sesuatu yang memang sudah dibayar orang</h2>
 <p>Mulailah dari pekerjaan di mana AI menghemat waktu nyata dan hasilnya tetap diperiksa manusia. Contohnya konten media sosial, ringkasan riset, draf balasan pelanggan, halaman web sederhana, serta penyuntingan atau penerjemahan yang diperiksa manusia.</p>
@@ -1430,7 +1456,7 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <li>Jangan menyalin karya orang lain atau memakai wajah atau suara seseorang tanpa izin.</li>
 <li>Tawarkan jasa dulu. Jasa memberi umpan balik lebih cepat daripada produk.</li>
 </ul>
-<p>Tidak yakin apakah peluang yang kamu temukan itu asli? Baca <a href="#/articles/ai-income-scam-or-real">Benarkah Bisa Cuan dari AI, atau Itu Penipuan?</a>.</p>`},
+<p>Tidak yakin apakah peluang yang kamu temukan itu asli? Baca <a href="#/articles/ai-income-scam-or-real">Benarkah Bisa Cuan dari AI, atau Itu Penipuan?</a>.</p><h2>Yang ditekankan videonya</h2><p>Di <a href="#/knowledges/podcast-1">Podcast #1</a>, pesannya adalah AI tidak menggantikan skill. Menghasilkan dari AI bertumpu pada dua hal: paham dasar AI dan paham industri yang ingin dimasuki. Episode itu juga mengingatkan agar tidak menyamarkan hasil kerja yang banyak dibantu AI seolah dikerjakan manual.</p>`},
 
     {slug:"ai-income-scam-or-real",tag:"build",g:["income","safety"],date:"2026-11-23",min:6,video:"podcast-1",
      t:"Can You Really Earn From AI, or Is It a Scam?",
@@ -1591,7 +1617,7 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <li>Slow down when something feels urgent.</li>
 <li>Test big plans with the <a href="#/resources/plan-stress-tester">Plan Stress-Tester</a> before you act.</li>
 </ul>
-<p>Worried about your work? Read <a href="#/articles/jobs-ai-will-not-replace">Jobs AI Will Not Replace</a>.</p>`,
+<p>Worried about your work? Read <a href="#/articles/jobs-ai-will-not-replace">Jobs AI Will Not Replace</a>.</p><h2>Extra steps from the video</h2><ul><li>Audit your AI chat history and delete conversations that contain sensitive information.</li><li>If your tool offers it, turn off the setting that lets your chats be used to train the model.</li><li>If you need to share a sensitive text, disguise the identity details instead of giving false answers on purpose.</li><li>Set a secret code word or question with your family to check suspicious calls.</li></ul><p>More in <a href="#/knowledges/podcast-4">Podcast #4</a>.</p>`,
      bi:`<p>AI itu berguna, tapi juga kuat di tangan yang salah atau saat dipakai sembarangan. Mengenal risikonya bukan berarti takut pada teknologinya, melainkan memakainya dengan mata terbuka. Ini risiko utamanya dan cara menguranginya.</p>
 <h2>1. Penipuan yang terdengar meyakinkan</h2>
 <p>AI membuat pesan rapi, situs palsu, dan bujukan yang dipersonalisasi jadi murah dibuat. Pesan bisa tampak profesional padahal jebakan. <strong>Lindungi dirimu:</strong> verifikasi lewat saluran lain, jangan pernah membagikan kata sandi atau kode OTP, dan waspadai desakan waktu. Lihat <a href="#/articles/ai-income-scam-or-real">Benarkah Bisa Cuan dari AI, atau Itu Penipuan?</a> untuk tanda bahaya lainnya.</p>
@@ -1615,7 +1641,7 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <li>Pelan-pelan saat sesuatu terasa mendesak.</li>
 <li>Uji rencana besar dengan <a href="#/resources/plan-stress-tester">Plan Stress-Tester</a> sebelum bertindak.</li>
 </ul>
-<p>Khawatir soal pekerjaanmu? Baca <a href="#/articles/jobs-ai-will-not-replace">Pekerjaan yang Tidak Akan Digantikan AI</a>.</p>`},
+<p>Khawatir soal pekerjaanmu? Baca <a href="#/articles/jobs-ai-will-not-replace">Pekerjaan yang Tidak Akan Digantikan AI</a>.</p><h2>Langkah tambahan dari videonya</h2><ul><li>Audit riwayat chat AI-mu dan hapus percakapan yang berisi informasi sensitif.</li><li>Kalau tool-mu menyediakannya, matikan pengaturan yang mengizinkan chat dipakai untuk melatih model.</li><li>Kalau perlu membagikan teks sensitif, samarkan detail identitasnya, jangan memberi jawaban palsu dengan sengaja.</li><li>Sepakati kode atau pertanyaan rahasia dengan keluarga untuk memeriksa panggilan yang mencurigakan.</li></ul><p>Selengkapnya di <a href="#/knowledges/podcast-4">Podcast #4</a>.</p>`},
 
     {slug:"jobs-ai-will-not-replace",tag:"risks",g:["careers"],date:"2026-11-23",min:6,video:"podcast-3",
      t:"Jobs AI Will Not Replace, and How to Stay Valuable",
@@ -1646,7 +1672,7 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <li><strong>Build optional income.</strong> A small side offer adds resilience. The <a href="#/resources/business-planner">Business Planner</a> and <a href="#/resources/offer-pricing-builder">Offer & Pricing Builder</a> can help you plan it. See <a href="#/articles/earn-money-with-ai">How to Earn Money With AI</a>.</li>
 </ol>
 <h2>A balanced view</h2>
-<p>Some people will be affected, and that concern is real. Staying informed, practicing with AI, and strengthening what is uniquely human is a sensible response. Read about the risks in <a href="#/articles/dark-side-of-ai">The Dark Side of AI</a>, and start from the basics in <a href="#/articles/learning-ai-from-zero">Learning AI From Zero</a> if you are new.</p>`,
+<p>Some people will be affected, and that concern is real. Staying informed, practicing with AI, and strengthening what is uniquely human is a sensible response. Read about the risks in <a href="#/articles/dark-side-of-ai">The Dark Side of AI</a>, and start from the basics in <a href="#/articles/learning-ai-from-zero">Learning AI From Zero</a> if you are new.</p><h2>What the video adds</h2><p>The AI Creator Labs episode (<a href="#/knowledges/podcast-3">Podcast #3</a>) names the roles it sees as most exposed in the next 5 to 10 years: data entry, content creator, modern and junior coder, admin and virtual assistant, and creative production such as design and video editing. The common thread is work with a clear, repeatable pattern that can be written as an SOP. It sees health, work involving human lives, jobs that are hard to turn into an SOP (such as negotiators), and some physical jobs as safer, and it advises building soft skills, communication, and negotiation. Treat creativity as a skill to deepen with real judgment, not as automatic protection.</p>`,
      bi:`<p>Apakah AI akan mengambil pekerjaanku? Jawaban jujurnya: tidak ada yang tahu persis. Sebagian tugas akan diotomatisasi, sebagian pekerjaan berubah, dan yang baru akan muncul. Yang bisa kita lakukan adalah melihat kekuatan manusia mana yang sulit digantikan, lalu membangunnya dengan sengaja.</p>
 <h2>Tugas berubah lebih cepat daripada pekerjaan</h2>
 <p>Pekerjaan adalah kumpulan tugas. AI cenderung mengambil alih yang berulang dan berbasis aturan lebih dulu, seperti menyusun teks standar, memilah data, atau meringkas. Sisanya, seperti penilaian dan hubungan antarmanusia, sering justru makin penting. Orang yang belajar memakai AI untuk bagian rutin biasanya lebih unggul daripada yang mengabaikannya.</p>
@@ -1670,7 +1696,7 @@ HASIL: Ringkasan lima baris, keputusan, tabel tugas.</pre>
 <li><strong>Bangun penghasilan tambahan.</strong> Penawaran sampingan kecil menambah ketahanan. <a href="#/resources/business-planner">Business Planner</a> dan <a href="#/resources/offer-pricing-builder">Offer & Pricing Builder</a> bisa membantu merencanakannya. Lihat <a href="#/articles/earn-money-with-ai">Cara Menghasilkan Uang dengan AI</a>.</li>
 </ol>
 <h2>Pandangan yang seimbang</h2>
-<p>Sebagian orang akan terdampak, dan kekhawatiran itu nyata. Tetap mengikuti perkembangan, berlatih dengan AI, dan memperkuat hal yang khas manusia adalah respons yang masuk akal. Baca risikonya di <a href="#/articles/dark-side-of-ai">Sisi Gelap AI</a>, dan mulai dari dasar lewat <a href="#/articles/learning-ai-from-zero">Belajar AI dari Nol</a> kalau kamu baru mulai.</p>`}
+<p>Sebagian orang akan terdampak, dan kekhawatiran itu nyata. Tetap mengikuti perkembangan, berlatih dengan AI, dan memperkuat hal yang khas manusia adalah respons yang masuk akal. Baca risikonya di <a href="#/articles/dark-side-of-ai">Sisi Gelap AI</a>, dan mulai dari dasar lewat <a href="#/articles/learning-ai-from-zero">Belajar AI dari Nol</a> kalau kamu baru mulai.</p><h2>Tambahan dari videonya</h2><p>Episode AI Creator Labs (<a href="#/knowledges/podcast-3">Podcast #3</a>) menyebut peran yang dinilai paling rentan dalam 5 sampai 10 tahun ke depan: data entry, content creator, coder modern dan junior, admin dan virtual assistant, serta produksi kreatif seperti desain dan video editing. Benang merahnya adalah pekerjaan yang polanya jelas dan berulang sehingga bisa dibuat SOP. Pekerjaan di bidang kesehatan, yang menyangkut nyawa manusia, yang sulit dibuat SOP (seperti negosiator), dan sebagian pekerjaan fisik dinilai lebih aman, dan videonya menyarankan membangun soft skill, komunikasi, dan negosiasi. Anggap kreativitas sebagai kemampuan yang perlu diperdalam dengan penilaian yang nyata, bukan perlindungan otomatis.</p>`}
   ]
 };
 
@@ -1753,7 +1779,7 @@ var S = {
 
 /* ============ ROUTER ============ */
 var home=document.getElementById('home'), inner=document.getElementById('inner');
-var lastH='', artKey='';
+var lastH='', artKey='', vKey='';
 function parseHash(){
   var p=location.hash.replace(/^#\/?/,'').split('?')[0].split('/');
   return {h:S.en.pages[p[0]]?p[0]:'', sub:p[1]||'', sub2:p[2]||''};
@@ -1766,6 +1792,7 @@ function renderPage(){
   document.getElementById('artView').hidden=!isArt;
   document.getElementById('resView').hidden=!isRes;
   document.getElementById('vidView').hidden=!isVid;
+  if(!isVid) document.getElementById('vPage').innerHTML='';
   if(isRes){ renderRes(); return }
   if(isVid){ renderVid(); return }
   if(isArt){ renderArt(); return }
@@ -1778,16 +1805,18 @@ function route(){
   if(h){
     home.hidden=true; inner.hidden=false;
     var ak=o.sub+'/'+o.sub2;
+    var vk=(h==='knowledges')?o.sub:'';
     if(h!==lastH){ renderPage(); window.scrollTo(0,0); artKey=ak }
     else if(h==='articles'&&ak!==artKey){ artKey=ak; renderArt(); window.scrollTo(0,0) }
+    else if(h==='knowledges'&&vk!==vKey){ renderVid(); window.scrollTo(0,0) }
+    vKey=vk;
     inner.querySelectorAll('[data-tab]').forEach(function(a){
       if(a.dataset.tab===h) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
     });
     lastH=h;
     if(h==='resources'&&o.sub) openDetail(o.sub); else closeDetail();
-    if(h==='knowledges'&&o.sub) openVideo(o.sub); else closeVideo();
   }else{
-    lastH=''; closeDetail(); closeVideo();
+    lastH=''; vKey=''; closeDetail(); document.getElementById('vPage').innerHTML='';
     inner.hidden=true; home.hidden=false; document.title="Altair Observatory";
     revealAll();
   }
@@ -1992,9 +2021,9 @@ var VT=[
 ];
 var V={
   en:{videos:'videos',topics:'topics',total:'total',search:'Search videos…',sort:'Sort videos',sNew:'Newest first',sPop:'Most popular',sRel:'Relevance',all:'All videos',topicsH:'Topics',
-      showing:'Showing {n} of {t} videos',reset:'Reset filters',none:'No videos match your search.',watch:'Watch on YouTube',views:'views',ep:'Podcast',orig:'Original title',close:'Close',play:'Play'},
+      showing:'Showing {n} of {t} videos',reset:'Reset filters',none:'No videos match your search.',watch:'Watch on YouTube',views:'views',ep:'Podcast',orig:'Original title',close:'Close',play:'Play',allv:'← All videos',about:'About this video',learn:'What you\'ll learn',take:'Key takeaways & practical insights',faq:'Common questions',relk:'Related knowledge',kVid:'Video',kArt:'Article',kSkill:'Skill',kClass:'Class by AI Creator Labs',visit:'Visit AI Creator Labs',ig:'Follow on Instagram',min:'min read',skl:'Open skill'},
   id:{videos:'video',topics:'topik',total:'total',search:'Cari video…',sort:'Urutkan video',sNew:'Terbaru',sPop:'Terpopuler',sRel:'Relevansi',all:'Semua video',topicsH:'Topik',
-      showing:'Menampilkan {n} dari {t} video',reset:'Atur ulang filter',none:'Tidak ada video yang cocok.',watch:'Tonton di YouTube',views:'x ditonton',ep:'Podcast',orig:'Judul asli',close:'Tutup',play:'Putar'}
+      showing:'Menampilkan {n} dari {t} video',reset:'Atur ulang filter',none:'Tidak ada video yang cocok.',watch:'Tonton di YouTube',views:'x ditonton',ep:'Podcast',orig:'Judul asli',close:'Tutup',play:'Putar',allv:'← Semua video',about:'Tentang video ini',learn:'Yang akan kamu pelajari',take:'Poin penting & insight praktis',faq:'Pertanyaan umum',relk:'Pengetahuan terkait',kVid:'Video',kArt:'Artikel',kSkill:'Skill',kClass:'Kelas AI Creator Labs',visit:'Kunjungi AI Creator Labs',ig:'Ikuti di Instagram',min:'menit baca',skl:'Buka skill'}
 };
 var VS={topic:'',q:'',sort:'new',auto:true};
 function vt(v){ return v.t }
@@ -2020,6 +2049,10 @@ function vthumb(v){
 }
 function renderVid(){
   var T=V[LANG], list=DATA.videos, toks=vtoks(), i;
+  var vsub=parseHash().sub, dv=vsub?list.filter(function(x){return x.slug===vsub})[0]:null;
+  if(vsub&&!dv){ location.replace('#/knowledges'); return }
+  document.getElementById('vList').hidden=!!dv; var vp=document.getElementById('vPage'); vp.hidden=!dv; vp.innerHTML=dv?vpage(dv):'';
+  if(dv) document.title=dv.t.split(' | ')[0]+' · Altair Observatory';
   var rows=list.map(function(v){ return {v:v,s:toks.length?vscore(v,toks):0} }).filter(function(r){ return r.s>=0 });
   var cnt={}; VT.forEach(function(t){ cnt[t.id]=rows.filter(function(r){return r.v.topic===t.id}).length });
   var shown=rows.filter(function(r){ return !VS.topic||r.v.topic===VS.topic });
@@ -2037,15 +2070,16 @@ function renderVid(){
   var active=VS.topic||VS.q;
   document.getElementById('vCount').innerHTML=active?esc(T.showing.replace('{n}',shown.length).replace('{t}',list.length))+' <button type="button" class="linkbtn" data-vreset>'+T.reset+'</button>':'';
   /* sidebar */
-  var s='<button type="button" class="sl'+(VS.topic?'':' on')+'" data-vt=""><span class="ic">◎</span><span class="tt">'+T.all+'</span><em>'+rows.length+'</em></button><p class="side-h">'+T.topicsH+'</p>';
-  VT.forEach(function(t,k){ s+='<button type="button" class="sl'+(VS.topic===t.id?' on':'')+(cnt[t.id]?'':' off')+'" data-vt="'+t.id+'"><span class="n">0'+(k+1)+'</span><span class="tt">'+esc(LANG==='id'?t.ti:t.t)+'</span><em>'+cnt[t.id]+'</em></button>' });
+  var hiT=dv?dv.topic:VS.topic;
+  var s='<button type="button" class="sl'+((dv||VS.topic)?'':' on')+'" data-vt=""><span class="ic">◎</span><span class="tt">'+T.all+'</span><em>'+rows.length+'</em></button><p class="side-h">'+T.topicsH+'</p>';
+  VT.forEach(function(t,k){ s+='<button type="button" class="sl'+(hiT===t.id?' on':'')+(cnt[t.id]?'':' off')+'" data-vt="'+t.id+'"><span class="n">0'+(k+1)+'</span><span class="tt">'+esc(LANG==='id'?t.ti:t.t)+'</span><em>'+cnt[t.id]+'</em></button>' });
   document.getElementById('vSide').innerHTML=sideTop()+s+exploreHtml('knowledges');
   /* grid */
   document.getElementById('vGrid').innerHTML=shown.length?shown.map(function(r){ var v=r.v;
     return '<button type="button" class="vcard" data-v="'+v.slug+'" aria-label="'+esc(T.play+': '+vt(v)+' ('+v.dur+')')+'">'+vthumb(v)+'<span class="vep">'+T.ep+' #'+v.ep+' · '+esc(vtopic(v))+'</span><span class="vtitle">'+esc(vt(v))+'</span></button>' }).join(''):'<p class="empty">'+T.none+' <button type="button" class="linkbtn" data-vreset>'+T.reset+'</button></p>';
   setStick();
 }
-var vV=document.getElementById('vidView'), vDrawer=document.getElementById('vDrawer');
+var vV=document.getElementById('vidView');
 vV.addEventListener('error',function(e){
   var im=e.target; if(im.tagName!=='IMG') return;
   var card=im.closest('[data-v]'), v=card&&DATA.videos.filter(function(x){return x.slug===card.dataset.v})[0], a=v?vsrc(v):[], n=(+im.dataset.n||0)+1;
@@ -2055,7 +2089,7 @@ vV.addEventListener('click',function(e){
   var t;
   if((t=e.target.closest('[data-go]'))){ if(t.dataset.go==='#/knowledges') window.scrollTo({top:0,behavior:'smooth'}); else location.hash=t.dataset.go; return }
   if((t=e.target.closest('[data-v]'))){ location.hash='#/knowledges/'+t.dataset.v; return }
-  if((t=e.target.closest('[data-vt]'))){ VS.topic=(VS.topic===t.dataset.vt)?'':t.dataset.vt; renderVid(); if(window.innerWidth>860) window.scrollTo({top:0,behavior:'smooth'}); return }
+  if((t=e.target.closest('[data-vt]'))){ if(parseHash().sub){ VS.topic=t.dataset.vt; location.hash='#/knowledges'; return } VS.topic=(VS.topic===t.dataset.vt)?'':t.dataset.vt; renderVid(); if(window.innerWidth>860) window.scrollTo({top:0,behavior:'smooth'}); return }
   if(e.target.closest('[data-vreset]')){ VS.topic=''; VS.q=''; VS.sort='new'; VS.auto=true; document.getElementById('vQ').value=''; renderVid() }
 });
 document.getElementById('vQ').addEventListener('input',function(){
@@ -2066,32 +2100,424 @@ document.getElementById('vQ').addEventListener('input',function(){
 document.getElementById('vSort').addEventListener('change',function(){ VS.sort=this.value; VS.auto=false; renderVid() });
 window.addEventListener('resize',setStick);
 
-var vLast=null;
-function openVideo(slug){
-  var v=DATA.videos.filter(function(x){return x.slug===slug})[0];
-  if(!v){ location.hash='#/knowledges'; return }
-  var T=V[LANG], src='https://www.youtube.com/embed/'+v.yt+'?autoplay=1&rel=0&modestbranding=1'+(v.start?'&start='+v.start:'');
-  document.getElementById('vBody').innerHTML=
-    '<p class="eyebrow">'+T.ep+' #'+v.ep+' · '+esc(vtopic(v))+'</p><h2 id="vTitle">'+esc(vt(v))+'</h2>'+
-    '<div class="player"><iframe src="'+src+'" title="'+esc(vt(v))+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>'+
+var CLS={
+  income:{t:'AI Income Workshop',ti:'AI Income Workshop',d:'A class from AI Creator Labs about turning AI skills into income. See the details on the AI Creator Labs website.',di:'Kelas dari AI Creator Labs tentang mengubah kemampuan AI menjadi penghasilan. Lihat detailnya di website AI Creator Labs.'},
+  agent:{t:'AI Agent Builder',ti:'AI Agent Builder',d:'A class from AI Creator Labs for people who want to build AI agents. See the details on the AI Creator Labs website.',di:'Kelas dari AI Creator Labs untuk kamu yang ingin membangun AI agent. Lihat detailnya di website AI Creator Labs.'},
+  general:{t:'Learn more with AI Creator Labs',ti:'Belajar lebih jauh bersama AI Creator Labs',d:'Want to go deeper? AI Creator Labs offers classes on learning AI, building with it, and earning from it. See what is available on their website.',di:'Ingin belajar lebih dalam? AI Creator Labs punya kelas untuk belajar AI, membangun dengan AI, dan menghasilkan dari AI. Lihat yang tersedia di website mereka.'}
+};
+var VD={
+ "podcast-1": {
+  "ab": "Can you really make money with AI, or is it all hype? This episode separates what is realistic from what is just a gimmick or a scam. The core message: AI does not replace skill. It is a tool that speeds up and supports human work, so real results come from understanding AI fundamentals and the industry you want to work in.",
+  "abi": "Benarkah AI bisa menghasilkan uang, atau semuanya cuma hype? Episode ini memisahkan mana yang realistis dan mana yang sekadar gimmick atau penipuan. Pesan utamanya: AI tidak menggantikan skill. AI adalah alat yang mempercepat dan membantu kerja manusia, jadi hasil nyata datang dari memahami dasar-dasar AI dan industri yang ingin dimasuki.",
+  "lr": [
+   "Why AI is a tool that speeds up work, not a substitute for skill",
+   "The two foundations of earning with AI: AI fundamentals and knowledge of your industry",
+   "Where AI shows up as an income opportunity: content creation, engineering and IT, finance, creative work, and health",
+   "Why many people wrongly expect money from AI with no skill at all",
+   "The line between good business and questionable ethics, such as passing AI-heavy work off as fully manual"
+  ],
+  "lri": [
+   "Mengapa AI adalah alat yang mempercepat kerja, bukan pengganti skill",
+   "Dua fondasi untuk menghasilkan dari AI: paham dasar AI dan paham industrinya",
+   "Di mana AI muncul sebagai peluang penghasilan: pembuatan konten, engineering dan IT, keuangan, kreatif, dan kesehatan",
+   "Mengapa banyak orang keliru mengira AI bisa menghasilkan uang tanpa skill sama sekali",
+   "Batas antara bisnis yang baik dan etika yang dipertanyakan, misalnya menyamarkan hasil kerja yang banyak dibantu AI seolah dikerjakan manual"
+  ],
+  "tk": [
+   "Learn the basics of AI first, then pick one industry you already understand.",
+   "Look at your own field and list the tasks where AI could make you faster or cheaper, such as content, building a simple site or app, financial analysis, ad production, or health data analysis.",
+   "Practice explaining what you want clearly to AI. Good communication matters more than being a full-time coder when you build websites or apps with AI.",
+   "Be open about how AI helped your work when it matters, instead of presenting AI-heavy work as purely manual.",
+   "Treat any promise of income with no skill involved as a warning sign."
+  ],
+  "tki": [
+   "Pelajari dasar AI dulu, lalu pilih satu industri yang sudah kamu pahami.",
+   "Lihat bidangmu sendiri dan daftar tugas yang bisa dipercepat atau dimurahkan dengan AI, seperti konten, membuat situs atau aplikasi sederhana, analisis keuangan, produksi iklan, atau analisis data kesehatan.",
+   "Latih diri menjelaskan keinginanmu dengan jelas kepada AI. Komunikasi yang baik lebih penting daripada jadi programmer penuh saat membuat situs atau aplikasi dengan AI.",
+   "Terbuka soal bantuan AI dalam pekerjaanmu saat itu penting, jangan menampilkan hasil yang banyak dibantu AI seolah murni manual.",
+   "Anggap janji penghasilan tanpa skill sebagai tanda bahaya."
+  ],
+  "fq": [
+   [
+    "Can I earn money from AI without any skill?",
+    "Apakah bisa menghasilkan uang dari AI tanpa skill?",
+    "According to the episode, no. AI speeds up work but does not replace skill. Results come from combining AI basics with real understanding of an industry.",
+    "Menurut episode ini, tidak. AI mempercepat kerja tapi tidak menggantikan skill. Hasil datang dari gabungan dasar AI dan pemahaman nyata tentang sebuah industri."
+   ],
+   [
+    "Which fields does the episode talk about?",
+    "Bidang apa saja yang dibahas?",
+    "Content creation, engineering and IT, finance, creative work, and health.",
+    "Pembuatan konten, engineering dan IT, keuangan, kreatif, dan kesehatan."
+   ],
+   [
+    "Is it okay to use AI without saying so?",
+    "Bolehkah memakai AI tanpa memberi tahu?",
+    "The episode points out that some uses can work as a business but are questionable ethically, for example presenting heavily AI-assisted work as if it were done manually. Being open about it is the safer path.",
+    "Episode ini menyebut sebagian penggunaan bisa jalan secara bisnis tapi dipertanyakan secara etika, misalnya menampilkan hasil yang banyak dibantu AI seolah dikerjakan manual. Terbuka soal itu adalah jalan yang lebih aman."
+   ]
+  ],
+  "rv": [
+   "podcast-3",
+   "podcast-5"
+  ],
+  "ra": [
+   "earn-money-with-ai",
+   "ai-income-scam-or-real",
+   "create-content-with-ai"
+  ],
+  "rs": [
+   "offer-pricing-builder",
+   "business-planner",
+   "plan-stress-tester"
+  ],
+  "cls": "income"
+ },
+ "podcast-2": {
+  "ab": "New to AI and not sure where to begin? This beginner-friendly episode explains AI from zero in a relaxed conversation: what AI really is, how it differs from regular coding, how it works, and how to start learning today.",
+  "abi": "Baru mengenal AI dan bingung mulai dari mana? Episode ramah pemula ini menjelaskan AI dari nol dengan obrolan santai: apa itu AI sebenarnya, bedanya dengan coding biasa, cara kerjanya, dan cara mulai belajar hari ini.",
+  "lr": [
+   "AI is not a robot that thinks like a human. It is a system of code and math that imitates human thinking",
+   "Coding versus AI: fixed rules versus data and probability",
+   "How AI works: reading data (text, images, audio, video) and predicting results, with machine learning behind it and data as the fuel",
+   "Types of AI: single-task, multi-task, generative and discriminative",
+   "The basic building blocks: database, compute, interface, and the idea of neuron networks",
+   "Popular tools such as ChatGPT and Claude, and MCP from Anthropic"
+  ],
+  "lri": [
+   "AI bukan robot yang berpikir seperti manusia, tapi sistem kode dan matematika yang meniru cara berpikir manusia",
+   "Coding vs AI: aturan pasti vs data dan probabilitas",
+   "Cara kerja AI: membaca data (teks, gambar, audio, video) lalu memprediksi hasil, dengan machine learning di baliknya dan data sebagai bensinnya",
+   "Jenis-jenis AI: satu tugas, banyak tugas, generatif dan diskriminatif",
+   "Bahan dasarnya: database, komputasi, antarmuka, dan ide jaringan neuron",
+   "Tools populer seperti ChatGPT dan Claude, serta MCP dari Anthropic"
+  ],
+  "tk": [
+   "Start now: open ChatGPT or Claude, try prompting, and learn from the AI itself.",
+   "Do not wait until you feel ready. Small daily practice beats a big start later.",
+   "When you look for income opportunities, explore the five tools named in the episode: Claude, ElevenLabs, VEO 3, N8N, and BytePlus. They are mentioned in the episode, not endorsed by this portal.",
+   "Check your own work: tasks with little emotion, social skill, or strategic thinking are the most exposed, so strengthen those human skills."
+  ],
+  "tki": [
+   "Mulai sekarang: buka ChatGPT atau Claude, coba prompting, dan belajar dari AI itu sendiri.",
+   "Jangan menunggu merasa siap. Latihan kecil tiap hari mengalahkan awal yang besar tapi terlambat.",
+   "Saat mencari peluang penghasilan, kenali lima tools yang disebut di episode: Claude, ElevenLabs, VEO 3, N8N, dan BytePlus. Ini disebut di episode, bukan rekomendasi portal ini.",
+   "Cek pekerjaanmu: tugas yang minim emosi, kemampuan sosial, atau pemikiran strategis paling rentan, jadi perkuat kemampuan manusiawi itu."
+  ],
+  "fq": [
+   [
+    "Will AI replace humans completely?",
+    "Apakah AI akan menggantikan manusia sepenuhnya?",
+    "Not completely. According to the episode, AI changes how people work and creates new jobs. The most exposed jobs are those with little emotion, social skill, or strategic thinking.",
+    "Tidak sepenuhnya. Menurut episode ini, AI mengubah cara kerja dan menciptakan pekerjaan baru. Yang paling rentan adalah pekerjaan yang minim emosi, kemampuan sosial, atau pemikiran strategis."
+   ],
+   [
+    "What is the difference between AI and regular programming?",
+    "Apa beda AI dengan pemrograman biasa?",
+    "Regular code follows fixed rules. AI uses data and probability to guess the most likely result.",
+    "Kode biasa mengikuti aturan pasti. AI memakai data dan probabilitas untuk menebak hasil yang paling mungkin."
+   ],
+   [
+    "Where should a complete beginner start?",
+    "Dari mana pemula harus mulai?",
+    "Try prompting with a tool like ChatGPT or Claude and keep learning from the AI itself.",
+    "Coba prompting dengan tool seperti ChatGPT atau Claude dan terus belajar dari AI itu sendiri."
+   ]
+  ],
+  "rv": [
+   "podcast-6",
+   "podcast-5"
+  ],
+  "ra": [
+   "learning-ai-from-zero",
+   "what-is-a-prompt",
+   "what-is-a-skill"
+  ],
+  "rs": [
+   "prompting-basics",
+   "prompt-optimizer",
+   "skill-starter-template"
+  ],
+  "cls": "general"
+ },
+ "podcast-3": {
+  "ab": "Which jobs are most exposed to AI in the next 5 to 10 years, and what can you do about it? Two speakers from AI Creator Labs walk through the roles that follow clear, repeatable patterns, the kind that can be written as a procedure, and the ones that are harder to automate.",
+  "abi": "Pekerjaan apa yang paling rentan terhadap AI dalam 5 sampai 10 tahun ke depan, dan apa yang bisa kamu lakukan? Dua pembicara dari AI Creator Labs membahas peran yang polanya jelas dan berulang, yang bisa ditulis sebagai prosedur, serta peran yang lebih sulit diotomatisasi.",
+  "lr": [
+   "Roles seen as most exposed: data entry, content creator, modern and junior coder, admin and virtual assistant, and creative production such as design and video editing",
+   "Why repetitive, rule-based work that can be written as an SOP is easier to automate",
+   "Why soft skills, communication, and negotiation are harder to replace",
+   "Work seen as safer: health, work involving human lives, jobs hard to write an SOP for such as negotiators, and some physical jobs that still need robotics"
+  ],
+  "lri": [
+   "Peran yang dinilai paling rentan: data entry, content creator, coder modern dan junior, admin dan virtual assistant, serta produksi kreatif seperti desain dan video editing",
+   "Mengapa pekerjaan berulang dan berbasis aturan yang bisa dibuat SOP lebih mudah diotomatisasi",
+   "Mengapa soft skill, komunikasi, dan negosiasi lebih sulit digantikan",
+   "Pekerjaan yang dinilai lebih aman: kesehatan, pekerjaan yang menyangkut nyawa manusia, pekerjaan yang sulit dibuat SOP seperti negosiator, dan sebagian pekerjaan fisik yang masih butuh robotik"
+  ],
+  "tk": [
+   "Look at your own work and ask how much of it follows a clear, repeated pattern that could be written as an SOP.",
+   "If you work in one of the exposed fields, start upgrading now, especially soft skills, communication, and negotiation.",
+   "Use AI for the routine part of your job so you have more time for judgment and for working with people.",
+   "Adapt early. Waiting is the biggest risk."
+  ],
+  "tki": [
+   "Lihat pekerjaanmu dan tanyakan seberapa banyak yang berpola jelas dan berulang sehingga bisa dibuat SOP.",
+   "Kalau kamu bekerja di bidang yang rentan, mulai tingkatkan kemampuan sekarang, terutama soft skill, komunikasi, dan negosiasi.",
+   "Pakai AI untuk bagian rutin pekerjaanmu supaya ada lebih banyak waktu untuk penilaian dan bekerja dengan orang.",
+   "Beradaptasilah lebih awal. Menunggu adalah risiko terbesar."
+  ],
+  "fq": [
+   [
+    "Will AI replace every job?",
+    "Apakah AI akan menggantikan semua pekerjaan?",
+    "The episode says work with clear, repetitive patterns is the most likely to be replaced. It presents this as a reason to adapt quickly, not as a certainty for every person.",
+    "Episode ini menyebut pekerjaan dengan pola jelas dan berulang paling mungkin digantikan. Ini disampaikan sebagai alasan untuk cepat beradaptasi, bukan kepastian untuk setiap orang."
+   ],
+   [
+    "Which kinds of work are seen as safer?",
+    "Pekerjaan seperti apa yang dinilai lebih aman?",
+    "Health, work that involves human lives, jobs that are very hard to turn into an SOP such as negotiators, and some physical jobs that still need robotics.",
+    "Kesehatan, pekerjaan yang menyangkut nyawa manusia, pekerjaan yang sangat sulit dibuat SOP seperti negosiator, dan sebagian pekerjaan fisik yang masih butuh robotik."
+   ],
+   [
+    "What should I learn first?",
+    "Apa yang sebaiknya dipelajari dulu?",
+    "The episode recommends strengthening soft skills, communication, and negotiation, because they are harder for AI to replace.",
+    "Episode ini menyarankan memperkuat soft skill, komunikasi, dan negosiasi, karena lebih sulit digantikan AI."
+   ]
+  ],
+  "rv": [
+   "podcast-1",
+   "podcast-4"
+  ],
+  "ra": [
+   "jobs-ai-will-not-replace",
+   "earn-money-with-ai"
+  ],
+  "rs": [
+   "skill-builder",
+   "business-planner"
+  ],
+  "cls": "income"
+ },
+ "podcast-4": {
+  "ab": "AI is helpful, but used carelessly it can become a source of serious problems. This episode covers the dark side of AI that is increasingly close to everyday life, such as data leaks and deepfakes, and how to protect yourself and your family.",
+  "abi": "AI itu membantu, tapi kalau dipakai tanpa hati-hati bisa jadi sumber masalah besar. Episode ini membahas sisi gelap AI yang makin dekat dengan kehidupan sehari-hari, seperti kebocoran data dan deepfake, serta cara melindungi diri dan keluarga.",
+  "lr": [
+   "How data leaks happen when personal, family, or company information is typed into AI",
+   "What you should not enter into AI: names, phone numbers, personal data, company strategy, SOPs, passwords, and any secret information",
+   "How to audit your AI chat history and limit use of your chats for training",
+   "What deepfakes are and how they are used to deceive people",
+   "Trust but verify, and a family code question against voice scams"
+  ],
+  "lri": [
+   "Bagaimana kebocoran data terjadi ketika informasi pribadi, keluarga, atau perusahaan diketik ke AI",
+   "Apa yang tidak boleh dimasukkan ke AI: nama, nomor HP, data pribadi, strategi perusahaan, SOP, password, dan informasi rahasia apa pun",
+   "Cara mengaudit riwayat chat AI dan membatasi pemakaian chat untuk training",
+   "Apa itu deepfake dan bagaimana dipakai untuk menipu",
+   "Trust but verify, dan pertanyaan kode rahasia keluarga untuk melawan penipuan suara"
+  ],
+  "tk": [
+   "Open your AI chat history today and delete conversations that contain sensitive information.",
+   "If your tool has a setting that lets conversations be used to train the model, switch it off.",
+   "Never put passwords, personal data, or company strategy in a prompt. If you need help with a sensitive text, disguise the identity details instead.",
+   "Do not give false answers to AI on purpose if you want good results. Anonymize, do not mislead.",
+   "Agree on a secret code word or question with your family, and verify any suspicious call or video through another channel."
+  ],
+  "tki": [
+   "Buka riwayat chat AI-mu hari ini dan hapus percakapan yang berisi informasi sensitif.",
+   "Kalau tool-mu punya pengaturan yang mengizinkan percakapan dipakai untuk melatih model, matikan.",
+   "Jangan pernah memasukkan password, data pribadi, atau strategi perusahaan ke prompt. Kalau butuh bantuan untuk teks yang sensitif, samarkan detail identitasnya.",
+   "Jangan sengaja memberi jawaban palsu ke AI kalau ingin hasil yang baik. Samarkan identitas, jangan menyesatkan.",
+   "Sepakati kode atau pertanyaan rahasia dengan keluarga, dan verifikasi panggilan atau video yang mencurigakan lewat saluran lain."
+  ],
+  "fq": [
+   [
+    "Why is it risky to enter personal data into AI?",
+    "Mengapa berbahaya memasukkan data pribadi ke AI?",
+    "According to the episode, that data can be used for training or misused. Many people do it without realizing.",
+    "Menurut episode ini, data itu bisa dipakai untuk training atau disalahgunakan. Banyak orang melakukannya tanpa sadar."
+   ],
+   [
+    "Can I give AI fake data to protect myself?",
+    "Bolehkah memberi data palsu ke AI untuk melindungi diri?",
+    "You can disguise sensitive identity details, but do not deliberately give wrong answers if you want good results.",
+    "Kamu boleh menyamarkan detail identitas yang sensitif, tapi jangan sengaja memberi jawaban salah kalau ingin hasil yang baik."
+   ],
+   [
+    "How do I tell whether a video or voice is real?",
+    "Bagaimana tahu video atau suara itu asli?",
+    "Do not believe it right away. Verify through another source, and use a family code question to confirm who is calling.",
+    "Jangan langsung percaya. Verifikasi lewat sumber lain, dan pakai pertanyaan kode keluarga untuk memastikan siapa yang menelepon."
+   ]
+  ],
+  "rv": [
+   "podcast-1",
+   "podcast-3"
+  ],
+  "ra": [
+   "dark-side-of-ai",
+   "ai-income-scam-or-real"
+  ],
+  "rs": [
+   "researcher",
+   "quality-control-reviewer",
+   "plan-stress-tester"
+  ],
+  "cls": "general"
+ },
+ "podcast-5": {
+  "ab": "Tools like GPT, Claude, and Gemini are not the same thing as an AI agent. This episode explains the difference between regular generative AI and AI agents, the types of agents, and the business opportunities around them.",
+  "abi": "Tools seperti GPT, Claude, dan Gemini tidak sama dengan AI agent. Episode ini menjelaskan perbedaan AI generatif biasa dan AI agent, jenis-jenis agent, serta peluang bisnis di sekitarnya.",
+  "lr": [
+   "Generative AI: a specific prompt goes in and an output comes out",
+   "AI agents: they plan, think, decide, execute, and review their own results to reach a goal, so the result is better called an outcome than an output",
+   "Types of agents: single agent, multi-agent, and autonomous or long-running agents",
+   "Business opportunities: project-based work, recurring maintenance, and efficiency for your own business",
+   "Builder business models: subscription platforms, pay-per-use through an API, and white label",
+   "Why critical thinking matters as no-code AI platforms grow"
+  ],
+  "lri": [
+   "AI generatif: prompt spesifik masuk, output keluar",
+   "AI agent: merencanakan, berpikir, mengambil keputusan, mengeksekusi, lalu me-review hasilnya untuk mencapai tujuan, jadi hasilnya lebih tepat disebut outcome daripada output",
+   "Jenis agent: single agent, multi-agent, dan autonomous atau long-running agent",
+   "Peluang bisnis: berbasis proyek, perawatan berulang, dan efisiensi untuk bisnis sendiri",
+   "Model bisnis builder: platform langganan, bayar per pemakaian lewat API, dan white label",
+   "Mengapa berpikir kritis penting saat platform AI tanpa coding makin banyak"
+  ],
+  "tk": [
+   "Before you start a task, ask yourself whether you need a single output or an outcome that requires planning and review.",
+   "Start with a single agent for one clear task before you try multi-agent setups.",
+   "If you want to build, pick a business angle first: a project, ongoing maintenance, or efficiency for your own business.",
+   "Use critical thinking to choose tools and to judge whether a solution is actually useful and worth it."
+  ],
+  "tki": [
+   "Sebelum memulai tugas, tanyakan apakah kamu butuh satu output atau outcome yang memerlukan perencanaan dan review.",
+   "Mulai dengan single agent untuk satu tugas yang jelas sebelum mencoba susunan multi-agent.",
+   "Kalau ingin membangun, pilih dulu sudut bisnisnya: proyek, perawatan berkelanjutan, atau efisiensi bisnis sendiri.",
+   "Gunakan berpikir kritis untuk memilih tools dan menilai apakah sebuah solusi benar-benar berguna dan layak."
+  ],
+  "fq": [
+   [
+    "What is the difference between generative AI and an AI agent?",
+    "Apa beda AI generatif dan AI agent?",
+    "Generative AI takes a prompt and gives an output. An agent also plans, decides, executes, and reviews its own results to reach a goal.",
+    "AI generatif menerima prompt lalu memberi output. Agent juga merencanakan, mengambil keputusan, mengeksekusi, dan me-review hasilnya untuk mencapai tujuan."
+   ],
+   [
+    "What types of agents are there?",
+    "Apa saja jenis agent?",
+    "Single agent (one agent, one task), multi-agent (several agents coordinated by one controller), and autonomous or long-running agents.",
+    "Single agent (satu agent satu tugas), multi-agent (beberapa agent yang dikoordinasikan satu pengendali), dan autonomous atau long-running agent."
+   ],
+   [
+    "How can people earn from AI agents?",
+    "Bagaimana orang bisa menghasilkan dari AI agent?",
+    "The episode mentions project-based work, recurring maintenance, and efficiency in your own business. Builders can use subscription, pay-per-use via API, or white label.",
+    "Episode ini menyebut kerja berbasis proyek, perawatan berulang, dan efisiensi di bisnis sendiri. Builder bisa memakai langganan, bayar per pemakaian lewat API, atau white label."
+   ]
+  ],
+  "rv": [
+   "podcast-6",
+   "podcast-2"
+  ],
+  "ra": [
+   "ai-agents-vs-ai-tools",
+   "build-your-first-ai-agent"
+  ],
+  "rs": [
+   "agent-orchestrator",
+   "skill-builder"
+  ],
+  "cls": "agent"
+ },
+ "podcast-6": {
+  "ab": "Why do AI credits run out so fast? This episode explains how AI actually reads your prompt through tokens and context windows, and how to use AI as more than a search engine by choosing the right model and managing context efficiently.",
+  "abi": "Kenapa kredit AI cepat habis? Episode ini menjelaskan cara AI membaca prompt-mu lewat token dan context window, serta cara memakai AI lebih dari sekadar mesin pencari dengan memilih model yang tepat dan mengatur konteks secara efisien.",
+  "lr": [
+   "How a prompt is broken into tokens",
+   "What a context window is: the active memory of an AI in one session",
+   "Why very long prompts or irrelevant data can make results less accurate or cause hallucinations",
+   "How to choose a model by purpose: everyday text, creative work or large data, and coding or math",
+   "Context engineering: arranging your input so the AI works better"
+  ],
+  "lri": [
+   "Bagaimana prompt dipecah menjadi token",
+   "Apa itu context window: ingatan aktif AI dalam satu sesi",
+   "Mengapa prompt yang sangat panjang atau data yang tidak relevan bisa membuat hasil kurang akurat atau halusinasi",
+   "Cara memilih model sesuai tujuan: teks sehari-hari, tugas kreatif atau data besar, serta coding atau matematika",
+   "Context engineering: menyusun input agar AI bekerja lebih baik"
+  ],
+  "tk": [
+   "Do not paste all your raw data. Include only the information that is relevant to the task.",
+   "When a conversation gets long, ask the AI to summarize the earlier work and continue from the summary.",
+   "Pick a model for the job, not just the one that is called the best. Models differ in context window size and strengths.",
+   "Keep prompts focused so you spend fewer tokens and get more accurate results."
+  ],
+  "tki": [
+   "Jangan tempel semua data mentah. Masukkan hanya informasi yang relevan dengan tugas.",
+   "Saat percakapan makin panjang, minta AI merangkum hasil sebelumnya lalu lanjutkan dari ringkasan itu.",
+   "Pilih model sesuai pekerjaan, bukan sekadar yang disebut paling bagus. Tiap model berbeda ukuran context window dan keunggulannya.",
+   "Jaga prompt tetap fokus supaya token lebih hemat dan hasil lebih akurat."
+  ],
+  "fq": [
+   [
+    "Why do my AI credits run out so fast?",
+    "Kenapa kredit AI-ku cepat habis?",
+    "Your prompt is broken into tokens, and long prompts or lots of irrelevant data use more of them. Sending only relevant information helps.",
+    "Prompt-mu dipecah menjadi token, dan prompt panjang atau banyak data tidak relevan memakai lebih banyak token. Mengirim informasi yang relevan saja akan membantu."
+   ],
+   [
+    "What is a context window?",
+    "Apa itu context window?",
+    "It is the active memory of an AI in one session. When it is full or filled with the wrong information, results can become less accurate.",
+    "Itu adalah ingatan aktif AI dalam satu sesi. Kalau penuh atau terisi informasi yang salah, hasil bisa kurang akurat."
+   ],
+   [
+    "Which AI model should I use?",
+    "Model AI mana yang sebaiknya dipakai?",
+    "It depends on the task. The episode suggests a balanced model for everyday text, a model with a large context window for creative work or large data, and a model that is strong at coding or math for those jobs.",
+    "Tergantung tugasnya. Episode ini menyarankan model seimbang untuk teks sehari-hari, model dengan context window besar untuk tugas kreatif atau data besar, dan model yang kuat di coding atau matematika untuk pekerjaan itu."
+   ]
+  ],
+  "rv": [
+   "podcast-5",
+   "podcast-2"
+  ],
+  "ra": [
+   "why-ai-credits-run-out",
+   "save-ai-tokens"
+  ],
+  "rs": [
+   "prompt-optimizer",
+   "prompting-basics"
+  ],
+  "cls": "general"
+ }
+};
+function vpage(v){
+  var T=V[LANG], D=VD[v.slug]||{}, id=LANG==='id';
+  function g(k){ return (id&&D[k+'i'])?D[k+'i']:(D[k]||'') }
+  function ul(tag,arr){ return arr&&arr.length?'<'+tag+'>'+arr.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</'+tag+'>':'' }
+  var src='https://www.youtube.com/embed/'+v.yt+'?rel=0&modestbranding=1'+(v.start?'&start='+v.start:'');
+  var h='<section class="rhead vhead"><a class="crumb" href="#/knowledges">'+T.allv+'</a><p class="eyebrow">'+T.ep+' #'+v.ep+' · '+esc(vtopic(v))+'</p><h1 class="vh1">'+esc(vt(v))+'</h1></section><div class="vwrap">'+
+    '<div class="player"><iframe src="'+src+'" title="'+esc(vt(v))+'" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>'+
     '<div class="vinfo"><span><b>'+v.dur+'</b></span><span>'+vviews(v)+'</span><span>'+vdate(v)+'</span></div>'+
     '<a class="ytlink" href="https://www.youtube.com/watch?v='+v.yt+'" target="_blank" rel="noopener noreferrer">'+T.watch+' ↗</a>';
-  document.getElementById('vClose').setAttribute('aria-label',T.close);
-  vDrawer.querySelector('.dpanel').scrollTop=0;
-  if(vDrawer.hidden){
-    vLast=document.activeElement; vDrawer.hidden=false; document.body.style.overflow='hidden';
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){ vDrawer.classList.add('open'); document.getElementById('vClose').focus({preventScroll:true}) }) });
-  }else vDrawer.classList.add('open');
+  h+='<div class="vprose"><h2>'+T.about+'</h2><p>'+esc(g('ab'))+'</p><h2>'+T.learn+'</h2>'+ul('ul',g('lr'))+'<h2>'+T.take+'</h2>'+ul('ol',g('tk'));
+  if(D.fq&&D.fq.length){ h+='<h2>'+T.faq+'</h2>'+D.fq.map(function(f,k){ return '<details class="fq"'+(k===0?' open':'')+'><summary>'+esc(id?f[1]:f[0])+'</summary><p>'+esc(id?f[3]:f[2])+'</p></details>' }).join('') }
+  h+='</div>';
+  var rk='';
+  (D.rv||[]).forEach(function(sl){ var x=DATA.videos.filter(function(y){return y.slug===sl})[0]; if(x) rk+='<a class="rk" href="#/knowledges/'+x.slug+'"><span class="rkt">'+T.kVid+'</span><span class="rkn">'+esc(vt(x))+'</span><span class="rkm">'+T.ep+' #'+x.ep+' · '+x.dur+'</span></a>' });
+  (D.ra||[]).forEach(function(sl){ var x=DATA.articles.filter(function(y){return y.slug===sl})[0]; if(x) rk+='<a class="rk" href="#/articles/'+x.slug+'"><span class="rkt">'+T.kArt+'</span><span class="rkn">'+esc(id?x.ti:x.t)+'</span><span class="rkm">'+x.min+' '+T.min+'</span></a>' });
+  (D.rs||[]).forEach(function(sl){ var x=DATA.resources.filter(function(y){return y.id===sl})[0]; if(x) rk+='<a class="rk" href="#/resources/'+x.id+'"><span class="rkt">'+T.kSkill+'</span><span class="rkn">'+esc(id?x.ti:x.t)+'</span><span class="rkm">'+T.skl+' →</span></a>' });
+  var c=CLS[D.cls]||CLS.general;
+  h+='<section class="vrel"><h2>'+T.relk+'</h2><div class="rkgrid">'+rk+'</div>'+
+    '<div class="abox"><h3>'+T.kClass+'</h3><p class="ctt">'+esc(id?c.ti:c.t)+'</p><p>'+esc(id?c.di:c.d)+'</p><div class="chips2"><a class="btn" href="https://www.aicreatorlabs.id/" target="_blank" rel="noopener noreferrer">'+T.visit+' ↗</a><a class="btn" href="https://www.instagram.com/aicreatorlabs.id/" target="_blank" rel="noopener noreferrer">'+T.ig+' ↗</a></div></div></section>'+
+    '<div class="rback"><a class="btn" href="#/knowledges">'+T.allv+'</a></div></div>';
+  return h;
 }
-function closeVideo(){
-  if(vDrawer.hidden) return;
-  var f=vDrawer.querySelector('iframe'); if(f) f.src='about:blank';
-  vDrawer.classList.remove('open'); document.body.style.overflow='';
-  setTimeout(function(){ if(!vDrawer.classList.contains('open')){ vDrawer.hidden=true; document.getElementById('vBody').innerHTML='' } },420);
-  if(vLast&&vLast.focus){ try{ vLast.focus({preventScroll:true}) }catch(e){} }
-}
-vDrawer.addEventListener('click',function(e){ if(e.target.closest('[data-close]')||e.target.closest('#vClose')) location.hash='#/knowledges' });
-document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!vDrawer.hidden&&vDrawer.classList.contains('open')) location.hash='#/knowledges' });
 
 /* ============ ARTICLES (Altair Journal) ============ */
 var AT=[
@@ -2267,7 +2693,7 @@ function applyLang(l){
   document.getElementById('featVideo').setAttribute('aria-label',(l==='id'?'Putar cuplikan: ':'Play preview: ')+'Perbedaan AI Agent vs AI Tools Biasa');
   if(box.classList.contains('open')) render();
   renderPage();
-  var _o=parseHash(); if(_o.h==='resources'&&_o.sub) openDetail(_o.sub); if(_o.h==='knowledges'&&_o.sub) openVideo(_o.sub);
+  var _o=parseHash(); if(_o.h==='resources'&&_o.sub) openDetail(_o.sub);
   tyGo();
   buildTheme();
 }
