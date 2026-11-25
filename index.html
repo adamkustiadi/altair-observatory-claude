@@ -202,7 +202,13 @@ footer .btn{margin-top:1.8rem}
 
 /* ---------- inner pages ---------- */
 .bar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:.8rem 1rem;flex-wrap:wrap;padding:.9rem var(--gutter);background:rgba(var(--bgc),.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
-.brand{font-family:var(--serif);font-size:1.45rem;font-weight:400;line-height:1}
+.brand{font-family:var(--serif);font-size:1.45rem;font-weight:400;line-height:1;display:inline-flex;align-items:center;gap:.55rem}
+.bstar{width:1.5em;height:1.5em;flex:none;overflow:visible;filter:drop-shadow(0 0 5px rgba(var(--gd),.55))}
+.bstar .b1{fill:var(--gold)}
+.bstar .b2{fill:var(--gold);transform-box:fill-box;transform-origin:center;animation:bspark 3.6s ease-in-out infinite}
+@keyframes bspark{0%,100%{opacity:.25;transform:scale(.7) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(20deg)}}
+html[data-theme="light"] .bstar{filter:drop-shadow(0 0 3px rgba(var(--gd),.45))}
+@media (prefers-reduced-motion:reduce){.bstar .b2{animation:none;opacity:.8}}
 .brand em{color:var(--gold)}
 .bar .tabs{gap:clamp(14px,3vw,34px)}
 .bar .tab{font-size:.7rem}
@@ -244,17 +250,18 @@ a.rk:hover,a.rk:focus-visible{border-color:rgba(var(--gd),.6);transform:translat
 .rkt{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
 .rkn{font-family:var(--head);font-weight:700;color:var(--hi);font-size:.95rem;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .rkm{margin-top:auto;font-size:.76rem;color:var(--muted)}
-.vrel .abox{max-width:46rem}
+.vrel .abox{max-width:46rem;margin-bottom:1rem}
 .vrel .abox h3{margin-bottom:.4rem}
 .vrel .abox .ctt{font-family:var(--serif);font-size:1.5rem;line-height:1.15;color:var(--hi);margin:0 0 .5rem}
 @media (max-width:860px){ .vprose h2,.vrel h2{font-size:1.5rem} }
 
 
 /* ---------- header panel (layered intro) ---------- */
-.rhead.rpanel{position:relative;overflow:hidden;margin-top:clamp(18px,3vw,34px);padding:clamp(28px,4vw,52px) clamp(22px,3.6vw,52px);border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,rgba(var(--gd),.10),rgba(124,92,214,.10) 55%,rgba(var(--wh),.02));-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.rhead.rpanel{position:relative;overflow:hidden;margin-top:clamp(18px,3vw,34px);margin-bottom:clamp(10px,1.4vw,16px);padding:clamp(24px,3vw,40px) clamp(22px,3.4vw,48px);border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,rgba(var(--gd),.10),rgba(124,92,214,.10) 55%,rgba(var(--wh),.02));-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .rhead.rpanel::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--gold),transparent)}
 .rhead.rpanel>*{position:relative}
-.rhead.rpanel:not(.big) h1{font-size:clamp(2.3rem,4.8vw,4rem)}
+.rhead.rpanel h1,.ahead.big.rpanel h1{font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.02;max-width:none;margin:.8rem 0 .8rem}
+.rhead.rpanel .rstats{margin-top:.9rem}
 .rhead.rpanel .wm{position:absolute;right:clamp(14px,3vw,44px);top:50%;transform:translateY(-50%);font-family:var(--head);font-weight:800;font-size:clamp(6rem,15vw,12rem);line-height:1;color:var(--gold);opacity:.08;pointer-events:none;user-select:none}
 html[data-theme="light"] .rhead.rpanel{background:linear-gradient(135deg,rgba(75,46,131,.07),rgba(var(--gd),.10) 60%,rgba(var(--wh),.5))}
 @media (max-width:860px){.rhead.rpanel{border-radius:16px}}
@@ -401,7 +408,10 @@ html.sc .sbtn svg{transform:rotate(180deg)}
 }
 
 /* ---------- knowledges ---------- */
-.vtool{position:sticky;top:var(--stick,78px);z-index:20;display:flex;gap:.7rem;align-items:center;padding:.75rem 0;margin-bottom:1.5rem;background:rgba(var(--bgc),.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-block:1px solid var(--line-soft)}
+.vtool{position:sticky;top:var(--stick,78px);z-index:20;display:flex;gap:.7rem;align-items:center;padding:.7rem 0;margin-bottom:1.1rem;background:transparent}
+.vtool .rq,.vtool .vsort{background-color:rgba(var(--bgc),.6);-webkit-backdrop-filter:blur(20px) saturate(1.3);backdrop-filter:blur(20px) saturate(1.3)}
+.rfilters{margin:0 0 1.4rem;gap:.7rem}
+.rfilters .rcount{min-height:1.2em;margin:0}
 .rq.vq{max-width:none;min-width:0}
 .vsort{flex:none;appearance:none;-webkit-appearance:none;border:1px solid var(--line);background:var(--glass) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23E8D5A3' stroke-width='1.5'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 1rem center;color:var(--text);border-radius:999px;padding:.55rem 2.4rem .55rem 1.1rem;font:inherit;font-size:.85rem;outline:0;cursor:pointer;transition:border-color .25s}
 .vsort:focus{border-color:rgba(var(--gd),.6)}
@@ -449,9 +459,11 @@ html.sc .sbtn svg{transform:rotate(180deg)}
 .tagcard{display:flex;flex-direction:column;gap:.7rem;min-height:270px;padding:clamp(22px,2.2vw,30px);border:1px solid var(--line);border-radius:16px;background:var(--glass);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:inherit;transition:transform .3s,border-color .3s,box-shadow .3s}
 .tagcard:hover,.tagcard:focus-visible{transform:translateY(-4px);border-color:rgba(var(--gd),.55);box-shadow:0 14px 40px rgba(75,46,131,.28)}
 .tagcard .tl{font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
-.tagcard .tn{font-family:var(--head);font-weight:800;font-size:clamp(1.45rem,2vw,1.8rem);line-height:1.12;letter-spacing:-.01em;color:var(--hi)}
+.tagcard .tn{font-family:var(--head);font-weight:700;font-size:clamp(1.25rem,1.7vw,1.5rem);line-height:1.12;letter-spacing:-.01em;color:var(--hi)}
 .tagcard .td{flex:1;color:var(--muted);font-size:.95rem;line-height:1.6}
 .tagcard .tc{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.tagcard .tc>span{font-size:.64rem;letter-spacing:.12em;min-width:0}
+.tagcard .tc{gap:.6rem}
 .tagcard .tc b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(var(--gd),.14);border:1px solid rgba(var(--gd),.35);font-weight:400;color:var(--gold);font-size:.95rem;letter-spacing:0;transition:background .25s}
 .tagcard:hover .tc b{background:rgba(var(--gd),.28)}
 .shead.row{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem 1.5rem;flex-wrap:wrap}
@@ -467,7 +479,7 @@ html.sc .sbtn svg{transform:rotate(180deg)}
 .arow{display:grid;grid-template-columns:1fr auto;column-gap:1.5rem;row-gap:.35rem;padding:1.5rem 0;border-bottom:1px solid var(--line);color:inherit;transition:padding .3s}
 .arow:hover,.arow:focus-visible{padding-left:.7rem}
 .arow .am{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.arow .at{font-family:var(--head);font-weight:700;font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.25;letter-spacing:-.01em;color:var(--hi)}
+.arow .at{font-family:var(--head);font-weight:600;font-size:clamp(1.05rem,1.7vw,1.28rem);line-height:1.25;letter-spacing:-.01em;color:var(--hi)}
 .arow .ax{color:var(--muted);font-size:.93rem;max-width:42rem}
 .arow .ar{grid-column:2;grid-row:1/4;align-self:center;color:var(--gold);font-size:1.25rem}
 .crumb{display:inline-block;margin-bottom:1.6rem;font-size:.8rem;color:var(--muted);border-bottom:1px solid var(--line)}
@@ -662,7 +674,7 @@ html.sc .sbtn svg{transform:rotate(180deg)}
 <!-- Inner pages (built in stages 2-4) -->
 <div id="inner" hidden>
   <header class="bar">
-    <a class="brand" href="#/" aria-label="Back to Altair Observatory home">Altair <em>Observatory</em></a>
+    <a class="brand" href="#/" aria-label="Back to Altair Observatory home"><svg class="bstar" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path class="b1" d="M16 3l2.6 10.4L29 16l-10.4 2.6L16 29l-2.6-10.4L3 16l10.4-2.6z"/><path class="b2" d="M25.5 4.5l.8 3.2 3.2.8-3.2.8-.8 3.2-.8-3.2-3.2-.8 3.2-.8z"/></svg><span>Altair <em>Observatory</em></span></a>
     <nav class="tabs" aria-label="Main">
       <a class="tab" href="#/resources" data-tab="resources" data-i="tabRes">Resources</a>
       <a class="tab" href="#/knowledges" data-tab="knowledges" data-i="tabKnow">Knowledges</a>
@@ -692,12 +704,13 @@ html.sc .sbtn svg{transform:rotate(180deg)}
           <h1 data-i="resH">AI Skills for <em>Every Creator</em></h1>
           <p class="lead2" data-i="resLead">Practical AI skills for every level, from your first prompt to building your own agents. Pick the ones you need and put them to work.</p>
           <p class="rstats" id="resStats"></p>
-          <div class="filters">
-            <div class="frow" id="resPaths"></div>
-            <div class="frow" id="resLevels"></div>
-            <div class="frow"><input class="rq" id="resQ" type="search" autocomplete="off"><span class="rcount" id="resCount"></span></div>
-          </div>
         </section>
+        <div class="vtool" id="resTool"><input class="rq vq" id="resQ" type="search" autocomplete="off"></div>
+        <div class="filters rfilters">
+          <div class="frow" id="resPaths"></div>
+          <div class="frow" id="resLevels"></div>
+          <p class="rcount" id="resCount"></p>
+        </div>
 
         <div id="resGroups"></div>
 
@@ -782,7 +795,7 @@ html.sc .sbtn svg{transform:rotate(180deg)}
       <aside class="side" id="aSide" aria-label="Tags"></aside>
       <div class="rmain">
         <div id="aHead"></div>
-        <div id="aTopWrap"><input class="rq vq" id="aQ" type="search" autocomplete="off" style="max-width:420px;margin-bottom:.5rem"></div>
+        <div class="vtool" id="aTopWrap"><input class="rq vq" id="aQ" type="search" autocomplete="off"></div>
         <div id="aMain"></div>
       </div>
     </div>
@@ -1021,7 +1034,7 @@ OUTPUT: A five-line summary, the decisions, an action items table, and open ques
      t:"Ini Pekerjaan yang Gak Akan Pernah Digantikan oleh AI | AI CREATOR LABS PODCAST #3",},
     {slug:"podcast-2",yt:"DpiYhVdSpbI",ep:2,topic:"start",dur:"21:57",views:2031,date:"2026-01-30",
      t:"99 Orang Tidak Tau Cara Belajar AI - Ini Panduan Dasar Belajar AI dari Nol untuk Pemula | AI CREATOR LABS PODCAST #2",},
-    {slug:"podcast-1",yt:"krZGmql_qag",ep:1,topic:"risks",dur:"18:38",views:1294,date:"2026-01-19",
+    {slug:"podcast-1",yt:"krZGmql_qag",ep:1,topic:"careers",dur:"18:38",views:1294,date:"2026-01-19",
      t:"Apakah mungkin untuk Cuan dari AI ? atau malah scam... | AI CREATOR LABS PODCAST #1",}
   ],
   /* tag = key in AT · g = small tags (key in ST) · date = publish date · min = reading minutes · t/ti = title EN/ID · ex/exi = excerpt · b/bi = body HTML (EN/ID)
@@ -2022,9 +2035,11 @@ function exploreHtml(cur){
   }).join('');
 }
 function setStick(){
-  var v=document.getElementById('vidView'); if(v.hidden) return;
-  var b=document.querySelector('#inner .bar'), sd=document.getElementById('vSide');
-  v.style.setProperty('--stick',(window.innerWidth<=860?sd.offsetHeight:b.offsetHeight)+'px');
+  var bar=document.querySelector('#inner .bar'); if(!bar) return;
+  [['resView','side'],['vidView','vSide'],['artView','aSide']].forEach(function(p){
+    var v=document.getElementById(p[0]), sd=document.getElementById(p[1]); if(!v||v.hidden||!sd) return;
+    v.style.setProperty('--stick',(window.innerWidth<=860?sd.offsetHeight:bar.offsetHeight)+'px');
+  });
 }
 
 /* ============ KNOWLEDGES (Altair Telescope) ============ */
@@ -2127,6 +2142,7 @@ window.addEventListener('resize',setStick);
 var CLS={
   income:{t:'AI Income Workshop',ti:'AI Income Workshop',d:'A class from AI Creator Labs about turning AI skills into income. See the details on the AI Creator Labs website.',di:'Kelas dari AI Creator Labs tentang mengubah kemampuan AI menjadi penghasilan. Lihat detailnya di website AI Creator Labs.'},
   agent:{t:'AI Agent Builder',ti:'AI Agent Builder',d:'A class from AI Creator Labs for people who want to build AI agents. See the details on the AI Creator Labs website.',di:'Kelas dari AI Creator Labs untuk kamu yang ingin membangun AI agent. Lihat detailnya di website AI Creator Labs.'},
+  creator:{t:'AI Creator Incubator',ti:'AI Creator Incubator',d:'A class from AI Creator Labs for people who want to create content and become a content creator with AI. See the details on the AI Creator Labs website.',di:'Kelas dari AI Creator Labs untuk kamu yang ingin membuat konten dan menjadi content creator dengan AI. Lihat detailnya di website AI Creator Labs.'},
   general:{t:'Learn more with AI Creator Labs',ti:'Belajar lebih jauh bersama AI Creator Labs',d:'Want to go deeper? AI Creator Labs offers classes on learning AI, building with it, and earning from it. See what is available on their website.',di:'Ingin belajar lebih dalam? AI Creator Labs punya kelas untuk belajar AI, membangun dengan AI, dan menghasilkan dari AI. Lihat yang tersedia di website mereka.'}
 };
 var VD={
@@ -2195,7 +2211,7 @@ var VD={
    "business-planner",
    "plan-stress-tester"
   ],
-  "cls": "income"
+  "cls": ["income","creator"]
  },
  "podcast-2": {
   "ab": "New to AI and not sure where to begin? This beginner-friendly episode explains AI from zero in a relaxed conversation: what AI really is, how it differs from regular coding, how it works, and how to start learning today.",
@@ -2537,9 +2553,10 @@ function vpage(v){
   (D.rv||[]).forEach(function(sl){ var x=DATA.videos.filter(function(y){return y.slug===sl})[0]; if(x) rk+='<a class="rk" href="#/knowledges/'+x.slug+'"><span class="rkt">'+T.kVid+'</span><span class="rkn">'+esc(vt(x))+'</span><span class="rkm">'+T.ep+' #'+x.ep+' · '+x.dur+'</span></a>' });
   (D.ra||[]).forEach(function(sl){ var x=DATA.articles.filter(function(y){return y.slug===sl})[0]; if(x) rk+='<a class="rk" href="#/articles/'+x.slug+'"><span class="rkt">'+T.kArt+'</span><span class="rkn">'+esc(id?x.ti:x.t)+'</span><span class="rkm">'+x.min+' '+T.min+'</span></a>' });
   (D.rs||[]).forEach(function(sl){ var x=DATA.resources.filter(function(y){return y.id===sl})[0]; if(x) rk+='<a class="rk" href="#/resources/'+x.id+'"><span class="rkt">'+T.kSkill+'</span><span class="rkn">'+esc(id?x.ti:x.t)+'</span><span class="rkm">'+T.skl+' →</span></a>' });
-  var c=CLS[D.cls]||CLS.general;
-  h+='<section class="vrel"><h2>'+T.relk+'</h2><div class="rkgrid">'+rk+'</div>'+
-    '<div class="abox"><h3>'+T.kClass+'</h3><p class="ctt">'+esc(id?c.ti:c.t)+'</p><p>'+esc(id?c.di:c.d)+'</p><div class="chips2"><a class="btn" href="https://www.aicreatorlabs.id/" target="_blank" rel="noopener noreferrer">'+T.visit+' ↗</a><a class="btn" href="https://www.instagram.com/aicreatorlabs.id/" target="_blank" rel="noopener noreferrer">'+T.ig+' ↗</a></div></div></section>'+
+  var cl=[].concat(D.cls||'general');
+  var boxes=cl.map(function(k){ var c=CLS[k]||CLS.general;
+    return '<div class="abox"><h3>'+T.kClass+'</h3><p class="ctt">'+esc(id?c.ti:c.t)+'</p><p>'+esc(id?c.di:c.d)+'</p><div class="chips2"><a class="btn" href="https://www.aicreatorlabs.id/" target="_blank" rel="noopener noreferrer">'+T.visit+' ↗</a><a class="btn" href="https://www.instagram.com/aicreatorlabs.id/" target="_blank" rel="noopener noreferrer">'+T.ig+' ↗</a></div></div>' }).join('');
+  h+='<section class="vrel"><h2>'+T.relk+'</h2><div class="rkgrid">'+rk+'</div>'+boxes+'</section>'+
     '<div class="rback"><a class="btn" href="#/knowledges">'+T.allv+'</a></div></div>';
   return h;
 }
