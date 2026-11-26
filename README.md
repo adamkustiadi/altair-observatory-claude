@@ -79,7 +79,7 @@ Indonesian text for interface labels is in the `ID` dictionary. Each `data-i` ke
 
 ## Brand document
 
-`Altair-Observatory-Brand-Design.pdf` explains the name, tagline, brand personality, colors, typography, logo, and creator's note (in Indonesian).
+`Altair Observatory Brand Design.pdf` explains the name, tagline, brand personality, colors, typography, logo, and creator's note (in Indonesian).
 
 ## Credits
 
