@@ -95,12 +95,12 @@ section{position:relative}
 
 /* ---------- tabs ---------- */
 .tabs{display:flex;justify-content:center;gap:clamp(18px,4vw,44px);flex-wrap:wrap}
-.tab{--ls:.26em;position:relative;font-size:.78rem;letter-spacing:var(--ls);text-transform:uppercase;color:rgba(var(--ink),.72);padding:.55rem 0;font-weight:400;transition:color .25s}
+.tab{--ls:.24em;position:relative;font-size:.92rem;letter-spacing:var(--ls);text-transform:uppercase;color:rgba(var(--ink),.92);padding:.8rem 0;font-weight:600;transition:color .25s}
 /* underline = exactly the width of the word (trailing letter-spacing removed) */
-.tab::after{content:"";position:absolute;left:0;right:var(--ls);bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
-.tab:hover{color:var(--hi)}
+.tab::after{content:"";position:absolute;left:0;right:var(--ls);bottom:.2rem;height:1.5px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.tab:hover{color:var(--gold)}
 .tab:hover::after{transform:scaleX(1)}
-.tab[aria-current="page"]{color:var(--hi)}
+.tab[aria-current="page"]{color:var(--gold)}
 .tab[aria-current="page"]::after{transform:scaleX(1)}
 
 /* ---------- hero ---------- */
@@ -211,7 +211,7 @@ html[data-theme="light"] .bstar{filter:drop-shadow(0 0 3px rgba(var(--gd),.45))}
 @media (prefers-reduced-motion:reduce){.bstar .b2{animation:none;opacity:.8}}
 .brand em{color:var(--gold)}
 .bar .tabs{gap:clamp(14px,3vw,34px)}
-.bar .tab{font-size:.7rem}
+.bar .tab{font-size:.8rem;padding:.6rem 0}
 .page{min-height:70vh;padding:clamp(70px,10vw,140px) 0}
 .page h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.8rem,7vw,5.5rem);line-height:1;margin:1rem 0 1.3rem}
 .page p{color:rgba(var(--ink),.8);max-width:34rem}
@@ -515,10 +515,16 @@ html.sc .sbtn svg{transform:rotate(180deg)}
 }
 @media (max-width:520px){
   .tabs{gap:14px 20px}
-  .tab{--ls:.2em;font-size:.68rem}
+  .tab{--ls:.16em;font-size:.78rem}
+  .bar .tab{font-size:.74rem}
   .counter span{letter-spacing:.14em}
   .fbar{justify-content:center;text-align:center}
   .bar{justify-content:center}
+}
+@media (max-width:360px){
+  .tabs{gap:10px 14px}
+  .tab{--ls:.1em;font-size:.7rem}
+  .bar .tab{font-size:.68rem}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
